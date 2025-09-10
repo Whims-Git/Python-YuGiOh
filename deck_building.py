@@ -132,4 +132,3 @@ def show_deck():
 #add_card_to_deck("Blue-Eyes White Dragon")
 #show_deck()
 # Dark Magician
-#add_card_to_deck("Dark Magician", 2)
