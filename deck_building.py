@@ -11,6 +11,8 @@ main_deck_monster_card_lookup = {card["Name"]: card for card in vanilla_monster_
 extra_deck_monster_card_lookup = {card["Name"]: card for card in extra_deck_monster_cards}
 spell_card_lookup = {card["Name"]: card for card in spell_cards}
 trap_card_lookup = {card["Name"]: card for card in trap_cards}
+
+# Create Empty Lists for deck
 current_main_deck = []
 current_extra_deck = []
 
@@ -19,7 +21,7 @@ def list_all_cards():
     for card in vanilla_monster_cards:
         print(f"- {card['Name']}")
 
-    print("\nAvailable Main Deck Monster Cards:")
+    print("\nAvailable Effect Monster Cards:")
     for card in effect_monster_cards:
         print(f"- {card['Name']}")
 
@@ -53,30 +55,34 @@ def add_card_to_deck(name, qty):
     try:
         qty = int(qty)
     except ValueError:
-        print("Please enter a valid number for quantity.")
+        print("Please enter a number for quantity.")
         return
     
     if qty <= 0:
         print("You must add at least 1 copy of a card to your deck.")
         return
     
-    if len(current_main_deck) + qty > 60:
-        print("Cannot add cards. Deck limit of 60 cards will be exceeded.")
-        return
-    
-    if len(current_extra_deck) + qty > 15:
-        print("Cannot add cards. Extra Deck limit of 15 cards will be exceeded.")
-        return
-
-    copies = current_main_deck.count(card), current_extra_deck.count(card)
-    addable = min(qty, 3 - copies)
-    if card in vanilla_monster_cards or effect_monster_cards or spell_cards or trap_cards:
-        current_main_deck.extend([card] * addable)
-    else:
+    # Determine which deck to add to
+    if name in extra_deck_monster_card_lookup:
+        if len(current_extra_deck) + qty > 15:
+            print("Cannot add cards. Extra Deck limit of 15 cards will be exceeded.")
+            return
+        copies = sum(1 for c in current_extra_deck if c["Name"] == name)
+        addable = min(qty, 3 - copies)
         current_extra_deck.extend([card] * addable)
-    print(f"\nAdded {addable} copy/copies of '{name}'. {name} x{copies + addable}.")
-    if addable < qty:
-        print(f"(Limit is 3 per card; {qty - addable} not added.)")
+        print(f"\nAdded {addable} copy/copies of '{name}' to Extra Deck. {name} x{copies + addable}.")
+        if addable < qty:
+            print(f"(Limit is 3 per card; {qty - addable} not added.)")
+    else:
+        if len(current_main_deck) + qty > 60:
+            print("Cannot add cards. Deck limit of 60 cards will be exceeded.")
+            return
+        copies = sum(1 for card in current_main_deck if card["Name"] == name)
+        addable = min(qty, 3 - copies)
+        current_main_deck.extend([card] * addable)
+        print(f"\nAdded {addable} copy/copies of '{name}'. {name} x{copies + addable}.")
+        if addable < qty:
+            print(f"(Limit is 3 per card; {qty - addable} not added.)")
 
     show_deck()
 
@@ -89,26 +95,31 @@ def remove_card_from_deck(name, qty):
     try:
         qty = int(qty)
     except ValueError:
-        print("Please enter a valid number for quantity.")
+        print("Please enter a number for quantity.")
         return
     
     if qty <= 0:
-        print("You must input a number greater than or equal to 1.")
-        return
-
-    copies = current_main_deck.count(card)
-    removable = min(qty, copies)
-    if removable == 0:
-        print(f"No copies of '{name}' found in your deck to remove.")
-        show_deck()
+        print("You must input an amount greater than or equal to 1 and less than or equal to 3.")
         return
     
-    # remove by Name
+    if name in extra_deck_monster_card_lookup:
+        deck = current_extra_deck
+    else:
+        deck = current_main_deck
+
+    copies = sum(1 for card in deck if card["Name"] == name)
+    removable = min(qty, copies)
+    if removable == 0:
+        print(f"\nNo copies of '{name}' found in your deck to remove.")
+        show_deck()
+        return
+
+    # Remove by Name
     removed = 0
     i = 0
-    while i < len(current_main_deck) and removed < removable:
-        if current_main_deck[i]["Name"] == name:
-            current_main_deck.pop(i)
+    while i < len(deck) and removed < removable:
+        if deck[i]["Name"] == name:
+            deck.pop(i)
             removed += 1
             continue
         i += 1
@@ -116,7 +127,7 @@ def remove_card_from_deck(name, qty):
     remaining = copies - removed
     print(f"\nRemoved {removed} copy/copies of '{name}'. Remaining: {name} x{remaining}.")
     if removed < qty:
-        print(f"(Only {copies} copies were in the deck; {qty - removed} could not be removed.)")
+        print(f"(Only {copies} copy/copies were in the deck; {qty - removed} copy/copies could not be removed.)")
 
     show_deck()
 
@@ -128,10 +139,11 @@ def card_type_counts():
     return main_deck_monster_count, extra_deck_monster_count, spell_count, trap_count
 
 def show_deck():
-    if not current_main_deck:
+
+    if not current_main_deck and not current_extra_deck:
         print("\nYour deck is empty.")
         return
-
+    
     # Get card type counts
     main_deck_monster_count, extra_deck_monster_count, spell_count, trap_count = card_type_counts()
 
