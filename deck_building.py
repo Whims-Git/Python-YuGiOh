@@ -68,7 +68,7 @@ def add_card_to_deck(name, qty):
         print("Cannot add cards. Extra Deck limit of 15 cards will be exceeded.")
         return
 
-    copies = current_main_deck.count(card) or current_extra_deck.count(card)
+    copies = current_main_deck.count(card), current_extra_deck.count(card)
     addable = min(qty, 3 - copies)
     if card in vanilla_monster_cards or effect_monster_cards or spell_cards or trap_cards:
         current_main_deck.extend([card] * addable)
@@ -122,7 +122,7 @@ def remove_card_from_deck(name, qty):
 
 def card_type_counts():
     main_deck_monster_count = sum(1 for card in current_main_deck if card["Name"] in main_deck_monster_card_lookup)
-    extra_deck_monster_count = sum(1 for card in current_main_deck if card["Name"] in extra_deck_monster_card_lookup)
+    extra_deck_monster_count = sum(1 for card in current_extra_deck if card["Name"] in extra_deck_monster_card_lookup)
     spell_count = sum(1 for card in current_main_deck if card["Name"] in spell_card_lookup)
     trap_count = sum(1 for card in current_main_deck if card["Name"] in trap_card_lookup)
     return main_deck_monster_count, extra_deck_monster_count, spell_count, trap_count
@@ -139,7 +139,7 @@ def show_deck():
     main_name_counts = Counter(card["Name"] for card in current_main_deck)
     extra_name_counts = Counter(card["Name"] for card in current_extra_deck)
 
-    print(f"\nCurrent Deck ({main_deck_monster_count} Monsters, {spell_count} Spells, {trap_count} Traps, {len(current_main_deck)} Cards Total):")
+    print(f"\nCurrent Main Deck ({main_deck_monster_count} Monsters, {spell_count} Spells, {trap_count} Traps, {len(current_main_deck)} Cards Total):")
     for name, count in main_name_counts.items():
         print(f"- {name} x{count}")
     print(f"\nCurrent Extra Deck ({extra_deck_monster_count} Monsters, {len(current_extra_deck)} Cards Total):")
