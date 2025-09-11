@@ -146,5 +146,39 @@ vanilla_monster_cards = [
         "ATK": 2850,
         "DEF": 2350,
     },
+    { #Hinotama Soul
+        "Name": "Hinotama Soul",
+        "Attribute": "FIRE",
+        "Level": 2,
+        "Type": "Pyro, Normal",
+        "Effect": "None",
+        "ATK": 600,
+        "DEF": 500,
+    },
+    { #Monster Egg
+        "Name": "Monster Egg",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Warrior, Normal",
+        "Effect": "None",
+        "ATK": 600,
+        "DEF": 900,
+    },
+    # Add more cards below using the same format
+]
+
+# Yu-Gi-Oh Effect Monster Card Database
+# Each card is represented as a dictionary with 7 characteristics.
+
+effect_monster_cards = [
+    {
+        "Name": "Man-Eater Bug",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Insect, Flip, Effect",
+        "Effect": "FLIP: Target 1 monster on the field; destroy it",
+        "ATK": 450,
+        "DEF": 600
+    },
     # Add more cards below using the same format
 ]

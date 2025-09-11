@@ -1,6 +1,5 @@
 # Import card database
-from vanilla_monster_cards import vanilla_monster_cards
-from main_deck_monster_cards import main_deck_monster_cards
+from monster_cards import vanilla_monster_cards, effect_monster_cards
 from extra_deck_monster_cards import extra_deck_monster_cards
 from spell_cards import spell_cards
 from trap_cards import trap_cards
@@ -8,7 +7,7 @@ from trap_cards import trap_cards
 from collections import Counter
 
 # Build a lookup dictionary for fast access
-main_deck_monster_card_lookup = {card["Name"]: card for card in vanilla_monster_cards + main_deck_monster_cards}
+main_deck_monster_card_lookup = {card["Name"]: card for card in vanilla_monster_cards + effect_monster_cards}
 extra_deck_monster_card_lookup = {card["Name"]: card for card in extra_deck_monster_cards}
 spell_card_lookup = {card["Name"]: card for card in spell_cards}
 trap_card_lookup = {card["Name"]: card for card in trap_cards}
@@ -21,7 +20,7 @@ def list_all_cards():
         print(f"- {card['Name']}")
 
     print("\nAvailable Main Deck Monster Cards:")
-    for card in main_deck_monster_cards:
+    for card in effect_monster_cards:
         print(f"- {card['Name']}")
 
     print("\nAvailable Extra Deck Monster Cards:")
@@ -64,10 +63,17 @@ def add_card_to_deck(name, qty):
     if len(current_main_deck) + qty > 60:
         print("Cannot add cards. Deck limit of 60 cards will be exceeded.")
         return
+    
+    if len(current_extra_deck) + qty > 15:
+        print("Cannot add cards. Extra Deck limit of 15 cards will be exceeded.")
+        return
 
-    copies = current_main_deck.count(card)
+    copies = current_main_deck.count(card) or current_extra_deck.count(card)
     addable = min(qty, 3 - copies)
-    current_main_deck.extend([card] * addable)
+    if card in vanilla_monster_cards or effect_monster_cards or spell_cards or trap_cards:
+        current_main_deck.extend([card] * addable)
+    else:
+        current_extra_deck.extend([card] * addable)
     print(f"\nAdded {addable} copy/copies of '{name}'. {name} x{copies + addable}.")
     if addable < qty:
         print(f"(Limit is 3 per card; {qty - addable} not added.)")
@@ -119,7 +125,7 @@ def card_type_counts():
     extra_deck_monster_count = sum(1 for card in current_main_deck if card["Name"] in extra_deck_monster_card_lookup)
     spell_count = sum(1 for card in current_main_deck if card["Name"] in spell_card_lookup)
     trap_count = sum(1 for card in current_main_deck if card["Name"] in trap_card_lookup)
-    return main_deck_monster_count, spell_count, trap_count
+    return main_deck_monster_count, extra_deck_monster_count, spell_count, trap_count
 
 def show_deck():
     if not current_main_deck:
