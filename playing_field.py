@@ -14,15 +14,16 @@ class PlayingField:
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
+        print("\nThe deck has been shuffled.")
 
     def draw_card(self, n=1):
         for _ in range(n):
             if self.deck:
                 card = self.deck.pop(0)
                 self.hand.append(card)
-                print(f"Drew card: {card['Name']}")
+                print(f"\nDrew card: {card['Name']}")
             else:
-                print("Deck is empty! Cannot draw.")
+                print("\nDeck is empty! Cannot draw.")
 
 def start_duel():
     field = PlayingField()
