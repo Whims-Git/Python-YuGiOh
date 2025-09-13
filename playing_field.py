@@ -25,8 +25,35 @@ class PlayingField:
             else:
                 print("\nDeck is empty! Cannot draw.")
 
+    def show_field_hand(self):
+
+        print("\nMonster Zones (Left -> Right):")
+        for i, card in enumerate(self.monster_zones):
+            print(f"  {i+1}: {card['Name'] if card else 'Empty'}")
+
+        print(f"\nHand: {len(self.hand)} cards")
+        for i, card in enumerate(self.hand):
+            print(f"\n  {i+1}: {card['Name'] if card else 'Empty'}")
+
+        print(f"\nMain Deck: {len(current_main_deck)} cards")
+        for i, card in enumerate(current_main_deck):
+            print(f"\n  {i+1}: {card['Name'] if card else 'Empty'}")
+
+        print(f"\nExtra Deck: {len(self.extra_deck)} cards")
+        for i, card in enumerate(self.extra_deck):
+            print(f"\n  {i+1}: {card['Name'] if card else 'Empty'}")
+
+        print(f"\nGraveyard: {len(self.graveyard)} cards")
+        for i, card in enumerate(self.graveyard):
+            print(f"\n  {i+1}: {card['Name'] if card else 'Empty'}")
+        
+        print(f"\nBanishment: {len(self.banished)} cards")
+        for i, card in enumerate(self.banished):
+            print(f"\n  {i+1}: {card['Name'] if card else 'Empty'}")
+
 def start_duel():
     field = PlayingField()
     field.shuffle_deck()
     field.draw_card(5)
+    field.show_field_hand()
     return field
