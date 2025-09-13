@@ -19,10 +19,10 @@ def deck_building_menu():
             card_name = input("\nEnter the name of the card to search: ")
             deck_building.search_card(card_name)
         elif choice == "4":
-            card_name, card_qty = input("\nEnter the name of the card and the amount to add, separated by a comma: ").split(',')
+            card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
             deck_building.add_card_to_deck(card_name, card_qty)
         elif choice == "5":
-            card_name, card_qty = input("\nEnter the name of the card and the amount to be removed, separated by a comma: ").split(',')
+            card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
         elif choice == "6":
             print("Returning to Main Menu...")
