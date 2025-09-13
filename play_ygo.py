@@ -26,6 +26,7 @@ def deck_building_menu():
             deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
             deck_building.add_card_to_deck("Pot of Greed", "3")
             deck_building.add_card_to_deck("Two-Pronged Attack", "2")
+            deck_building.add_card_to_deck("Charubin the Fire Knight", "1")
         elif choice == "5":
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
