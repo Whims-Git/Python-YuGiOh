@@ -50,14 +50,14 @@ def duel_actions_menu():
         if choice == "1":
             pass
             card_name, hand_field = input("\nEnter the card name and either 'hand' or 'field', separated by a comma: ").split(',')
-            playing_field.examine_card(card_name, hand_field)
+            playing_field.PlayingField.examine_card(card_name, hand_field)
         elif choice == "2":
             card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
-            playing_field.place_card_field(card_name, hand_index, face_up_down, field_zone_index)
+            playing_field.PlayingField.place_card_field(card_name, hand_index, face_up_down, field_zone_index)
         elif choice == "3":
             pass
             card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
-            deck_building.change_monster_position(card_name, card_position)
+            playing_field.PlayingField.change_monster_position(card_name, card_position)
         elif choice == "4":
             pass
             #pull_cards_menu()
@@ -66,7 +66,7 @@ def duel_actions_menu():
         elif choice == "5":
             pass
             card_name, send_card = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
-            deck_building.send_card_gy_banish(card_name, send_card)
+            playing_field.PlayingField.send_card_gy_banish(card_name, send_card)
         elif choice == "6":
             print("Goodbye!")
             break
