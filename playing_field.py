@@ -63,10 +63,6 @@ class PlayingField:
             "equipped_cards": [],  # Cards equipped to this card
             "counters": 0,  # Counter tokens on card
             "affected_by": [],  # Card effects currently affecting this card
-            "attack_modifier": 0,  # Changes to original ATK
-            "defense_modifier": 0,  # Changes to original DEF
-            "cannot_attack": False,  # If card is prevented from attacking
-            "cannot_change_position": False,  # If card cannot change battle position
         }
     
     #Return monster count, extra monster count, spell count, and trap count for a given list of cards.
@@ -105,6 +101,19 @@ class PlayingField:
         for i, card in enumerate(self.hand):
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
+        # Graveyard counts
+        grave_m, grave_e, grave_s, grave_t = self.count_types(self.graveyard)
+        print(f"\nGraveyard: {len(self.graveyard)} cards, {grave_m + grave_e} Monsters, {grave_s} Spells, {grave_t} Traps")
+        for i, card in enumerate(self.graveyard):
+            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+
+        # Banished counts
+        banish_m, banish_e, banish_s, banish_t = self.count_types(self.banished)
+        print(f"\nBanishment: {len(self.banished)} cards, {banish_m + banish_e} Monsters, {banish_s} Spells, {banish_t} Traps")
+        for i, card in enumerate(self.banished):
+            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+
+    def show_main_extra(self):
         # Main and Extra deck counts
         main_mon_count, extra_mon_count, spell_count, trap_count = card_type_counts()
         print(f"\nMain Deck: {len(current_main_deck)} cards, {main_mon_count} Monsters, {spell_count} Spells, {trap_count} Traps")
@@ -118,23 +127,18 @@ class PlayingField:
         for i, card in enumerate(self.extra_deck):
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
-        # Graveyard counts
-        grave_m, grave_e, grave_s, grave_t = self.count_types(self.graveyard)
-        print(f"\nGraveyard: {len(self.graveyard)} cards, {grave_m + grave_e} Monsters, {grave_s} Spells, {grave_t} Traps")
-        for i, card in enumerate(self.graveyard):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
-
-        # Banished counts
-        banish_m, banish_e, banish_s, banish_t = self.count_types(self.banished)
-        print(f"\nBanishment: {len(self.banished)} cards, {banish_m + banish_e} Monsters, {banish_s} Spells, {banish_t} Traps")
-        for i, card in enumerate(self.banished):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
-
     def place_card_field(self, name, hand_index, face_up_down, field_zone_index):
         card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)
         
         if not card:
             print(f"Card '{name}' not found.")
+            return
+
+        try:
+            hand_index = int(hand_index)
+            field_zone_index = int(field_zone_index)
+        except ValueError:
+            print("Please enter a number for quantity.")
             return
         
         if not (0 <= hand_index < len(self.hand)):
@@ -146,9 +150,10 @@ class PlayingField:
         is_spell = spell_card_lookup
         is_trap = trap_card_lookup
         
-        hand_monster_card, hand_backrow_card = self.hand[hand_index]
+        # hand_monster_card, hand_backrow_card = self.hand[hand_index]
         # Set position based on card type and placement type and choose correct zone list and validate zone index
         if is_monster:
+            hand_monster_card = self.hand[hand_index]
             if face_up_down == "summon":
                 position = "face-up attack"
             else:  # set
@@ -157,15 +162,15 @@ class PlayingField:
             zones = self.monster_zones
             max_index = 4
             field_card = self.field_monster_card_properties(hand_monster_card, position) # Create field card with appropriate position for monsters
-        
-        if is_spell or is_trap:
+        else:
+            hand_backrow_card = self.hand[hand_index]
             if face_up_down == "summon":
                 print("Not a valid action.")
                 return
             elif face_up_down == "set":
                 position = "face-down"
-            else:
-                position = "face-up"
+            # else:
+            #     position = "face-up"
             
             zones = self.spell_trap_zones
             max_index = 4
@@ -181,12 +186,12 @@ class PlayingField:
         
         # Place card in appropriate zone
         zones[field_zone_index] = field_card
-        self.hand.pop(hand_index)
+        self.hand.pop(hand_index - 1)
 
         # Announce action
         action_type = "Summoned" if face_up_down == "summon" else "Set"
         card_type = "monster" if is_monster else "spell/trap card"
-        print(f"{action_type} {card['Name']} as a {position} {card_type} in zone {field_zone_index + 1}")
+        print(f"\n{action_type} {card['Name']} as a {position} {card_type} in zone {field_zone_index}")
         
         return True
 
@@ -199,10 +204,12 @@ class PlayingField:
     def send_card_gy_banish():
         pass
 
+    def activate_card():
+        pass
+
 def start_duel():
     field = PlayingField()
     field.shuffle_deck()
     field.draw_card(5)
     field.show_field_hand()
-    field.duel
     return field

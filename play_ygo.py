@@ -36,42 +36,44 @@ def deck_building_menu():
         else:
             print("Invalid choice. Please enter a number from 1 to 6.")
 
-def duel_actions_menu():
+def duel_actions_menu(field):
     while True:
         print("\nActions Menu")
         print("1. Examine Card in hand or on field")
-        print("2. Summon/Set Monster or Set Spell/Trap From Hand")
-        print("3. Change Monster Card Position")
-        print("4. Activate Card Effect")
-        print("5. Send Card to GY/Banishment")
-        print("6. Quit")
-        choice = input("\nEnter your choice (1-6): ")
+        print("2. Examine field")
+        print("3. Summon/Set Monster or Set Spell/Trap From Hand")
+        print("4. Change Monster Card Position")
+        print("5. Activate Card Effect")
+        print("6. Send Card to GY/Banishment")
+        print("7. Show main/extra deck")
+        print("8. Quit")
+        choice = input("\nEnter your choice (1-8): ")
 
         if choice == "1":
-            pass
             card_name, hand_field = input("\nEnter the card name and either 'hand' or 'field', separated by a comma: ").split(',')
-            playing_field.PlayingField.examine_card(card_name, hand_field)
+            field.examine_card(card_name.strip(), hand_field.strip())
         elif choice == "2":
-            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
-            playing_field.PlayingField.place_card_field(card_name, hand_index, face_up_down, field_zone_index)
+            field.show_field_hand()
         elif choice == "3":
-            pass
-            card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
-            playing_field.PlayingField.change_monster_position(card_name, card_position)
+            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
+            field.place_card_field(card_name.strip(), hand_index.strip(), face_up_down.strip(), field_zone_index.strip())
         elif choice == "4":
-            pass
-            #pull_cards_menu()
-            card_name = input("\nEnter the name of the card to activate its effect: ")
-            print(f"{card_name} activated its effect.")
+            card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
+            field.change_monster_position(card_name.strip(), card_position.strip())
         elif choice == "5":
-            pass
-            card_name, send_card = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
-            playing_field.PlayingField.send_card_gy_banish(card_name, send_card)
+            card_name = input("\nEnter the name of the card to activate its effect: ")
+            field.activate_card(card_name.strip())
+            print(f"{card_name} activated its effect.")
         elif choice == "6":
-            print("Goodbye!")
+            card_name, send_card = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
+            field.send_card_gy_banish(card_name.strip(), send_card.strip())
+        elif choice == "7":
+            field.show_main_extra()
+        elif choice == "8":
+            print("Returning to Main Menu...")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 6.")
+            print("Invalid choice. Please enter a number from 1 to 8.")
 
 def main_menu():
     while True:
@@ -84,8 +86,8 @@ def main_menu():
 
         if choice == "1":
             print("\nDuel!")
-            playing_field.start_duel()
-            duel_actions_menu()
+            field = playing_field.start_duel()
+            duel_actions_menu(field)
         elif choice == "2":
             deck_building_menu()
         elif choice == "3":
