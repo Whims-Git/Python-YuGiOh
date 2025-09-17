@@ -41,13 +41,14 @@ def duel_actions_menu(field):
         print("\nActions Menu")
         print("1. Examine Card in hand or on field")
         print("2. Examine field")
-        print("3. Summon/Set Monster or Set Spell/Trap From Hand")
-        print("4. Change Monster Card Position")
-        print("5. Activate Card Effect")
-        print("6. Send Card to GY/Banishment")
-        print("7. Show main/extra deck")
-        print("8. Quit")
-        choice = input("\nEnter your choice (1-8): ")
+        print("3. Examine graveyard/banishment")
+        print("4. Summon/Set Monster or Set Spell/Trap From Hand")
+        print("5. Change Monster Card Position")
+        print("6. Activate Card Effect")
+        print("7. Send Card to GY/Banishment")
+        print("8. Show main/extra deck")
+        print("9. Quit")
+        choice = input("\nEnter your choice (1-9): ")
 
         if choice == "1":
             card_name, hand_field = input("\nEnter the card name and either 'hand' or 'field', separated by a comma: ").split(',')
@@ -55,25 +56,29 @@ def duel_actions_menu(field):
         elif choice == "2":
             field.show_field_hand()
         elif choice == "3":
+            field.show_grave_banish()
+        elif choice == "4":
             card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
             field.place_card_field(card_name.strip(), hand_index.strip(), face_up_down.strip(), field_zone_index.strip())
-        elif choice == "4":
+            field.show_field_hand()
+        elif choice == "5":
             card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
             field.change_monster_position(card_name.strip(), card_position.strip())
-        elif choice == "5":
+            field.show_field_hand()
+        elif choice == "6":
             card_name = input("\nEnter the name of the card to activate its effect: ")
             field.activate_card(card_name.strip())
             print(f"{card_name} activated its effect.")
-        elif choice == "6":
+        elif choice == "7":
             card_name, send_card = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
             field.send_card_gy_banish(card_name.strip(), send_card.strip())
-        elif choice == "7":
-            field.show_main_extra()
         elif choice == "8":
+            field.show_main_extra()
+        elif choice == "9":
             print("Returning to Main Menu...")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 8.")
+            print("Invalid choice. Please enter a number from 1 to 9.")
 
 def main_menu():
     while True:
