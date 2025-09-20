@@ -1,7 +1,25 @@
-from monster_cards import vanilla_monster_cards, effect_monster_cards
-from extra_deck_monster_cards import extra_deck_monster_cards
-from spell_cards import spell_cards
-from trap_cards import trap_cards
+# Import card database
+from monster_cards import (
+    vanilla_monster_cards,
+    effect_monster_cards
+)
+
+from extra_deck_monster_cards import (
+    extra_deck_fusions_cards
+)
+
+from spell_cards import (
+    normal_spell_cards,
+    field_spell_cards,
+    equip_spell_cards,
+    quick_spell_cards
+)
+
+from trap_cards import (
+    normal_trap_cards,
+    continuous_trap_cards,
+    counter_trap_cards
+)
 
 from deck_building import (
     current_main_deck,
@@ -65,9 +83,8 @@ class PlayingField:
             "affected_by": [],  # Card effects currently affecting this card
         }
     
-    #Return monster count, extra monster count, spell count, and trap count for a given list of cards.
+    # Return monster count, extra monster count, spell count, and trap count for a given list of cards.
     def count_types(self, collection):
-        
         m = e = s = t = 0
         for card in collection:
             if not card:
@@ -84,7 +101,6 @@ class PlayingField:
         return m, e, s, t
 
     def show_field_hand(self):
-
         print("\nMonster Zones (Left -> Right):")
         for i, card in enumerate(self.monster_zones):
             if card is None:

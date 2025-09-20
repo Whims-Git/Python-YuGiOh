@@ -15,7 +15,8 @@ def deck_building_menu():
         if choice == "1":
             deck_building.show_deck()
         elif choice == "2":
-            deck_building.list_all_cards()
+            search_card_pool()
+            # deck_building.list_all_cards()
         elif choice == "3":
             card_name = input("\nEnter the name of the card to search: ")
             deck_building.search_card(card_name)
@@ -79,6 +80,32 @@ def duel_actions_menu(field):
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 9.")
+
+def search_card_pool():
+    while True:
+        print("\nSelect Catagory of Cards to View")
+        print("1. Vanilla Monsters")
+        print("2. Main Deck Effect Monsters")
+        print("3. Fusion Monsters")
+        print("4. Spell Cards")
+        print("5. Trap Cards")
+        choice = input("\nEnter your choice (1-5): ")
+
+        if choice == "1":
+            deck_building.list_all_vanillas()
+        elif choice == "2":
+            deck_building.list_all_main_effects()
+        elif choice == "3":
+            deck_building.list_all_fusions()
+        elif choice == "4":
+            deck_building.list_all_spells()
+        elif choice == "5":
+            deck_building.list_all_traps()
+        elif choice == "6":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 5.")
 
 def main_menu():
     while True:

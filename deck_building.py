@@ -1,41 +1,66 @@
 # Import card database
-from monster_cards import vanilla_monster_cards, effect_monster_cards
-from extra_deck_monster_cards import extra_deck_monster_cards
-from spell_cards import spell_cards
-from trap_cards import trap_cards
+from monster_cards import (
+    vanilla_monster_cards,
+    effect_monster_cards
+)
+
+from extra_deck_monster_cards import (
+    extra_deck_fusions_cards
+)
+
+from spell_cards import (
+    normal_spell_cards,
+    field_spell_cards,
+    equip_spell_cards,
+    quick_spell_cards
+)
+
+from trap_cards import (
+    normal_trap_cards,
+    continuous_trap_cards,
+    counter_trap_cards
+)
 
 from collections import Counter
 
 # Build a lookup dictionary for fast access
 main_deck_monster_card_lookup = {card["Name"]: card for card in vanilla_monster_cards + effect_monster_cards}
-extra_deck_monster_card_lookup = {card["Name"]: card for card in extra_deck_monster_cards}
-spell_card_lookup = {card["Name"]: card for card in spell_cards}
-trap_card_lookup = {card["Name"]: card for card in trap_cards}
+extra_deck_monster_card_lookup = {card["Name"]: card for card in extra_deck_fusions_cards}
+spell_card_lookup = {card["Name"]: card for card in normal_spell_cards + field_spell_cards + equip_spell_cards + quick_spell_cards}
+trap_card_lookup = {card["Name"]: card for card in normal_trap_cards + continuous_trap_cards + counter_trap_cards}
 
 # Create Empty Lists for deck
 current_main_deck = []
 current_extra_deck = []
 
-def list_all_cards():
+def list_all_vanillas():
     print("\nAvailable Vanilla Monster Cards:")
     for card in vanilla_monster_cards:
-        print(f"- {card['Name']}")
+        main_type = card.get('Type', '').split(',')[0].strip()
+        print(f"\n- {card['Name']}, Lv: {card["Level"]}, {card["Attribute"]}, {main_type}, ATK/{card["ATK"]} DEF/{card["DEF"]}")
 
+def list_all_main_effects():
     print("\nAvailable Effect Monster Cards:")
     for card in effect_monster_cards:
-        print(f"- {card['Name']}")
+        main_type = card.get('Type', '').split(',')[0].strip()
+        print(f"\n- {card['Name']}, Lv: {card["Level"]}, {card["Attribute"]}, {main_type}, ATK/{card["ATK"]} DEF/{card["DEF"]}")
 
-    print("\nAvailable Extra Deck Monster Cards:")
-    for card in extra_deck_monster_cards:
-        print(f"- {card['Name']}")
+def list_all_fusions():
+    print("\nAvailable Extra Deck Fusion Monster Cards:")
+    for card in extra_deck_fusions_cards:
+        main_type = card.get('Type', '').split(',')[0].strip()
+        extra_type = card.get('Type', '').split(',')[1].strip()
+        print(f"\n- {card['Name']}, Lv: {card["Level"]}, {card["Attribute"]}, {main_type}, {extra_type}, ATK/{card["ATK"]} DEF/{card["DEF"]}")
 
+def list_all_spells():
     print("\nAvailable Spell Cards:")
-    for card in spell_cards:
-        print(f"- {card['Name']}")
+    for card in normal_spell_cards + field_spell_cards + equip_spell_cards + quick_spell_cards:
+        print(f"\n- {card['Name']}, {card["Typing"]}")
 
+def list_all_traps():
     print("\nAvailable Trap Cards:")
-    for card in trap_cards:
-        print(f"- {card['Name']}")
+    for card in normal_trap_cards + continuous_trap_cards + counter_trap_cards:
+        print(f"\n- {card['Name']}, {card["Typing"]}")
 
 def search_card(name):
     card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)

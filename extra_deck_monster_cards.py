@@ -1,7 +1,7 @@
 # Yu-Gi-Oh Extra Deck Monster Card Database
 # Each card is represented as a dictionary with 8 characteristics.
 
-extra_deck_monster_cards = [
+extra_deck_fusions_cards = [
     {
         "Name": "Charubin the Fire Knight",
         "Attribute": "FIRE",
