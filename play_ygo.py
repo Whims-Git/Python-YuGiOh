@@ -89,23 +89,39 @@ def search_card_pool():
         print("3. Fusion Monsters")
         print("4. Spell Cards")
         print("5. Trap Cards")
-        choice = input("\nEnter your choice (1-5): ")
+        print("6. Quit")
+        choice = input("\nEnter your choice (1-6): ")
 
         if choice == "1":
             deck_building.list_all_vanillas()
+            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
+            "Enter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "2":
             deck_building.list_all_main_effects()
+            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
+            "Enter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "3":
             deck_building.list_all_fusions()
+            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
+            "Enter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "4":
             deck_building.list_all_spells()
+            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
+            "Enter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "5":
             deck_building.list_all_traps()
+            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
+            "Enter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "6":
-            print("Goodbye!")
+            print("\nReturning to deck building menu.")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 5.")
+            print("\nInvalid choice. Please enter a number from 1 to 6.")
 
 def main_menu():
     while True:
