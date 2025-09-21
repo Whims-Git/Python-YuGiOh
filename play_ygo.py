@@ -32,10 +32,10 @@ def deck_building_menu():
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
         elif choice == "6":
-            print("Returning to Main Menu...")
+            print("\nReturning to Main Menu...")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 6.")
+            print("\nInvalid choice. Please enter a number from 1 to 6.")
 
 def duel_actions_menu(field):
     while True:

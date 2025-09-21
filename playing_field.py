@@ -33,6 +33,8 @@ from deck_building import (
     trap_card_lookup,
 )
 
+from play_ygo import main_menu
+
 import random
 from collections import Counter
 
@@ -57,8 +59,19 @@ class PlayingField:
                 card = self.deck.pop(0)
                 self.hand.append(card)
                 print(f"\nDrew card: {card.get('Name', 'Unknown')}")
+                print(f"\nCards left in deck: {len(self.deck)} cards")
             else:
-                print("\nDeck is empty! Cannot draw.")
+                print("\nDeck is empty! Cannot draw. You lose!")
+                # Reset the entire duel so that players won't have to rebuild their decks to replay.
+                self.monster_zones = [None] * 5
+                self.spell_trap_zones = [None] * 5
+                self.field_zone = None
+                self.graveyard = []
+                self.deck = current_main_deck.copy()
+                self.extra_deck = current_extra_deck.copy()
+                self.banished = []
+                self.hand = []
+                main_menu()
 
     # Create a field card dictionary for dynamic properties
     def field_monster_card_properties(self, card, position = "face-up attack"):
@@ -150,6 +163,8 @@ class PlayingField:
 
     def show_main_extra(self):
         # Main and Extra deck counts
+        print(f"\nCards left in deck: {len(self.deck)} cards")
+
         main_mon_count, extra_mon_count, spell_count, trap_count = card_type_counts()
         print(f"\nMain Deck: {len(current_main_deck)} cards, {main_mon_count} Monsters, {spell_count} Spells, {trap_count} Traps")
         main_name_counts = Counter(card["Name"] for card in current_main_deck)
