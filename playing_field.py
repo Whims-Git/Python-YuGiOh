@@ -25,7 +25,6 @@ from deck_building import (
     current_main_deck,
     current_extra_deck,
     search_card,
-    show_deck,
     card_type_counts,
     main_deck_monster_card_lookup,
     extra_deck_monster_card_lookup,
@@ -42,7 +41,7 @@ class PlayingField:
     def __init__(self):
         self.monster_zones = [None] * 5
         self.spell_trap_zones = [None] * 5
-        self.field_zone = None
+        self.field_spell_zone = None
         self.graveyard = []
         self.deck = current_main_deck.copy()
         self.extra_deck = current_extra_deck.copy()
@@ -85,15 +84,26 @@ class PlayingField:
             "defense_modifier": 0,  # Changes to original DEF
             "cannot_attack": False,  # If card is prevented from attacking
             "cannot_change_position": False,  # If card cannot change battle position
+            "negated": False
         }
     
-    def field_backrow_card_properties(self, card, position = "face-up"):
+    def field_backrow_card_properties(self, card, position = "face-up", equipped_monster = None):
         return {
             "card": card,  # Original card data
             "position": position,  # face-up, face-down
-            #"equipped_to": equipped_monster,  # monster this card is equipped to
+            "equipped_to": equipped_monster,  # monster this card is equipped to
             "counters": 0,  # Counter tokens on card
             "affected_by": [],  # Card effects currently affecting this card
+            "negated": False
+        }
+    
+    def field_spell_card_properties(self, card, position = "face-up"):
+        return {
+            "card": card,  # Original card data
+            "position": position,  # face-up, face-down
+            "counters": 0,  # Counter tokens on card
+            "affected_by": [],  # Card effects currently affecting this card
+            "negated": False
         }
     
     # Return monster count, extra monster count, spell count, and trap count for a given list of cards.
@@ -119,15 +129,22 @@ class PlayingField:
             if card is None:
                 print(f"  {i+1}: Empty")
             else:
-                # card on field is a dict with 'card' key
                 inner = card.get('card') if isinstance(card, dict) else card
-                print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
+                pos = card.get('position') if isinstance(card, dict) else None
+                if pos == 'face-down':
+                    print(f"  {i+1}: Set Card (Face-down)")
+                else:
+                    print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
 
-        if self.field_zone is None:
+        if self.field_spell_zone is None:
             print(f"\nField Spell Zone: Empty")
         else:
-            fz = self.field_zone.get('card') if isinstance(self.field_zone, dict) else self.field_zone
-            print(f"\nField Spell Zone: {fz.get('Name', 'Unknown')}")
+            inner = self.field_spell_zone.get('card') if isinstance(self.field_spell_zone, dict) else self.field_spell_zone
+            pos = self.field_spell_zone.get('position') if isinstance(self.field_spell_zone, dict) else None
+            if pos == 'face-down':
+                print(f"\nField Spell Zone: Set Card (Face-down)")
+            else:
+                print(f"\nField Spell Zone: {inner.get('Name', 'Unknown')}")
 
         print("\nSpell/Trap Zones (Left -> Right):")
         for i, card in enumerate(self.spell_trap_zones):
@@ -135,7 +152,6 @@ class PlayingField:
                 print(f"  {i+1}: Empty")
             else:
                 inner = card.get('card') if isinstance(card, dict) else card
-                # hide name if face-down
                 pos = card.get('position') if isinstance(card, dict) else None
                 if pos == 'face-down':
                     print(f"  {i+1}: Set Card (Face-down)")
@@ -143,7 +159,7 @@ class PlayingField:
                     print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
 
         # Hand counts (excluding extra deck monsters)
-        hand_m, _, hand_s, hand_t = self.count_types(self.hand)  # Exclude extra deck count
+        hand_m, _, hand_s, hand_t = self.count_types(self.hand)
         print(f"\nHand: {len(self.hand)} cards, {hand_m} Monsters, {hand_s} Spells, {hand_t} Traps")
         for i, card in enumerate(self.hand):
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
@@ -177,73 +193,125 @@ class PlayingField:
         for i, card in enumerate(self.extra_deck):
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
-    def place_card_field(self, name, hand_index, face_up_down, field_zone_index):
-        card = (
-            main_deck_monster_card_lookup.get(name)
-            or extra_deck_monster_card_lookup.get(name)
-            or spell_card_lookup.get(name)
-            or trap_card_lookup.get(name)
-        )
-
+    def place_monster_card(self, name, hand_index, face_up_down, field_zone_index = None):
+        card = main_deck_monster_card_lookup.get(name)
+        
         if not card:
-            print(f"Card '{name}' not found.")
+            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
             return False
 
         try:
             hand_index = int(hand_index)
             field_zone_index = int(field_zone_index)
         except ValueError:
-            print("Please enter numeric indices for hand_index and field_zone_index.")
+            print("\nPlease enter numeric indices for hand_index and field_zone_index.")
             return False
 
         if not (0 <= hand_index < len(self.hand)):
-            print("Invalid hand index.")
+            print("\nInvalid hand index.")
             return False
 
-        # Determine card type by name membership
-        is_monster = name in main_deck_monster_card_lookup or name in extra_deck_monster_card_lookup
-        is_spell = name in spell_card_lookup
-        is_trap = name in trap_card_lookup
-
-        # Choose zone, position and create the field card wrapper
-        if is_monster:
-            hand_card = self.hand[hand_index]
-            if face_up_down == "summon":
-                position = "face-up attack"
-            else:
-                position = "face-down defense"
-            zones = self.monster_zones
-            max_index = len(zones) - 1
-            field_card = self.field_monster_card_properties(hand_card, position)
-        else:
-            hand_card = self.hand[hand_index]
-            if face_up_down == "summon":
-                print("Not a valid action for a spell/trap.")
-                return False
-            elif face_up_down == "set":
-                position = "face-down"
-            else:
-                position = "face-up"
-            zones = self.spell_trap_zones
-            max_index = len(zones) - 1
-            field_card = self.field_backrow_card_properties(hand_card, position)
-
+        zones = self.monster_zones
+        max_index = len(zones) - 1
         if not (0 <= field_zone_index <= max_index):
-            print("Invalid zone.")
+            print("\nInvalid monster zone.")
             return False
-
         if zones[field_zone_index] is not None:
-            print("That zone is already occupied.")
+            print("\nThat monster zone is already occupied.")
             return False
 
-        # Place card and remove from hand
-        zones[field_zone_index - 1] = field_card
+        # Copy card from hand before popping
+        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
+        if face_up_down == "summon":
+            position = "face-up attack"
+        elif face_up_down == "set":
+            position = "face-down defense"
+        else:
+            print("\nNot a valid card position.")
+            return False
+
+        field_card = self.field_monster_card_properties(hand_card, position)
+        zones[field_zone_index] = field_card
         self.hand.pop(hand_index)
-
         action_type = "Summoned" if face_up_down == "summon" else "Set"
-        card_type = "monster" if is_monster else "spell/trap card"
-        print(f"\n{action_type} {card.get('Name', 'Unknown')} as a {position} {card_type} in zone {field_zone_index}")
+        print(f"\n{action_type} {hand_card.get('Name', 'Unknown')} as a {position} monster in zone {field_zone_index + 1}")
+        return True
 
+    def place_spell_trap_card(self, name, hand_index, field_zone_index = None):
+        card = spell_card_lookup.get(name) or trap_card_lookup.get(name)
+        
+        if not card:
+            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
+            return False
+        
+        if card["Name"] in spell_card_lookup:
+            card_type = "spell"
+        else:
+            card_type = "trap"
+
+        try:
+            hand_index = int(hand_index)
+            field_zone_index = int(field_zone_index)
+        except ValueError:
+            print("\nPlease enter numeric indices for hand_index and field_zone_index.")
+            return False
+
+        if not (0 <= hand_index < len(self.hand)):
+            print("\nInvalid hand index.")
+            return False
+
+        zones = self.spell_trap_zones
+        max_index = len(zones) - 1
+        if not (0 <= field_zone_index <= max_index):
+            print("\nInvalid backrow zone.")
+            return False
+        if zones[field_zone_index] is not None:
+            print("\nThat backrow zone is already occupied.")
+            return False
+
+        # Copy card from hand before popping
+        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
+        position = "face-down"
+
+        field_card = self.field_backrow_card_properties(hand_card, position)
+        zones[field_zone_index] = field_card
+        self.hand.pop(hand_index)
+        print(f"\nSet the {card_type} card '{hand_card.get('Name', 'Unknown')}' in zone {field_zone_index + 1}")
+        return True
+
+    def place_field_spell(self, name, hand_index):
+        card = spell_card_lookup.get(name)
+        
+        if not card:
+            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
+            return False
+        
+        if card["Typing"] != "Field":
+            print("\nThis card is not a field spell card.")
+            return False
+
+        try:
+            hand_index = int(hand_index)
+        except ValueError:
+            print("\nPlease enter numeric indices for hand_index.")
+            return False
+
+        if not (0 <= hand_index < len(self.hand)):
+            print("\nInvalid hand index.")
+            return False
+
+        # Copy card from hand before popping
+        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
+        position = "face-down"
+        
+        field_card = self.field_spell_card_properties(hand_card, position)
+        # If a field spell is already present, send it to graveyard and replace
+        if self.field_spell_zone is not None:
+            print(f"\n{self.field_spell_zone['card'].get('Name', 'Unknown')} was sent to the graveyard and replaced by {hand_card.get('Name', 'Unknown')}.")
+            self.graveyard.append(self.field_spell_zone['card'])
+        self.field_spell_zone = field_card
+        self.hand.pop(hand_index)
+        print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
         return True
 
     def examine_card(self):

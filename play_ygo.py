@@ -23,11 +23,12 @@ def deck_building_menu():
         elif choice == "4":
             #card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
             #deck_building.add_card_to_deck(card_name, card_qty)
-            deck_building.add_card_to_deck("Dark Magician", "3")
-            deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
-            deck_building.add_card_to_deck("Pot of Greed", "3")
-            deck_building.add_card_to_deck("Two-Pronged Attack", "2")
+            deck_building.add_card_to_deck("Dark Magician", "1")
+            deck_building.add_card_to_deck("Blue-Eyes White Dragon", "1")
+            deck_building.add_card_to_deck("Pot of Greed", "1")
+            deck_building.add_card_to_deck("Two-Pronged Attack", "1")
             deck_building.add_card_to_deck("Charubin the Fire Knight", "1")
+            deck_building.add_card_to_deck("Forest", "3")
         elif choice == "5":
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
@@ -43,7 +44,7 @@ def duel_actions_menu(field):
         print("1. Examine Card in hand or on field")
         print("2. Examine field")
         print("3. Examine graveyard/banishment")
-        print("4. Summon/Set Monster or Set Spell/Trap From Hand")
+        print("4. Summon/Set Card to Field")
         print("5. Change Monster Card Position")
         print("6. Activate Card Effect")
         print("7. Send Card to GY/Banishment")
@@ -59,9 +60,12 @@ def duel_actions_menu(field):
         elif choice == "3":
             field.show_grave_banish()
         elif choice == "4":
-            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
-            field.place_card_field(card_name.strip(), hand_index.strip(), face_up_down.strip(), field_zone_index.strip())
-            field.show_field_hand()
+            summon_set_menu(field)
+        # elif choice == "4":
+        #     card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, position in hand, either 'summon' or "
+        #     "'set', and field zone # (L -> R, Zone 1-5, any zone for field spells), separated by a comma: ").split(',')
+        #     field.place_card_field(card_name.strip(), hand_index.strip(), face_up_down.strip(), field_zone_index.strip())
+        #     field.show_field_hand()
         elif choice == "5":
             card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
             field.change_monster_position(card_name.strip(), card_position.strip())
@@ -80,6 +84,41 @@ def duel_actions_menu(field):
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 9.")
+
+def summon_set_menu(field):
+    while True:
+        print("\nSummon or set a card menu")
+        print("1. Summon or set a monster card")
+        print("2. Set a spell or trap card")
+        print("3. Set a field spell")
+        print("4. Quit")
+        choice = input("\nEnter your choice (1-4): ")
+
+        if choice == "1":
+            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, position in hand, either 'summon' or "
+            "'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
+            # Convert indices from 1-based (user) to 0-based (Python)
+            hand_index = int(hand_index.strip()) - 1
+            field_zone_index = int(field_zone_index.strip()) - 1
+            field.place_monster_card(card_name.strip(), hand_index, face_up_down.strip(), field_zone_index)
+            field.show_field_hand()
+        elif choice == "2":
+            card_name, hand_index, field_zone_index = input("\nEnter the spell/trap card name, position in hand, "
+            "and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
+            hand_index = int(hand_index.strip()) - 1
+            field_zone_index = int(field_zone_index.strip()) - 1
+            field.place_spell_trap_card(card_name.strip(), hand_index, field_zone_index)
+            field.show_field_hand()
+        elif choice == "3":
+            card_name, hand_index = input("\nEnter the field spell card name and position in hand, separated by a comma: ").split(',')
+            hand_index = int(hand_index.strip()) - 1
+            field.place_field_spell(card_name.strip(), hand_index)
+            field.show_field_hand()
+        elif choice == "4":
+            print("Returning to Duel menu.")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 4.")
 
 def search_card_pool():
     while True:
