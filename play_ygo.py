@@ -59,7 +59,8 @@ def duel_actions_menu(field):
             field.examine_card(card_name, "hand", hand_zone_index)
         elif choice == "2":
             field.show_field()
-            card_name, field_zone_index = input("\nEnter the card name and the zone number(L -> R, 1-5), separated by a comma: ").split(',')
+            card_name, field_zone_index = input("\nEnter the card name and the zone number(L -> R, 1-5, any for field spell), " \
+            "separated by a comma: ").split(',')
             field_zone_index = int(field_zone_index.strip()) - 1
             field.examine_card(card_name.strip(), "field", field_zone_index)
         elif choice == "3":
@@ -67,7 +68,7 @@ def duel_actions_menu(field):
             card_name, gy_banish, gy_banish_zone_index = input("\nEnter the card name, either 'gy' or 'banish', "
             "and the location number, separated by a comma: ").split(',')
             gy_banish_zone_index = int(gy_banish_zone_index.strip()) - 1
-            field.examine_card(card_name.strip(), gy_banish, gy_banish_zone_index)
+            field.examine_card(card_name.strip(), gy_banish.strip(), gy_banish_zone_index)
         elif choice == "4":
             summon_set_menu(field)
         elif choice == "5":
@@ -77,10 +78,10 @@ def duel_actions_menu(field):
         elif choice == "6":
             card_name = input("\nEnter the name of the card to activate its effect: ")
             field.activate_card(card_name.strip())
-            print(f"{card_name} activated its effect.")
+            print(f"\n{card_name} activated its effect.")
         elif choice == "7":
-            card_name, send_card = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
-            field.send_card_gy_banish(card_name.strip(), send_card.strip())
+            card_name, gy_banish = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
+            field.send_card_gy_banish(card_name.strip(), gy_banish.strip())
         elif choice == "8":
             field.show_main_extra()
         elif choice == "9":
@@ -100,8 +101,8 @@ def summon_set_menu(field):
 
         if choice == "1":
             field.show_hand()
-            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, position in hand, either 'summon' or "
-            "'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
+            card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, position in hand, " \
+            "either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
             # Convert indices from 1-based (user) to 0-based (Python)
             hand_index = int(hand_index.strip()) - 1
             field_zone_index = int(field_zone_index.strip()) - 1
@@ -129,7 +130,7 @@ def summon_set_menu(field):
 
 def search_card_pool():
     while True:
-        print("\nSelect Catagory of Cards to View")
+        print("\nSelect Category of Cards to View")
         print("1. Vanilla Monsters")
         print("2. Main Deck Effect Monsters")
         print("3. Fusion Monsters")

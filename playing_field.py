@@ -57,8 +57,7 @@ class PlayingField:
             if self.deck:
                 card = self.deck.pop(0)
                 self.hand.append(card)
-                print(f"\nDrew card: {card.get('Name', 'Unknown')}")
-                print(f"\nCards left in deck: {len(self.deck)} cards")
+                print(f"\nDrew card: {card.get('Name', 'Unknown')}, Remaining cards in deck: {len(self.deck)} cards")
             else:
                 print("\nDeck is empty! Cannot draw. You lose!")
                 # Reset the entire duel so that players won't have to rebuild their decks to replay.
@@ -71,13 +70,13 @@ class PlayingField:
                 self.banished = []
                 self.hand = []
                 main_menu()
-
     # Create a field card dictionary for dynamic properties
-    def field_monster_card_properties(self, card, position = "face-up attack"):
+    def field_monster_card_properties(self, card, position = "face-up attack", equipped_monster = None):
         return {
             "card": card,  # Original card data
             "position": position,  # face-up attack, face-down defense
             "equipped_cards": [],  # Cards equipped to this card
+            "equipped_to": equipped_monster, # monster this card is equipped to
             "counters": 0,  # Counter tokens on card
             "affected_by": [],  # Card effects currently affecting this card
             "attack_modifier": 0,  # Changes to original ATK
@@ -319,14 +318,14 @@ class PlayingField:
         # hand_field: 'hand', 'field', 'gy', 'banish'
         # zone_index: required for field (0-based)
         hand_field = hand_field.lower()
-        # if hand_field not in ("hand", "field", "gy", "banish"):
-        #     print("\nInvalid option. Please input either hand, field, gy, or banish.")
-        #     return
+        if hand_field not in ("hand", "field", "gy", "banish"):
+            print("\nInvalid option. Please input either hand, field, gy, or banish.")
+            return
 
         # Find the card and its field properties if on field
         if hand_field == "field":
             if zone_index is None:
-                print("Please provide the zone index for the card on the field.")
+                print("\nPlease provide the zone index for the card on the field.")
                 return
             # Search all zones for the card
             found = False
@@ -369,7 +368,7 @@ class PlayingField:
                     print(f"  {k}: {v}")
                 found = True
             if not found:
-                print("Card not found in the specified field zone.")
+                print("\nCard not found in the specified field zone.")
             return
 
         # Otherwise, print card data from hand, gy, or banish
@@ -380,7 +379,7 @@ class PlayingField:
                     for k, v in c.items():
                         print(f"  {k}: {v}")
                     return
-            print("Card not found in hand.")
+            print("\nCard not found in hand.")
             return
         if hand_field == "gy":
             for i, c in enumerate(self.graveyard):
@@ -389,7 +388,7 @@ class PlayingField:
                     for k, v in c.items():
                         print(f"  {k}: {v}")
                     return
-            print("Card not found in graveyard.")
+            print("\nCard not found in graveyard.")
             return
         if hand_field == "banish":
             for i, c in enumerate(self.banished):
@@ -398,7 +397,7 @@ class PlayingField:
                     for k, v in c.items():
                         print(f"  {k}: {v}")
                     return
-            print("Card not found in banished zone.")
+            print("\nCard not found in banished zone.")
             return
     def change_monster_position(self):
         pass
