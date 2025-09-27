@@ -23,12 +23,12 @@ def deck_building_menu():
         elif choice == "4":
             #card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
             #deck_building.add_card_to_deck(card_name, card_qty)
-            # deck_building.add_card_to_deck("Dark Magician", "1")
-            # deck_building.add_card_to_deck("Blue-Eyes White Dragon", "1")
-            deck_building.add_card_to_deck("Pot of Greed", "1")
-            deck_building.add_card_to_deck("Two-Pronged Attack", "1")
+            deck_building.add_card_to_deck("Dark Magician", "3")
+            deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
+            # deck_building.add_card_to_deck("Pot of Greed", "1")
+            # deck_building.add_card_to_deck("Two-Pronged Attack", "1")
+            # deck_building.add_card_to_deck("Forest", "3")
             # deck_building.add_card_to_deck("Charubin the Fire Knight", "1")
-            deck_building.add_card_to_deck("Forest", "3")
         elif choice == "5":
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
@@ -45,7 +45,7 @@ def duel_actions_menu(field):
         print("2. Examine field/card on field")
         print("3. Examine graveyard/banishment and a card there")
         print("4. Summon/Set card to Field")
-        print("5. Change Monster card Position")
+        print("5. Change card position on field")
         print("6. Activate card effect")
         print("7. Send card to GY/Banishment")
         print("8. Show main/extra deck")
@@ -72,8 +72,11 @@ def duel_actions_menu(field):
         elif choice == "4":
             summon_set_menu(field)
         elif choice == "5":
-            card_name, card_position = input("\nEnter the card name and either 'atk' or 'def', separated by a comma: ").split(',')
-            field.change_monster_position(card_name.strip(), card_position.strip())
+            field.show_field()
+            card_name, field_zone_index, card_position = input("\nEnter the card name, the zone number(L -> R, 1-5, any for field spell), "
+            "and either 'up' or 'set', separated by a comma: ").split(',')
+            field_zone_index = int(field_zone_index.strip()) - 1
+            field.change_card_position(card_name.strip(), field_zone_index, card_position.strip())
             field.show_field()
         elif choice == "6":
             card_name = input("\nEnter the name of the card to activate its effect: ")
@@ -103,7 +106,6 @@ def summon_set_menu(field):
             field.show_hand()
             card_name, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, position in hand, " \
             "either 'summon' or 'set', and field zone # (L -> R, Zone 1-5), separated by a comma: ").split(',')
-            # Convert indices from 1-based (user) to 0-based (Python)
             hand_index = int(hand_index.strip()) - 1
             field_zone_index = int(field_zone_index.strip()) - 1
             field.place_monster_card(card_name.strip(), hand_index, face_up_down.strip(), field_zone_index)

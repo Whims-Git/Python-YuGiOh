@@ -70,6 +70,7 @@ class PlayingField:
                 self.banished = []
                 self.hand = []
                 main_menu()
+
     # Create a field card dictionary for dynamic properties
     def field_monster_card_properties(self, card, position = "face-up attack", equipped_monster = None):
         return {
@@ -399,8 +400,58 @@ class PlayingField:
                     return
             print("\nCard not found in banished zone.")
             return
-    def change_monster_position(self):
-        pass
+
+    def change_card_position(self, name, zone_index, face_up_down):
+        if face_up_down == "up":
+            position = "face-up attack"
+        elif face_up_down == "set":
+            position = "face-down defense"
+        else:
+            print("\nNot a valid card position.")
+            return False
+
+        if zone_index is None:
+            print("\nPlease provide the zone index for the card on the field.")
+            return
+        # Search all zones for the card
+        found = False
+        # Monster zones
+        for i, field_card in enumerate(self.monster_zones):
+            if field_card and field_card["card"].get("Name") == name and i == zone_index:
+                print(f"\nMonster Zone {i+1}:")
+                print(field_card.get("position"))
+                #if field_card.get("position") == pos: print(f"\n{name} is already in {field_card.get('position')} position.")
+            found = True
+            break
+                
+        # Spell/trap zones
+        if not found:
+            for i, field_card in enumerate(self.spell_trap_zones):
+                if field_card and field_card["card"].get("Name") == name and i == zone_index:
+                    print(f"\nSpell/Trap Zone {i+1}:")
+                    print("\nField Properties:")
+                    for k, v in field_card.items():
+                        if k == "card": continue
+                        print(f"  {k}: {v}")
+                    print("\nCard Data:")
+                    for k, v in field_card["card"].items():
+                        print(f"  {k}: {v}")
+                    found = True
+                    break
+        # Field spell zone
+        if not found and self.field_spell_zone and self.field_spell_zone["card"].get("Name") == name:
+            print(f"\nField Spell Zone:")
+            print("\nField Properties:")
+            for k, v in self.field_spell_zone.items():
+                if k == "card": continue
+                print(f"  {k}: {v}")
+            print("\nCard Data:")
+            for k, v in self.field_spell_zone["card"].items():
+                print(f"  {k}: {v}")
+            found = True
+        if not found:
+            print("\nCard not found in the specified field zone.")
+            return
 
     def send_card_gy_banish(self):
         pass
