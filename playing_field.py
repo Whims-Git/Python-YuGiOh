@@ -123,7 +123,7 @@ class PlayingField:
                 t += 1
         return m, e, s, t
 
-    def show_field_hand(self):
+    def show_field(self):
         print("\nMonster Zones (Left -> Right):")
         for i, card in enumerate(self.monster_zones):
             if card is None:
@@ -131,7 +131,7 @@ class PlayingField:
             else:
                 inner = card.get('card') if isinstance(card, dict) else card
                 pos = card.get('position') if isinstance(card, dict) else None
-                if pos == 'face-down':
+                if pos == 'face-down defense':
                     print(f"  {i+1}: Set Card (Face-down)")
                 else:
                     print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
@@ -158,6 +158,7 @@ class PlayingField:
                 else:
                     print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
 
+    def show_hand(self):
         # Hand counts (excluding extra deck monsters)
         hand_m, _, hand_s, hand_t = self.count_types(self.hand)
         print(f"\nHand: {len(self.hand)} cards, {hand_m} Monsters, {hand_s} Spells, {hand_t} Traps")
@@ -314,9 +315,91 @@ class PlayingField:
         print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
         return True
 
-    def examine_card(self):
-        pass
+    def examine_card(self, name, hand_field, zone_index = None):
+        # hand_field: 'hand', 'field', 'gy', 'banish'
+        # zone_index: required for field (0-based)
+        hand_field = hand_field.lower()
+        # if hand_field not in ("hand", "field", "gy", "banish"):
+        #     print("\nInvalid option. Please input either hand, field, gy, or banish.")
+        #     return
 
+        # Find the card and its field properties if on field
+        if hand_field == "field":
+            if zone_index is None:
+                print("Please provide the zone index for the card on the field.")
+                return
+            # Search all zones for the card
+            found = False
+            # Monster zones
+            for i, field_card in enumerate(self.monster_zones):
+                if field_card and field_card["card"].get("Name") == name and i == zone_index:
+                    print(f"\nMonster Zone {i+1}:")
+                    print("\nField Properties:")
+                    for k, v in field_card.items():
+                        if k == "card": continue
+                        print(f"  {k}: {v}")
+                    print("\nCard Data:")
+                    for k, v in field_card["card"].items():
+                        print(f"  {k}: {v}")
+                    found = True
+                    break
+            # Spell/trap zones
+            if not found:
+                for i, field_card in enumerate(self.spell_trap_zones):
+                    if field_card and field_card["card"].get("Name") == name and i == zone_index:
+                        print(f"\nSpell/Trap Zone {i+1}:")
+                        print("\nField Properties:")
+                        for k, v in field_card.items():
+                            if k == "card": continue
+                            print(f"  {k}: {v}")
+                        print("\nCard Data:")
+                        for k, v in field_card["card"].items():
+                            print(f"  {k}: {v}")
+                        found = True
+                        break
+            # Field spell zone
+            if not found and self.field_spell_zone and self.field_spell_zone["card"].get("Name") == name:
+                print(f"\nField Spell Zone:")
+                print("\nField Properties:")
+                for k, v in self.field_spell_zone.items():
+                    if k == "card": continue
+                    print(f"  {k}: {v}")
+                print("\nCard Data:")
+                for k, v in self.field_spell_zone["card"].items():
+                    print(f"  {k}: {v}")
+                found = True
+            if not found:
+                print("Card not found in the specified field zone.")
+            return
+
+        # Otherwise, print card data from hand, gy, or banish
+        if hand_field == "hand":
+            for i, c in enumerate(self.hand):
+                if c.get("Name") == name and i == zone_index:
+                    print(f"\nHand Card {i+1}:")
+                    for k, v in c.items():
+                        print(f"  {k}: {v}")
+                    return
+            print("Card not found in hand.")
+            return
+        if hand_field == "gy":
+            for i, c in enumerate(self.graveyard):
+                if c.get("Name") == name:
+                    print(f"\nGraveyard Card {i+1}:")
+                    for k, v in c.items():
+                        print(f"  {k}: {v}")
+                    return
+            print("Card not found in graveyard.")
+            return
+        if hand_field == "banish":
+            for i, c in enumerate(self.banished):
+                if c.get("Name") == name:
+                    print(f"\nBanished Card {i+1}:")
+                    for k, v in c.items():
+                        print(f"  {k}: {v}")
+                    return
+            print("Card not found in banished zone.")
+            return
     def change_monster_position(self):
         pass
 
@@ -330,5 +413,6 @@ def start_duel():
     field = PlayingField()
     field.shuffle_deck()
     field.draw_card(5)
-    field.show_field_hand()
+    field.show_field()
+    field.show_hand()
     return field
