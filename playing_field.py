@@ -134,7 +134,7 @@ class PlayingField:
                 if pos == 'face-down defense':
                     print(f"  {i+1}: Set Card (Face-down)")
                 else:
-                    print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
+                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} ({pos})")
 
         if self.field_spell_zone is None:
             print(f"\nField Spell Zone: Empty")
@@ -144,7 +144,7 @@ class PlayingField:
             if pos == 'face-down':
                 print(f"\nField Spell Zone: Set Card (Face-down)")
             else:
-                print(f"\nField Spell Zone: {inner.get('Name', 'Unknown')}")
+                print(f"\nField Spell Zone: {inner.get('Name', 'Unknown')} ({pos})")
 
         print("\nSpell/Trap Zones (Left -> Right):")
         for i, card in enumerate(self.spell_trap_zones):
@@ -156,7 +156,7 @@ class PlayingField:
                 if pos == 'face-down':
                     print(f"  {i+1}: Set Card (Face-down)")
                 else:
-                    print(f"  {i+1}: {inner.get('Name', 'Unknown')}")
+                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} ({pos})")
 
     def show_hand(self):
         # Hand counts (excluding extra deck monsters)
@@ -401,57 +401,62 @@ class PlayingField:
             print("\nCard not found in banished zone.")
             return
 
-    def change_card_position(self, name, zone_index, face_up_down):
-        if face_up_down == "up":
-            position = "face-up attack"
-        elif face_up_down == "set":
-            position = "face-down defense"
+    def change_monster_position(self, name, zone_index, face_position):
+        # Translate requested shorthand to full position string
+        if face_position == "atk":
+            requested_position = "face-up attack"
+        elif face_position == "def":
+            requested_position = "face-up defense"
         else:
-            print("\nNot a valid card position.")
+            print("\nNot a valid card position. Use 'atk' or 'def'.")
             return False
 
         if zone_index is None:
             print("\nPlease provide the zone index for the card on the field.")
-            return
-        # Search all zones for the card
-        found = False
-        # Monster zones
-        for i, field_card in enumerate(self.monster_zones):
-            if field_card and field_card["card"].get("Name") == name and i == zone_index:
-                print(f"\nMonster Zone {i+1}:")
-                print(field_card.get("position"))
-                #if field_card.get("position") == pos: print(f"\n{name} is already in {field_card.get('position')} position.")
-            found = True
-            break
-                
-        # Spell/trap zones
-        if not found:
-            for i, field_card in enumerate(self.spell_trap_zones):
-                if field_card and field_card["card"].get("Name") == name and i == zone_index:
-                    print(f"\nSpell/Trap Zone {i+1}:")
-                    print("\nField Properties:")
-                    for k, v in field_card.items():
-                        if k == "card": continue
-                        print(f"  {k}: {v}")
-                    print("\nCard Data:")
-                    for k, v in field_card["card"].items():
-                        print(f"  {k}: {v}")
-                    found = True
-                    break
-        # Field spell zone
-        if not found and self.field_spell_zone and self.field_spell_zone["card"].get("Name") == name:
-            print(f"\nField Spell Zone:")
-            print("\nField Properties:")
-            for k, v in self.field_spell_zone.items():
-                if k == "card": continue
-                print(f"  {k}: {v}")
-            print("\nCard Data:")
-            for k, v in self.field_spell_zone["card"].items():
-                print(f"  {k}: {v}")
-            found = True
-        if not found:
-            print("\nCard not found in the specified field zone.")
-            return
+            return False
+
+        # Ensure zone_index is within bounds
+        try:
+            zi = int(zone_index)
+        except (ValueError, TypeError):
+            print("\nZone index must be an integer.")
+            return False
+
+        if not (0 <= zi < len(self.monster_zones)):
+            print("\nInvalid monster zone index.")
+            return False
+
+        field_card = self.monster_zones[zi]
+        if not field_card or not isinstance(field_card, dict):
+            print("\nNo monster found in that zone.")
+            return False
+
+        current_position = field_card.get("position")
+
+        # If already in requested position
+        if current_position == requested_position:
+            print(f"\n{name} is already in {current_position} position.")
+            return True
+
+        # If currently in defense (face-up defense or face-down defense) and requesting atk -> flip face-up attack
+        if current_position in ("face-up defense", "face-down defense") and requested_position == "face-up attack":
+            # Changing defense to face-up attack
+            field_card["position"] = "face-up attack"
+            if current_position == "face-down defense":
+                print(f"\n{name} was flipped from {current_position} to face-up attack.")
+            else:
+                print(f"\n{name} was changed from {current_position} to face-up attack.")
+            return True
+
+        # If currently face-up attack and requesting def -> change to face-up defense
+        if current_position == "face-up attack" and requested_position == "face-up defense":
+            field_card["position"] = "face-up defense"
+            print(f"\n{name} was changed from face-up attack to face-up defense.")
+            return True
+
+        # Any other transitions are not allowed (e.g., changing face-up attack directly to face-down defense)
+        print(f"\nCannot change {name} from {current_position} to {requested_position} directly.")
+        return False
 
     def send_card_gy_banish(self):
         pass

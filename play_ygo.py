@@ -45,7 +45,7 @@ def duel_actions_menu(field):
         print("2. Examine field/card on field")
         print("3. Examine graveyard/banishment and a card there")
         print("4. Summon/Set card to Field")
-        print("5. Change card position on field")
+        print("5. Change monster card position on field")
         print("6. Activate card effect")
         print("7. Send card to GY/Banishment")
         print("8. Show main/extra deck")
@@ -73,10 +73,10 @@ def duel_actions_menu(field):
             summon_set_menu(field)
         elif choice == "5":
             field.show_field()
-            card_name, field_zone_index, card_position = input("\nEnter the card name, the zone number(L -> R, 1-5, any for field spell), "
-            "and either 'up' or 'set', separated by a comma: ").split(',')
+            card_name, field_zone_index, card_position = input("\nEnter the monster card name, the zone number, "
+            "and either 'atk' or 'def', separated by a comma: ").split(',')
             field_zone_index = int(field_zone_index.strip()) - 1
-            field.change_card_position(card_name.strip(), field_zone_index, card_position.strip())
+            field.change_monster_position(card_name.strip(), field_zone_index, card_position.strip())
             field.show_field()
         elif choice == "6":
             card_name = input("\nEnter the name of the card to activate its effect: ")
