@@ -47,7 +47,7 @@ def duel_actions_menu(field):
         print("4. Summon/Set card to Field")
         print("5. Change monster card position on field")
         print("6. Activate card effect")
-        print("7. Send card to GY/Banishment")
+        print("7. Move cards gy/banishment <-> hand/field")
         print("8. Show main/extra deck")
         print("9. Quit")
         choice = input("\nEnter your choice (1-9): ")
@@ -83,8 +83,7 @@ def duel_actions_menu(field):
             field.activate_card(card_name.strip())
             print(f"\n{card_name} activated its effect.")
         elif choice == "7":
-            card_name, gy_banish = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
-            field.send_card_gy_banish(card_name.strip(), gy_banish.strip())
+            move_cards_menu(field)
         elif choice == "8":
             field.show_main_extra()
         elif choice == "9":
@@ -129,6 +128,66 @@ def summon_set_menu(field):
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 4.")
+
+def move_cards_menu(field):
+    while True:
+        print("\nMove cards from gy/banishment <-> hand/field")
+        print("1. Send a card from field to gy/banishment")
+        print("2. Send a card from hand/gy/banishment to gy/banishment")
+        print("3. Send a field spell card from field to gy/banishment")
+        print("4. Return card from gy/banishment to field")
+        print("5. Return card from gy/banishment to the hand")
+        print("6. Quit")
+        choice = input("\nEnter your choice (1-6): ")
+
+        if choice == "1": # Send a monster card from field to gy/banishment
+            field.show_field()
+            field.show_hand()
+            card_name, hand_field_location, hand_field_index, gy_banish = input("\nEnter the name of the card, either 'hand', 'field', 'gy', or 'banish', the hand/field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
+            hand_field_index = int(hand_field_index.strip()) - 1
+            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "monster")
+            field.show_grave_banish()
+            if hand_field_location.strip() == 'hand':
+                field.show_hand()
+            elif hand_field_location.strip() == 'field':
+                field.show_field()
+            else:
+                field.grave_banish()
+        elif choice == "2": # Send a card from hand/gy/banishment to gy/banishment
+            field.show_field()
+            field.show_hand()
+            card_name, hand_field_location, hand_field_index, gy_banish = input("\nEnter the name of the card, either 'hand', 'field', 'gy', or 'banish', the hand/field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
+            hand_field_index = int(hand_field_index.strip()) - 1
+            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "spell/trap")
+            field.show_grave_banish()
+            if hand_field_location.strip() == 'hand':
+                field.show_hand()
+            elif hand_field_location.strip() == 'field':
+                field.show_field()
+            else:
+                field.grave_banish()
+        elif choice == "3": # Send a field spell card from field to gy/banishment
+            field.show_field()
+            field.show_hand()
+            card_name, hand_field_location, gy_banish = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
+            hand_field_location = "field"
+            hand_field_index = None
+            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "field spell")
+            field.show_grave_banish()
+            field.show_field()
+        elif choice == "4":
+            field.show_hand()
+            card_name, hand_index = input("\nEnter the field spell card name and position in hand, separated by a comma: ").split(',')
+            hand_index = int(hand_index.strip()) - 1
+            field.place_field_spell(card_name.strip(), hand_index)
+            field.show_field()
+        elif choice == "5":
+            pass
+        elif choice == "6":
+            print("Returning to Duel menu.")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 6.")
 
 def search_card_pool():
     while True:

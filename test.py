@@ -2,6 +2,7 @@ from spell_cards import field_spell_cards
 from deck_building import spell_card_lookup
 
 
+
 name = "Pot of Greed"
 card = spell_card_lookup.get(name)
 

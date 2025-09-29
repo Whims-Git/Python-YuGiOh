@@ -458,9 +458,194 @@ class PlayingField:
         print(f"\nCannot change {name} from {current_position} to {requested_position} directly.")
         return False
 
-    def send_card_gy_banish(self):
-        pass
+    # Helper to move a card object to a destination list
+    def move_card_obj(self, card_obj, dest):
+        if dest == "gy":
+            self.graveyard.append(card_obj)
+        elif dest == "banish":
+            self.banished.append(card_obj)
+        elif dest == "hand":
+            self.hand.append(card_obj)
+        else:
+            # 'field' moving requires a zone index and different handling
+            return False
+        return True
 
+    def move_cards_gy_banish(self, name, from_location, index, to_location, card_type):
+        # Normalize and validate locations
+        if not isinstance(from_location, str) or not isinstance(to_location, str):
+            print("\nfrom_location and to_location must be strings: 'hand','field','gy', or 'banish'.")
+            return False
+        from_location = from_location.lower()
+        to_location = to_location.lower()
+        if from_location not in ("hand", "field", "gy", "banish") or to_location not in ("hand", "field", "gy", "banish"):
+            print("\nInvalid option. Please input either hand, field, gy, or banish.")
+            return False
+
+        # Moving monster/spell&trap/field spell cards from field -> gy/banish
+        if from_location == "field" and card_type == "monster":
+            if index is None:
+                print("\nPlease provide the zone index for the card on the field.")
+                return False
+            try:
+                zi = int(index)
+            except (ValueError, TypeError):
+                print("\nZone index must be an integer.")
+                return False
+            if not (0 <= zi < len(self.monster_zones)):
+                print("\nInvalid monster zone index.")
+                return False
+            field_card = self.monster_zones[zi]
+            if not field_card or not isinstance(field_card, dict) or field_card.get('card', {}).get('Name') != name:
+                print("\nCard not found in the specified field zone.")
+                return False
+            # Remove from field (clear zone)
+            card_obj = field_card['card']
+            self.monster_zones[zi] = None
+            if to_location in ("gy", "banish", "hand"):
+                moved = self.move_card_obj(card_obj, to_location)
+                if moved:
+                    print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field zone {zi+1} to {to_location}.")
+                    return True
+                else:
+                    print("\nCannot move directly to field without specifying a zone.")
+                    return False
+        elif from_location == "field" and card_type == "spell/trap":
+            if index is None:
+                print("\nPlease provide the zone index for the card on the field.")
+                return False
+            try:
+                zi = int(index)
+            except (ValueError, TypeError):
+                print("\nZone index must be an integer.")
+                return False
+            if not (0 <= zi < len(self.spell_trap_zones)):
+                print("\nInvalid backrow zone index.")
+                return False
+            field_card = self.spell_trap_zones[zi]
+            if not field_card or not isinstance(field_card, dict) or field_card.get('card', {}).get('Name') != name:
+                print("\nCard not found in the specified field zone.")
+                return False
+            # Remove from field (clear zone)
+            card_obj = field_card['card']
+            self.spell_trap_zones[zi] = None
+            if to_location in ("gy", "banish", "hand"):
+                moved = self.move_card_obj(card_obj, to_location)
+                if moved:
+                    print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field zone {zi+1} to {to_location}.")
+                    return True
+                else:
+                    print("\nCannot move directly to field without specifying a zone.")
+                    return False
+        elif from_location == "field" and card_type == "field spell":
+            if self.field_spell_zone is None:
+                print("\nNo field spell card found in the field spell zone.")
+                return False
+
+            field_card = self.field_spell_zone.get('card')
+            if not field_card or field_card.get('Name') != name:
+                print(f"\nCard '{name}' not found in field spell zone.")
+                return False
+
+            # Copy card before removing from field
+            card_obj = field_card.copy()
+            # Clear the field spell zone
+            self.field_spell_zone = None
+
+            if to_location in ("gy", "banish"):
+                moved = self.move_card_obj(card_obj, to_location)
+                if moved:
+                    print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field spell zone to {to_location}.")
+                    return True
+            return False
+
+        # Moving from hand -> gy/banish/field
+        if from_location == "hand":
+            if index is None:
+                print("\nPlease provide the index in hand (0-based).")
+                return False
+            try:
+                hi = int(index)
+            except (ValueError, TypeError):
+                print("\nHand index must be an integer.")
+                return False
+            if not (0 <= hi < len(self.hand)):
+                print("\nInvalid hand index.")
+                return False
+            hand_card = self.hand[hi]
+            if not hand_card or hand_card.get('Name') != name:
+                print("\nCard not found in the specified hand location.")
+                return False
+            # Remove from hand
+            card_obj = self.hand.pop(hi)
+            if to_location in ("gy", "banish", "hand"):
+                self.move_card_obj(card_obj, to_location)
+                print(f"\n{card_obj.get('Name', 'Unknown')} was moved from hand to {to_location}.")
+                return True
+            if to_location == "field":
+                print("\nTo move to field, please use the summon/set option.")
+                # Put it back into hand to avoid accidental loss
+                self.hand.insert(hi, card_obj)
+                return False
+
+        # Moving from gy -> hand/banish
+        if from_location == "gy":
+            if index is None:
+                print("\nPlease provide the index in the graveyard (0-based).")
+                return False
+            try:
+                gi = int(index)
+            except (ValueError, TypeError):
+                print("\nGraveyard index must be an integer.")
+                return False
+            if not (0 <= gi < len(self.graveyard)):
+                print("\nInvalid graveyard index.")
+                return False
+            gy_card = self.graveyard[gi]
+            if not gy_card or gy_card.get('Name') != name:
+                print("\nCard not found in the specified graveyard location.")
+                return False
+            card_obj = self.graveyard.pop(gi)
+            if to_location in ("hand", "banish", "gy"):
+                self.move_card_obj(card_obj, to_location)
+                print(f"\n{card_obj.get('Name', 'Unknown')} was moved from graveyard to {to_location}.")
+                return True
+            if to_location == "field":
+                print("\nTo move to field, please use the summon/set option.")
+                # Return card to graveyard
+                self.graveyard.insert(gi, card_obj)
+                return False
+
+        # Moving from banish -> hand/gy
+        if from_location == "banish":
+            if index is None:
+                print("\nPlease provide the index in the banished zone (0-based).")
+                return False
+            try:
+                bi = int(index)
+            except (ValueError, TypeError):
+                print("\nBanished index must be an integer.")
+                return False
+            if not (0 <= bi < len(self.banished)):
+                print("\nInvalid banished index.")
+                return False
+            bx_card = self.banished[bi]
+            if not bx_card or bx_card.get('Name') != name:
+                print("\nCard not found in the specified banished location.")
+                return False
+            card_obj = self.banished.pop(bi)
+            if to_location in ("hand", "gy", "banish"):
+                self.move_card_obj(card_obj, to_location)
+                print(f"\n{card_obj.get('Name', 'Unknown')} was moved from banished to {to_location}.")
+                return True
+            if to_location == "field":
+                print("\nTo move to field, please use the summon/set option.")
+                # Return card to banished
+                self.banished.insert(bi, card_obj)
+                return False
+
+        print("\nUnsupported move or invalid parameters.")
+        return False
     def activate_card(self):
         pass
 
