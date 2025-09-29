@@ -106,6 +106,17 @@ class PlayingField:
             "negated": False
         }
     
+    def determine_card_type(self, card_name):
+        if card_name in main_deck_monster_card_lookup or card_name in extra_deck_monster_card_lookup:
+            return "monster"
+        elif card_name in spell_card_lookup:
+            if spell_card_lookup[card_name]["Typing"] == "Field":
+                return "field spell"
+            return "spell"
+        elif card_name in trap_card_lookup:
+            return "trap"
+        return None
+
     # Return monster count, extra monster count, spell count, and trap count for a given list of cards.
     def count_types(self, collection):
         m = e = s = t = 0
@@ -240,15 +251,21 @@ class PlayingField:
 
     def place_spell_trap_card(self, name, hand_index, field_zone_index = None):
         card = spell_card_lookup.get(name) or trap_card_lookup.get(name)
-        
+
         if not card:
             print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
             return False
-        
-        if card["Name"] in spell_card_lookup:
-            card_type = "spell"
-        else:
+
+        # Determine whether this is a spell (including field) or trap for messaging
+        card_type_detected = self.determine_card_type(name)
+        if card_type_detected == "monster":
+            print("\nThis is a monster card; use summon/set instead.")
+            return False
+        # Normalize message type
+        if card_type_detected == "trap":
             card_type = "trap"
+        else:
+            card_type = "spell"
 
         try:
             hand_index = int(hand_index)
@@ -471,7 +488,7 @@ class PlayingField:
             return False
         return True
 
-    def move_cards_gy_banish(self, name, from_location, index, to_location, card_type):
+    def move_cards_gy_banish(self, name, from_location, index, to_location, card_type = None):
         # Normalize and validate locations
         if not isinstance(from_location, str) or not isinstance(to_location, str):
             print("\nfrom_location and to_location must be strings: 'hand','field','gy', or 'banish'.")
@@ -481,6 +498,13 @@ class PlayingField:
         if from_location not in ("hand", "field", "gy", "banish") or to_location not in ("hand", "field", "gy", "banish"):
             print("\nInvalid option. Please input either hand, field, gy, or banish.")
             return False
+
+        # Determine card type if not provided
+        if card_type is None:
+            card_type = self.determine_card_type(name)
+            if card_type is None:
+                print(f"\nCard '{name}' not found in any card pool.")
+                return False
 
         # Moving monster/spell&trap/field spell cards from field -> gy/banish
         if from_location == "field" and card_type == "monster":
@@ -510,7 +534,7 @@ class PlayingField:
                 else:
                     print("\nCannot move directly to field without specifying a zone.")
                     return False
-        elif from_location == "field" and card_type == "spell/trap":
+        elif from_location == "field" and card_type == "spell" or "trap":
             if index is None:
                 print("\nPlease provide the zone index for the card on the field.")
                 return False
@@ -559,10 +583,10 @@ class PlayingField:
                     return True
             return False
 
-        # Moving from hand -> gy/banish/field
+        # Moving from hand -> gy/banish
         if from_location == "hand":
             if index is None:
-                print("\nPlease provide the index in hand (0-based).")
+                print("\nPlease provide the index in the hand.")
                 return False
             try:
                 hi = int(index)
@@ -573,17 +597,17 @@ class PlayingField:
                 print("\nInvalid hand index.")
                 return False
             hand_card = self.hand[hi]
-            if not hand_card or hand_card.get('Name') != name:
+            if not hand_card or not isinstance(hand_card, dict) or hand_card.get('card', {}).get('Name') != name:
                 print("\nCard not found in the specified hand location.")
                 return False
             # Remove from hand
             card_obj = self.hand.pop(hi)
-            if to_location in ("gy", "banish", "hand"):
+            if to_location in ("gy", "banish"):
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from hand to {to_location}.")
                 return True
-            if to_location == "field":
-                print("\nTo move to field, please use the summon/set option.")
+            if to_location == "field" or "hand":
+                print("\nCannot move the card to this area.")
                 # Put it back into hand to avoid accidental loss
                 self.hand.insert(hi, card_obj)
                 return False
@@ -591,7 +615,7 @@ class PlayingField:
         # Moving from gy -> hand/banish
         if from_location == "gy":
             if index is None:
-                print("\nPlease provide the index in the graveyard (0-based).")
+                print("\nPlease provide the index in the graveyard.")
                 return False
             try:
                 gi = int(index)
@@ -606,12 +630,12 @@ class PlayingField:
                 print("\nCard not found in the specified graveyard location.")
                 return False
             card_obj = self.graveyard.pop(gi)
-            if to_location in ("hand", "banish", "gy"):
+            if to_location in ("hand", "banish"):
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from graveyard to {to_location}.")
                 return True
-            if to_location == "field":
-                print("\nTo move to field, please use the summon/set option.")
+            if to_location == "field" or "gy":
+                print("\nCannot move the card to this area.")
                 # Return card to graveyard
                 self.graveyard.insert(gi, card_obj)
                 return False
@@ -634,12 +658,12 @@ class PlayingField:
                 print("\nCard not found in the specified banished location.")
                 return False
             card_obj = self.banished.pop(bi)
-            if to_location in ("hand", "gy", "banish"):
+            if to_location in ("hand", "gy"):
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from banished to {to_location}.")
                 return True
-            if to_location == "field":
-                print("\nTo move to field, please use the summon/set option.")
+            if to_location == "field" or "banish":
+                print("\nCannot move the card to this area..")
                 # Return card to banished
                 self.banished.insert(bi, card_obj)
                 return False

@@ -24,10 +24,10 @@ def deck_building_menu():
             #card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
             #deck_building.add_card_to_deck(card_name, card_qty)
             deck_building.add_card_to_deck("Dark Magician", "3")
-            deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
-            # deck_building.add_card_to_deck("Pot of Greed", "1")
-            # deck_building.add_card_to_deck("Two-Pronged Attack", "1")
-            # deck_building.add_card_to_deck("Forest", "3")
+            # deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
+            deck_building.add_card_to_deck("Pot of Greed", "2")
+            deck_building.add_card_to_deck("Two-Pronged Attack", "2")
+            deck_building.add_card_to_deck("Forest", "2")
             # deck_building.add_card_to_deck("Charubin the Fire Knight", "1")
         elif choice == "5":
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
@@ -140,39 +140,29 @@ def move_cards_menu(field):
         print("6. Quit")
         choice = input("\nEnter your choice (1-6): ")
 
-        if choice == "1": # Send a monster card from field to gy/banishment
+        if choice == "1": # Send a card from field to gy/banishment
             field.show_field()
-            field.show_hand()
-            card_name, hand_field_location, hand_field_index, gy_banish = input("\nEnter the name of the card, either 'hand', 'field', 'gy', or 'banish', the hand/field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
-            hand_field_index = int(hand_field_index.strip()) - 1
-            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "monster")
+            card_name, field_index, gy_banish = input("\nEnter the name of the card, the field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
+            field_index = int(field_index.strip()) - 1
+            field_location = "field"
+            field.move_cards_gy_banish(card_name.strip(), field_location.strip(), field_index, gy_banish.strip())
             field.show_grave_banish()
-            if hand_field_location.strip() == 'hand':
-                field.show_hand()
-            elif hand_field_location.strip() == 'field':
-                field.show_field()
-            else:
-                field.grave_banish()
+            field.show_field()
         elif choice == "2": # Send a card from hand/gy/banishment to gy/banishment
-            field.show_field()
             field.show_hand()
-            card_name, hand_field_location, hand_field_index, gy_banish = input("\nEnter the name of the card, either 'hand', 'field', 'gy', or 'banish', the hand/field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
-            hand_field_index = int(hand_field_index.strip()) - 1
-            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "spell/trap")
             field.show_grave_banish()
-            if hand_field_location.strip() == 'hand':
-                field.show_hand()
-            elif hand_field_location.strip() == 'field':
-                field.show_field()
-            else:
-                field.grave_banish()
+            card_name, from_location, index, hand_gy_banish = input("\nEnter the name of the card, either 'hand', 'gy', or 'banish', the index, and either 'hand', 'gy', or 'banish', separated by a comma: ").split(',')
+            index = int(index.strip()) - 1
+            field.move_cards_gy_banish(card_name.strip(), from_location.strip(), index, hand_gy_banish.strip())
+            field.show_grave_banish()
+            field.show_hand()
         elif choice == "3": # Send a field spell card from field to gy/banishment
             field.show_field()
             field.show_hand()
             card_name, hand_field_location, gy_banish = input("\nEnter the name of the card and either 'gy' or 'banish', separated by a comma: ").split(',')
             hand_field_location = "field"
             hand_field_index = None
-            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip(), card_type = "field spell")
+            field.move_cards_gy_banish(card_name.strip(), hand_field_location.strip(), hand_field_index, gy_banish.strip())
             field.show_grave_banish()
             field.show_field()
         elif choice == "4":
