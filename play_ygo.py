@@ -133,7 +133,7 @@ def move_cards_menu(field):
     while True:
         print("\nMove cards from gy/banishment <-> hand/field")
         print("1. Send a card from field to gy/banishment")
-        print("2. Send a card from hand/gy/banishment to gy/banishment")
+        print("2. Send a card from hand/gy/banishment to hand/gy/banishment")
         print("3. Send a field spell card from field to gy/banishment")
         print("4. Return card from gy/banishment to field")
         print("5. Return card from gy/banishment to the hand")
@@ -148,12 +148,13 @@ def move_cards_menu(field):
             field.move_cards_gy_banish(card_name.strip(), field_location.strip(), field_index, gy_banish.strip())
             field.show_grave_banish()
             field.show_field()
-        elif choice == "2": # Send a card from hand/gy/banishment to gy/banishment
+        elif choice == "2": # Send a card from hand/gy/banishment to hand/gy/banishment
             field.show_hand()
             field.show_grave_banish()
-            card_name, from_location, index, hand_gy_banish = input("\nEnter the name of the card, either 'hand', 'gy', or 'banish', the index, and either 'hand', 'gy', or 'banish', separated by a comma: ").split(',')
+            card_name, from_location, index, to_location = input("\nEnter the name of the card, the 'from' 'hand', 'gy', or 'banish', the index, "
+            "and the 'to' location 'hand', 'gy', or 'banish', separated by a comma: ").split(',')
             index = int(index.strip()) - 1
-            field.move_cards_gy_banish(card_name.strip(), from_location.strip(), index, hand_gy_banish.strip())
+            field.move_cards_gy_banish(card_name.strip(), from_location.strip(), index, to_location.strip())
             field.show_grave_banish()
             field.show_hand()
         elif choice == "3": # Send a field spell card from field to gy/banishment

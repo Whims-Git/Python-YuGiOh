@@ -534,7 +534,7 @@ class PlayingField:
                 else:
                     print("\nCannot move directly to field without specifying a zone.")
                     return False
-        elif from_location == "field" and card_type == "spell" or "trap":
+        elif from_location == "field" and card_type in ("spell", "trap"):
             if index is None:
                 print("\nPlease provide the zone index for the card on the field.")
                 return False
@@ -597,7 +597,7 @@ class PlayingField:
                 print("\nInvalid hand index.")
                 return False
             hand_card = self.hand[hi]
-            if not hand_card or not isinstance(hand_card, dict) or hand_card.get('card', {}).get('Name') != name:
+            if not hand_card or hand_card.get('Name') != name:
                 print("\nCard not found in the specified hand location.")
                 return False
             # Remove from hand
@@ -606,7 +606,7 @@ class PlayingField:
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from hand to {to_location}.")
                 return True
-            if to_location == "field" or "hand":
+            if to_location == "field" or to_location == "hand":
                 print("\nCannot move the card to this area.")
                 # Put it back into hand to avoid accidental loss
                 self.hand.insert(hi, card_obj)
@@ -634,7 +634,7 @@ class PlayingField:
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from graveyard to {to_location}.")
                 return True
-            if to_location == "field" or "gy":
+            if to_location == "field" or to_location == "gy":
                 print("\nCannot move the card to this area.")
                 # Return card to graveyard
                 self.graveyard.insert(gi, card_obj)
@@ -662,8 +662,8 @@ class PlayingField:
                 self.move_card_obj(card_obj, to_location)
                 print(f"\n{card_obj.get('Name', 'Unknown')} was moved from banished to {to_location}.")
                 return True
-            if to_location == "field" or "banish":
-                print("\nCannot move the card to this area..")
+            if to_location == "field" or to_location == "banish":
+                print("\nCannot move the card to this area.")
                 # Return card to banished
                 self.banished.insert(bi, card_obj)
                 return False
