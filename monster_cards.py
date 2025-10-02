@@ -1,9 +1,10 @@
 # Yu-Gi-Oh Vanilla Monster Card Database
-# Each card is represented as a dictionary with 7 characteristics.
+# Each card is represented as a dictionary with 8 characteristics.
 
 vanilla_monster_cards = [
     { #Blue-Eyes White Dragon
         "Name": "Blue-Eyes White Dragon",
+        "Category": "Monster",
         "Attribute": "LIGHT",
         "Level": 8,
         "Type": "Dragon, Normal",
@@ -13,6 +14,7 @@ vanilla_monster_cards = [
     },
     { #Dark Magician
         "Name": "Dark Magician",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 7,
         "Type": "Spellcaster, Normal",
@@ -22,6 +24,7 @@ vanilla_monster_cards = [
     },
     { #Summoned Skull
         "Name": "Summoned Skull",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 6,
         "Type": "Fiend, Normal",
@@ -31,6 +34,7 @@ vanilla_monster_cards = [
     },
     { #Aqua Madoor
         "Name": "Aqua Madoor",
+        "Category": "Monster",
         "Attribute": "WATER",
         "Level": 4,
         "Type": "Spellcaster, Normal",
@@ -40,6 +44,7 @@ vanilla_monster_cards = [
     },
     { #Giant Soldier of Stone
         "Name": "Giant Soldier of Stone",
+        "Category": "Monster",
         "Attribute": "EARTH",
         "Level": 3,
         "Type": "Rock, Normal",
@@ -49,6 +54,7 @@ vanilla_monster_cards = [
     },
     { #Spirit of the Harp
         "Name": "Spirit of the Harp",
+        "Category": "Monster",
         "Attribute": "WIND",
         "Level": 4,
         "Type": "Fairy, Normal",
@@ -58,6 +64,7 @@ vanilla_monster_cards = [
     },
     { #Gaia The Fierce Knight
         "Name": "Gaia The Fierce Knight",
+        "Category": "Monster",
         "Attribute": "EARTH",
         "Level": 7,
         "Type": "Warrior, Normal",
@@ -67,6 +74,7 @@ vanilla_monster_cards = [
     },
     { #Left Arm of the Forbidden One
         "Name": "Left Arm of the Forbidden One",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 1,
         "Type": "Spellcaster, Normal",
@@ -76,6 +84,7 @@ vanilla_monster_cards = [
     },
     { #Left Leg of the Forbidden One
         "Name": "Left Leg of the Forbidden One",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 1,
         "Type": "Spellcaster, Normal",
@@ -85,6 +94,7 @@ vanilla_monster_cards = [
     },
     { #Right Arm of the Forbidden One
         "Name": "Right Arm of the Forbidden One",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 1,
         "Type": "Spellcaster, Normal",
@@ -94,6 +104,7 @@ vanilla_monster_cards = [
     },
     { #Right Leg of the Forbidden One
         "Name": "Right Leg of the Forbidden One",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 1,
         "Type": "Spellcaster, Normal",
@@ -103,6 +114,7 @@ vanilla_monster_cards = [
     },
     { #Red-Eyes Black Dragon
         "Name": "Red-Eyes Black Dragon",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 7,
         "Type": "Dragon, Normal",
@@ -112,6 +124,7 @@ vanilla_monster_cards = [
     },
     { #Celtic Guardian
         "Name": "Celtic Guardian",
+        "Category": "Monster",
         "Attribute": "EARTH",
         "Level": 4,
         "Type": "Warrior, Normal",
@@ -121,6 +134,7 @@ vanilla_monster_cards = [
     },
     { #Curse of Dragon
         "Name": "Curse of Dragon",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 5,
         "Type": "Dragon, Normal",
@@ -130,6 +144,7 @@ vanilla_monster_cards = [
     },
     { #Mystical Elf
         "Name": "Mystical Elf",
+        "Category": "Monster",
         "Attribute": "LIGHT",
         "Level": 4,
         "Type": "Spellcaster, Normal",
@@ -139,6 +154,7 @@ vanilla_monster_cards = [
     },
     { #Tri-Horned Dragon
         "Name": "Tri-Horned Dragon",
+        "Category": "Monster",
         "Attribute": "DARK",
         "Level": 8,
         "Type": "Dragon, Normal",
@@ -148,6 +164,7 @@ vanilla_monster_cards = [
     },
     { #Hinotama Soul
         "Name": "Hinotama Soul",
+        "Category": "Monster",
         "Attribute": "FIRE",
         "Level": 2,
         "Type": "Pyro, Normal",
@@ -157,6 +174,7 @@ vanilla_monster_cards = [
     },
     { #Monster Egg
         "Name": "Monster Egg",
+        "Category": "Monster",
         "Attribute": "EARTH",
         "Level": 3,
         "Type": "Warrior, Normal",
@@ -168,11 +186,12 @@ vanilla_monster_cards = [
 ]
 
 # Yu-Gi-Oh Effect Monster Card Database
-# Each card is represented as a dictionary with 7 characteristics.
+# Each card is represented as a dictionary with 8 characteristics.
 
 effect_monster_cards = [
     {
         "Name": "Man-Eater Bug",
+        "Category": "Monster",
         "Attribute": "EARTH",
         "Level": 2,
         "Type": "Insect, Flip, Effect",

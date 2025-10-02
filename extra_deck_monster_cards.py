@@ -4,6 +4,8 @@
 extra_deck_fusions_cards = [
     {
         "Name": "Charubin the Fire Knight",
+        "Category": "Monster",
+        "Extra Deck Type": "Fusion",
         "Attribute": "FIRE",
         "Level": 3,
         "Type": "Pyro, Fusion, Normal",

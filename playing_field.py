@@ -159,7 +159,7 @@ class PlayingField:
                 if pos == 'face-down defense':
                     print(f"  {i+1}: Set Card (Face-down)")
                 else:
-                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} ({pos})")
+                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} (LV {inner.get('Level')}, ATK: {inner.get('ATK')}/DEF: {inner.get('DEF')}, {pos})")
 
         if self.field_spell_zone is None:
             print(f"\nField Spell Zone: Empty")
@@ -181,27 +181,36 @@ class PlayingField:
                 if pos == 'face-down':
                     print(f"  {i+1}: Set Card (Face-down)")
                 else:
-                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} ({pos})")
+                    print(f"  {i+1}: {inner.get('Name', 'Unknown')} ({inner.get('Category')}, {inner.get('Type')}, {pos})")
 
     def show_hand(self):
         # Hand counts (excluding extra deck monsters)
         hand_m, _, hand_s, hand_t = self.count_types(self.hand)
         print(f"\nHand: {len(self.hand)} cards, {hand_m} Monsters, {hand_s} Spells, {hand_t} Traps")
         for i, card in enumerate(self.hand):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+            if card.get('Category') == "Monster":
+                print(f"  {i+1}: {card.get('Name')} (Monster, LV {card.get('Level')}, {card.get('Attribute')}, {card.get('Type')})")
+            else:
+                print(f"  {i+1}: {card.get('Name')} ({card.get('Category')}, {card.get('Type')})")
 
     def show_grave_banish(self):
         # Graveyard counts
         grave_m, grave_e, grave_s, grave_t = self.count_types(self.graveyard)
         print(f"\nGraveyard: {len(self.graveyard)} cards, {grave_m + grave_e} Monsters, {grave_s} Spells, {grave_t} Traps")
         for i, card in enumerate(self.graveyard):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+            if card.get('Category') == "Monster":
+                print(f"  {i+1}: {card.get('Name')} (Monster, LV {card.get('Level')}, {card.get('Attribute')}, {card.get('Type')})")
+            else:
+                print(f"  {i+1}: {card.get('Name')} ({card.get('Category')}, {card.get('Type')})")
 
         # Banished counts
         banish_m, banish_e, banish_s, banish_t = self.count_types(self.banished)
         print(f"\nBanishment: {len(self.banished)} cards, {banish_m + banish_e} Monsters, {banish_s} Spells, {banish_t} Traps")
         for i, card in enumerate(self.banished):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+            if card.get('Category') == "Monster":
+                print(f"  {i+1}: {card.get('Name')} (Monster, LV {card.get('Level')}, {card.get('Attribute')}, {card.get('Type')})")
+            else:
+                print(f"  {i+1}: {card.get('Name')} ({card.get('Category')}, {card.get('Type')})")
 
     def show_main_extra(self):
         # Main and Extra deck counts
@@ -212,12 +221,15 @@ class PlayingField:
         main_name_counts = Counter(card["Name"] for card in current_main_deck)
         i = 0
         for name, count in main_name_counts.items():
-            print(f"  {i+1}: {name} x{count}")
+            if name["Category"] == "Monster":
+                print(f"  {i+1}: {name} x{count} (Monster)")
+            else:
+                print(f"  {i+1}: {name} x{count} ({name["Type"]})")
             i += 1
 
         print(f"\nExtra Deck: {len(self.extra_deck)} cards, {extra_mon_count} Monsters")
         for i, card in enumerate(self.extra_deck):
-            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
+            print(f"  {i+1}: {card.get('Name')} ({card.get('Extra Deck Type')})")
 
     # Place cards from hand, graveyard, and banishment to field
     def place_card(self, name, from_location, index, face_up_down, field_zone_index = None):
