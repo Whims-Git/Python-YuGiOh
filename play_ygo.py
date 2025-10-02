@@ -41,35 +41,22 @@ def deck_building_menu():
 def duel_actions_menu(field):
     while True:
         print("\nActions Menu")
-        print("1. Examine hand/card in hand")
-        print("2. Examine field/card on field")
-        print("3. Examine graveyard/banishment and a card there")
-        print("4. Summon/Set card to Field")
-        print("5. Change monster card position on field")
-        print("6. Activate card effect")
-        print("7. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
-        print("8. Show main/extra deck")
-        print("9. Quit")
-        choice = input("\nEnter your choice (1-9): ")
+        print("1. Examine card - field/hand/graveyard/banishment")
+        print("2. Summon/Set card to Field")
+        print("3. Change monster card position on field")
+        print("4. Activate card effect")
+        print("5. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
+        print("6. Show main/extra deck")
+        print("7. Quit")
+        choice = input("\nEnter your choice (1-7): ")
 
-        if choice == "1": # Examine hand/card in hand
+        if choice == "1": # Examine card - field/hand/graveyard/banishment
             field.show_hand()
-            card_name, hand_zone_index = input("\nEnter the card name and hand position(L -> R, 1-5), separated by a comma:\n").split(',')
-            hand_zone_index = int(hand_zone_index.strip()) - 1
-            field.examine_card(card_name, "hand", hand_zone_index)
-        elif choice == "2": # Examine field/card on field
-            field.show_field()
-            card_name, field_zone_index = input("\nEnter the card name and the zone number(L -> R, 1-5, any for field spell), " \
-            "separated by a comma:\n").split(',')
-            field_zone_index = int(field_zone_index.strip()) - 1
-            field.examine_card(card_name.strip(), "field", field_zone_index)
-        elif choice == "3": # Examine graveyard/banishment and a card there
-            field.show_grave_banish()
-            card_name, gy_banish, gy_banish_zone_index = input("\nEnter the card name, either 'gy' or 'banish', "
-            "and the location number, separated by a comma:\n").split(',')
-            gy_banish_zone_index = int(gy_banish_zone_index.strip()) - 1
-            field.examine_card(card_name.strip(), gy_banish.strip(), gy_banish_zone_index)
-        elif choice == "4": # Summon/Set card to Field
+            card_name, location, location_index = input("\nEnter the card name, location: 'field', 'hand', 'gy', or 'banish', " \
+            "and the index of the card, separated by a comma:\n").split(',')
+            location_index = int(location_index.strip()) - 1
+            field.examine_card(card_name, location.strip(), location_index)
+        elif choice == "2": # Summon/Set card to Field
             field.show_hand()
             field.show_grave_banish()
             card_name, from_location, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, location: 'hand', 'gy', or 'banish', " \
@@ -78,18 +65,18 @@ def duel_actions_menu(field):
             field_zone_index = int(field_zone_index.strip()) - 1
             field.place_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
             field.show_field()
-        elif choice == "5": # Change monster card position on field
+        elif choice == "3": # Change monster card position on field
             field.show_field()
             card_name, field_zone_index, card_position = input("\nEnter the monster card name, the zone number, "
             "and either 'atk' or 'def', separated by a comma:\n").split(',')
             field_zone_index = int(field_zone_index.strip()) - 1
             field.change_monster_position(card_name.strip(), field_zone_index, card_position.strip())
             field.show_field()
-        elif choice == "6": # Activate card effect
+        elif choice == "4": # Activate card effect
             card_name = input("\nEnter the name of the card to activate its effect:\n")
             field.activate_card(card_name.strip())
             print(f"\n{card_name} activated its effect.")
-        elif choice == "7": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
+        elif choice == "5": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
             field.show_field()
             card_name, from_location, index, to_location = input("\nEnter the name of the card, from location: 'field', 'hand', 'gy', or 'banish', " \
             "the index, and to location: 'hand', 'gy', or 'banish', separated by a comma:\n").split(',')
@@ -97,13 +84,13 @@ def duel_actions_menu(field):
             field.move_cards(card_name.strip(), from_location.strip(), index, to_location.strip())
             field.show_grave_banish()
             field.show_field()
-        elif choice == "8": # Show main/extra deck
+        elif choice == "6": # Show main/extra deck
             field.show_main_extra()
-        elif choice == "9": # Quit
+        elif choice == "7": # Quit
             print("Returning to Main Menu...")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 9.")
+            print("Invalid choice. Please enter a number from 1 to 7.")
 
 def search_card_pool():
     while True:

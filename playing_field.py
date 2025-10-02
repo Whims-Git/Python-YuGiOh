@@ -327,16 +327,16 @@ class PlayingField:
             print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
             return True
 
-    def examine_card(self, name, hand_field, zone_index = None):
-        # hand_field: 'hand', 'field', 'gy', 'banish'
+    def examine_card(self, name, location, zone_index = None):
+        # location: 'hand', 'field', 'gy', 'banish'
         # zone_index: required for field (0-based)
-        hand_field = hand_field.lower()
-        if hand_field not in ("hand", "field", "gy", "banish"):
+        location = location.lower()
+        if location not in ("hand", "field", "gy", "banish"):
             print("\nInvalid option. Please input either hand, field, gy, or banish.")
             return
 
         # Find the card and its field properties if on field
-        if hand_field == "field":
+        if location == "field":
             if zone_index is None:
                 print("\nPlease provide the zone index for the card on the field.")
                 return
@@ -385,7 +385,7 @@ class PlayingField:
             return
 
         # Otherwise, print card data from hand, gy, or banish
-        if hand_field == "hand":
+        if location == "hand": # Examine card in hand
             for i, c in enumerate(self.hand):
                 if c.get("Name") == name and i == zone_index:
                     print(f"\nHand Card {i+1}:")
@@ -394,7 +394,7 @@ class PlayingField:
                     return
             print("\nCard not found in hand.")
             return
-        if hand_field == "gy":
+        if location == "gy": # Examine card in graveyard
             for i, c in enumerate(self.graveyard):
                 if c.get("Name") == name:
                     print(f"\nGraveyard Card {i+1}:")
@@ -403,7 +403,7 @@ class PlayingField:
                     return
             print("\nCard not found in graveyard.")
             return
-        if hand_field == "banish":
+        if location == "banish": # Examine card in banishment
             for i, c in enumerate(self.banished):
                 if c.get("Name") == name:
                     print(f"\nBanished Card {i+1}:")
