@@ -76,7 +76,7 @@ def duel_actions_menu(field):
             "index of card, either 'summon' or 'set', and field zone for monsters and spells/traps, separated by a comma:\n").split(',')
             hand_index = int(hand_index.strip()) - 1
             field_zone_index = int(field_zone_index.strip()) - 1
-            field.place_monster_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
+            field.place_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
             field.show_field()
         elif choice == "5":
             field.show_field()
@@ -109,7 +109,7 @@ def move_cards_menu(field):
         print("5. Quit")
         choice = input("\nEnter your choice (1-5): ")
 
-        if choice == "1": # Send a card from field to gy/banishment
+        if choice == "1": # Move a card field/hand/gy/banishment <-> field/hand/gy/banishment
             field.show_field()
             card_name, field_index, gy_banish = input("\nEnter the name of the card, the field index, and either 'gy' or 'banish', separated by a comma: ").split(',')
             field_index = int(field_index.strip()) - 1

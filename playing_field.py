@@ -206,7 +206,7 @@ class PlayingField:
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
     # Place cards from hand, graveyard, and banishment to field
-    def place_monster_card(self, name, from_location, hand_index, face_up_down, field_zone_index = None):
+    def place_card(self, name, from_location, hand_index, face_up_down, field_zone_index = None):
         card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)
         card_type = self.determine_card_type(name)
 
@@ -312,89 +312,6 @@ class PlayingField:
                 self.hand.pop(hand_index)
             print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
             return True
-
-    def place_spell_trap_card(self, name, hand_index, field_zone_index = None):
-        card = spell_card_lookup.get(name) or trap_card_lookup.get(name)
-
-        if not card:
-            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
-            return False
-
-        # Determine whether this is a spell (including field) or trap for messaging
-        card_type_detected = self.determine_card_type(name)
-        if card_type_detected == "monster":
-            print("\nThis is a monster card; use summon/set instead.")
-            return False
-        # Normalize message type
-        if card_type_detected == "trap":
-            card_type = "trap"
-        else:
-            card_type = "spell"
-
-        try:
-            hand_index = int(hand_index)
-            field_zone_index = int(field_zone_index)
-        except ValueError:
-            print("\nPlease enter numeric indices for hand_index and field_zone_index.")
-            return False
-
-        if not (0 <= hand_index < len(self.hand)):
-            print("\nInvalid hand index.")
-            return False
-
-        zones = self.spell_trap_zones
-        max_index = len(zones) - 1
-        if not (0 <= field_zone_index <= max_index):
-            print("\nInvalid backrow zone.")
-            return False
-        if zones[field_zone_index] is not None:
-            print("\nThat backrow zone is already occupied.")
-            return False
-
-        # Copy card from hand before popping
-        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
-        position = "face-down"
-
-        field_card = self.field_backrow_card_properties(hand_card, position)
-        zones[field_zone_index] = field_card
-        self.hand.pop(hand_index)
-        print(f"\nSet the {card_type} card '{hand_card.get('Name', 'Unknown')}' in zone {field_zone_index + 1}")
-        return True
-
-    def place_field_spell(self, name, hand_index):
-        card = spell_card_lookup.get(name)
-        
-        if not card:
-            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
-            return False
-        
-        if card["Typing"] != "Field":
-            print("\nThis card is not a field spell card.")
-            return False
-
-        try:
-            hand_index = int(hand_index)
-        except ValueError:
-            print("\nPlease enter numeric indices for hand_index.")
-            return False
-
-        if not (0 <= hand_index < len(self.hand)):
-            print("\nInvalid hand index.")
-            return False
-
-        # Copy card from hand before popping
-        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
-        position = "face-down"
-        
-        field_card = self.field_spell_card_properties(hand_card, position)
-        # If a field spell is already present, send it to graveyard and replace
-        if self.field_spell_zone is not None:
-            print(f"\n{self.field_spell_zone['card'].get('Name', 'Unknown')} was sent to the graveyard and replaced by {hand_card.get('Name', 'Unknown')}.")
-            self.graveyard.append(self.field_spell_zone['card'])
-        self.field_spell_zone = field_card
-        self.hand.pop(hand_index)
-        print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
-        return True
 
     def examine_card(self, name, hand_field, zone_index = None):
         # hand_field: 'hand', 'field', 'gy', 'banish'
