@@ -1,15 +1,17 @@
 from spell_cards import field_spell_cards
-from deck_building import spell_card_lookup
+from deck_building import (spell_card_lookup, main_deck_monster_card_lookup, extra_deck_monster_card_lookup, trap_card_lookup)
 
 
+card_name = "Pot of Greed"
+def determine_card_type(card_name):
+        if card_name in main_deck_monster_card_lookup or card_name in extra_deck_monster_card_lookup:
+            return "monster"
+        elif card_name in spell_card_lookup:
+            if spell_card_lookup[card_name]["Typing"] == "Field":
+                return "field spell"
+            return "spell"
+        elif card_name in trap_card_lookup:
+            return "trap"
+        return None
 
-name = "Pot of Greed"
-card = spell_card_lookup.get(name)
-
-if not card:
-    print(f"\nCard '{name}' not found.")
-
-if card["Typing"] != "Field":
-    print("Not a field spell")
-else:
-    print("Field spell")
+print(determine_card_type(card_name))

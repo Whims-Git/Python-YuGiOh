@@ -205,9 +205,11 @@ class PlayingField:
         for i, card in enumerate(self.extra_deck):
             print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
-    def place_monster_card(self, name, hand_index, face_up_down, field_zone_index = None):
-        card = main_deck_monster_card_lookup.get(name)
-        
+    # Place cards from hand, graveyard, and banishment to field
+    def place_monster_card(self, name, from_location, hand_index, face_up_down, field_zone_index = None):
+        card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)
+        card_type = self.determine_card_type(name)
+
         if not card:
             print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
             return False
@@ -219,22 +221,30 @@ class PlayingField:
             print("\nPlease enter numeric indices for hand_index and field_zone_index.")
             return False
 
-        if not (0 <= hand_index < len(self.hand)):
-            print("\nInvalid hand index.")
+        # Validate index for the source zone
+        if from_location == "hand":
+            if not (0 <= hand_index < len(self.hand)):
+                print("\nInvalid hand index.")
+                return False
+            hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
+        elif from_location == "gy":
+            if not (0 <= hand_index < len(self.graveyard)):
+                print("\nInvalid graveyard index.")
+                return False
+            hand_card = self.graveyard[hand_index].copy() if isinstance(self.graveyard[hand_index], dict) else self.graveyard[hand_index]
+        elif from_location == "banish":
+            if not (0 <= hand_index < len(self.banished)):
+                print("\nInvalid banish index.")
+                return False
+            hand_card = self.banished[hand_index].copy() if isinstance(self.banished[hand_index], dict) else self.banished[hand_index]
+        else:
+            print("Invalid location.")
             return False
 
-        zones = self.monster_zones
-        max_index = len(zones) - 1
-        if not (0 <= field_zone_index <= max_index):
-            print("\nInvalid monster zone.")
-            return False
-        if zones[field_zone_index] is not None:
-            print("\nThat monster zone is already occupied.")
-            return False
-
-        # Copy card from hand before popping
-        hand_card = self.hand[hand_index].copy() if isinstance(self.hand[hand_index], dict) else self.hand[hand_index]
         if face_up_down == "summon":
+            if card_type in ("spell", "trap"):
+                print("Cannot summon a spell/trap card.")
+                return False
             position = "face-up attack"
         elif face_up_down == "set":
             position = "face-down defense"
@@ -242,12 +252,66 @@ class PlayingField:
             print("\nNot a valid card position.")
             return False
 
-        field_card = self.field_monster_card_properties(hand_card, position)
-        zones[field_zone_index] = field_card
-        self.hand.pop(hand_index)
-        action_type = "Summoned" if face_up_down == "summon" else "Set"
-        print(f"\n{action_type} {hand_card.get('Name', 'Unknown')} as a {position} monster in zone {field_zone_index + 1}")
-        return True
+        card_type = self.determine_card_type(name)
+        if card_type == "monster":
+            zones = self.monster_zones
+            max_index = len(zones) - 1
+            if not (0 <= field_zone_index <= max_index):
+                print("\nInvalid monster zone.")
+                return False
+            if zones[field_zone_index] is not None:
+                print("\nThat monster zone is already occupied.")
+                return False
+            field_card = self.field_monster_card_properties(hand_card, position)
+            zones[field_zone_index] = field_card
+            # Remove from the correct source
+            if from_location == "gy":
+                self.graveyard.pop(hand_index)
+            elif from_location == "banish":
+                self.banished.pop(hand_index)
+            else:
+                self.hand.pop(hand_index)
+            action_type = "Summoned" if face_up_down == "summon" else "Set"
+            print(f"\n{action_type} {hand_card.get('Name', 'Unknown')} as a {position} monster in zone {field_zone_index + 1}")
+            return True
+        elif card_type in ("spell", "trap"):
+            zones = self.spell_trap_zones
+            max_index = len(zones) - 1
+            if not (0 <= field_zone_index <= max_index):
+                print("\nInvalid backrow zone.")
+                return False
+            if zones[field_zone_index] is not None:
+                print("\nThat backrow zone is already occupied.")
+                return False
+            position = "face-down"
+            field_card = self.field_backrow_card_properties(hand_card, position)
+            zones[field_zone_index] = field_card
+            # Remove from the correct source
+            if from_location == "gy":
+                self.graveyard.pop(hand_index)
+            elif from_location == "banish":
+                self.banished.pop(hand_index)
+            else:
+                self.hand.pop(hand_index)
+            print(f"\nSet the {card_type} card '{hand_card.get('Name', 'Unknown')}' in zone {field_zone_index + 1}")
+            return True
+        elif card_type == "field spell":
+            position = "face-down"
+            field_card = self.field_spell_card_properties(hand_card, position)
+            # If a field spell is already present, send it to graveyard and replace
+            if self.field_spell_zone is not None:
+                print(f"\n{self.field_spell_zone['card'].get('Name', 'Unknown')} was sent to the graveyard and replaced by {hand_card.get('Name', 'Unknown')}.")
+                self.graveyard.append(self.field_spell_zone['card'])
+            self.field_spell_zone = field_card
+            # Remove from the correct source
+            if from_location == "gy":
+                self.graveyard.pop(hand_index)
+            elif from_location == "banish":
+                self.banished.pop(hand_index)
+            else:
+                self.hand.pop(hand_index)
+            print(f"\nSet {hand_card.get('Name', 'Unknown')} as a {position} field spell in the field spell zone.")
+            return True
 
     def place_spell_trap_card(self, name, hand_index, field_zone_index = None):
         card = spell_card_lookup.get(name) or trap_card_lookup.get(name)
@@ -488,6 +552,7 @@ class PlayingField:
             return False
         return True
 
+    # Move cards from field, hand, graveyard, and banishment -> hand, graveyard, and banishment but not field.
     def move_cards_gy_banish(self, name, from_location, index, to_location, card_type = None):
         # Normalize and validate locations
         if not isinstance(from_location, str) or not isinstance(to_location, str):
@@ -526,7 +591,7 @@ class PlayingField:
             # Remove from field (clear zone)
             card_obj = field_card['card']
             self.monster_zones[zi] = None
-            if to_location in ("gy", "banish", "hand"):
+            if to_location in ("hand", "gy", "banish"):
                 moved = self.move_card_obj(card_obj, to_location)
                 if moved:
                     print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field zone {zi+1} to {to_location}.")
@@ -553,7 +618,7 @@ class PlayingField:
             # Remove from field (clear zone)
             card_obj = field_card['card']
             self.spell_trap_zones[zi] = None
-            if to_location in ("gy", "banish", "hand"):
+            if to_location in ("hand", "gy", "banish"):
                 moved = self.move_card_obj(card_obj, to_location)
                 if moved:
                     print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field zone {zi+1} to {to_location}.")
@@ -576,7 +641,7 @@ class PlayingField:
             # Clear the field spell zone
             self.field_spell_zone = None
 
-            if to_location in ("gy", "banish"):
+            if to_location in ("hand","gy", "banish"):
                 moved = self.move_card_obj(card_obj, to_location)
                 if moved:
                     print(f"\n{card_obj.get('Name', 'Unknown')} was moved from field spell zone to {to_location}.")
@@ -670,6 +735,7 @@ class PlayingField:
 
         print("\nUnsupported move or invalid parameters.")
         return False
+    
     def activate_card(self):
         pass
 
