@@ -59,8 +59,8 @@ def duel_actions_menu(field):
         elif choice == "2": # Summon/Set card to Field
             field.show_hand()
             field.show_grave_banish()
-            card_name, from_location, hand_index, face_up_down, field_zone_index = input("\nEnter the monster card name, location: 'hand', 'gy', or 'banish', " \
-            "index of card, either 'summon' or 'set', and field zone for monsters and spells/traps, separated by a comma:\n").split(',')
+            card_name, from_location, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, location: 'hand', 'gy', or 'banish', " \
+            "index of card, either 'summon' or 'set', and field zone, separated by a comma:\n").split(',')
             hand_index = int(hand_index.strip()) - 1
             field_zone_index = int(field_zone_index.strip()) - 1
             field.place_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
@@ -73,9 +73,23 @@ def duel_actions_menu(field):
             field.change_monster_position(card_name.strip(), field_zone_index, card_position.strip())
             field.show_field()
         elif choice == "4": # Activate card effect
-            card_name = input("\nEnter the name of the card to activate its effect:\n")
-            field.activate_card(card_name.strip())
-            print(f"\n{card_name} activated its effect.")
+            field.show_hand()
+            field.show_field()
+            field.show_grave_banish()
+            card_name, from_location, index = input("\nEnter the card name, the location: 'field', 'hand', 'gy', or 'banish' and " \
+            "index of card, separated by a comma:\n").split(',')
+            card_type = field.determine_card_type(card_name)
+            if from_location.strip() == "hand" and card_type != "field spell":
+                field_zone_index = int(input("\nEnter the field zone for cards only from the hand:\n").strip()) - 1
+            else:
+                field_zone_index = 0
+            index = int(index.strip()) - 1
+            #field_zone_index = int(field_zone_index.strip()) - 1
+            field.activate_card(card_name.strip(), from_location.strip(), index, field_zone_index)
+            # print(f"\n{card_name} activated its effect.")
+            if from_location.strip() == "hand":
+                field.show_hand()
+                field.show_field()
         elif choice == "5": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
             field.show_field()
             card_name, from_location, index, to_location = input("\nEnter the name of the card, from location: 'field', 'hand', 'gy', or 'banish', " \

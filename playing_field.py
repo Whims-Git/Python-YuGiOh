@@ -111,7 +111,7 @@ class PlayingField:
         if card_name in main_deck_monster_card_lookup or card_name in extra_deck_monster_card_lookup:
             return "monster"
         elif card_name in spell_card_lookup:
-            if spell_card_lookup[card_name]["Typing"] == "Field":
+            if spell_card_lookup[card_name]["Type"] == "Field":
                 return "field spell"
             return "spell"
         elif card_name in trap_card_lookup:
@@ -221,24 +221,27 @@ class PlayingField:
         main_name_counts = Counter(card["Name"] for card in current_main_deck)
         i = 0
         for name, count in main_name_counts.items():
-            if name["Category"] == "Monster":
-                print(f"  {i+1}: {name} x{count} (Monster)")
-            else:
-                print(f"  {i+1}: {name} x{count} ({name["Type"]})")
+            print(f"  {i+1}: {name} x{count}")
             i += 1
 
         print(f"\nExtra Deck: {len(self.extra_deck)} cards, {extra_mon_count} Monsters")
         for i, card in enumerate(self.extra_deck):
-            print(f"  {i+1}: {card.get('Name')} ({card.get('Extra Deck Type')})")
+            print(f"  {i+1}: {card.get('Name') if card else 'Empty'}")
 
     # Place cards from hand, graveyard, and banishment to field
-    def place_card(self, name, from_location, index, face_up_down, field_zone_index = None):
+    def place_card(self, name, from_location, index, face_up_down, field_zone_index = None, card_type = None):
         card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)
-        card_type = self.determine_card_type(name)
 
         if not card:
             print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
             return False
+
+        # Determine card type if not provided
+        if card_type is None:
+            card_type = self.determine_card_type(name)
+            if card_type is None:
+                print(f"\nCard '{name}' not found in any card pool.")
+                return False
 
         try:
             index = int(index)
@@ -269,7 +272,7 @@ class PlayingField:
 
         if face_up_down == "summon":
             if card_type in ("spell", "trap"):
-                print("Cannot summon a spell/trap card.")
+                print("\nCannot summon a spell/trap card.")
                 return False
             position = "face-up attack"
         elif face_up_down == "set":
@@ -666,8 +669,82 @@ class PlayingField:
         print("\nUnsupported move or invalid parameters.")
         return False
     
-    def activate_card(self):
-        pass
+    def activate_card(self, name, location, index, field_zone_index, card_type = None):
+        card = main_deck_monster_card_lookup.get(name) or extra_deck_monster_card_lookup.get(name) or spell_card_lookup.get(name) or trap_card_lookup.get(name)
+
+        if not card:
+            print(f"\nCard '{name}' not found. Please input the correct card or check spelling.")
+            return False
+
+        if not isinstance(location, str):
+            print("\nLocation must be strings: 'field', 'hand', 'gy', or 'banish'.")
+            return False
+        location = location.lower()
+        if location not in ("hand", "field", "gy", "banish"):
+            print("\nInvalid option. Please input either field, hand, gy, or banish.")
+            return False
+        
+        if index is None:
+                print("\nPlease provide the index for the card or field zone.")
+                return False
+        try:
+            index = int(index)
+            field_zone_index = int(field_zone_index)
+        except (ValueError, TypeError):
+            print("\nIndex must be an integer.")
+            return False
+
+        # Determine card type if not provided
+        if card_type is None:
+            card_type = self.determine_card_type(name)
+            if card_type is None:
+                print(f"\nCard '{name}' not found in any card pool.")
+                return False
+        
+        # If spell/trap, especially field spells, is activated from the hand, place it on field in face-up position first
+        if location == "hand" and card_type in ("spell", "trap"):
+            if field_zone_index is None:
+                print("\nPlease provide the field index for the field zone.")
+                return False
+            
+            # Place card from hand to field in face-up position
+            if not (0 <= index < len(self.hand)):
+                print("\nInvalid hand index.")
+                return False
+            hand_card = self.hand[index].copy() if isinstance(self.hand[index], dict) else self.hand[index]
+            zones = self.spell_trap_zones
+            max_index = len(zones) - 1
+            if not (0 <= field_zone_index <= max_index):
+                print("\nInvalid backrow zone.")
+                return False
+            if zones[field_zone_index] is not None:
+                print("\nThat backrow zone is already occupied.")
+                return False
+            position = "face-up"
+            field_card = self.field_backrow_card_properties(hand_card, position)
+            zones[field_zone_index] = field_card
+            # Remove from the correct source
+            self.hand.pop(index)
+            print(f"\nThe {card_type} card '{hand_card.get('Name', 'Unknown')}' was activated in zone {field_zone_index + 1}")
+            return True
+        elif location == "hand" and card_type == "field spell":
+            if not (0 <= index < len(self.hand)):
+                print("\nInvalid hand index.")
+                return False
+            hand_card = self.hand[index].copy() if isinstance(self.hand[index], dict) else self.hand[index]
+            position = "face-up"
+            field_card = self.field_spell_card_properties(hand_card, position)
+            # If a field spell is already present, send it to graveyard and replace
+            if self.field_spell_zone is not None:
+                print(f"\n{self.field_spell_zone['card'].get('Name', 'Unknown')} was sent to the graveyard and replaced by {hand_card.get('Name', 'Unknown')}.")
+                self.graveyard.append(self.field_spell_zone['card'])
+            self.field_spell_zone = field_card
+            # Remove from the correct source
+            self.hand.pop(index)
+            print(f"\nThe {card_type} card '{hand_card.get('Name', 'Unknown')}' was activated as a {position} field spell in the field spell zone.")
+            return True
+        else: # Cards activated from the field, gy, and banishment need no extra action
+            print(f"\nThe {card_type} card '{card.get('Name', 'Unknown')}' was activated from the {location}")
 
 def start_duel():
     field = PlayingField()
