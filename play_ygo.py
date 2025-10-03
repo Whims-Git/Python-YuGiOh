@@ -16,7 +16,6 @@ def deck_building_menu():
             deck_building.show_deck()
         elif choice == "2": # View Card Pool
             search_card_pool()
-            # deck_building.list_all_cards()
         elif choice == "3": # Search and View Card Details
             card_name = input("\nEnter the name of the card to search: ")
             deck_building.search_card(card_name)
@@ -52,19 +51,32 @@ def duel_actions_menu(field):
 
         if choice == "1": # Examine card - field/hand/graveyard/banishment
             field.show_hand()
-            card_name, location, location_index = input("\nEnter the card name, location: 'field', 'hand', 'gy', or 'banish', " \
-            "and the index of the card, separated by a comma:\n").split(',')
-            location_index = int(location_index.strip()) - 1
+            card_name, location = input("\nEnter the card name and the location: 'field', 'hand', 'gy', or 'banish', separated by a comma:\n").split(',')
+            card_type = field.determine_card_type(card_name)
+            if card_type != "field spell":
+                location_index = int(input("\nEnter the index of the card:\n").strip()) - 1
+            else:
+                location_index = 0
             field.examine_card(card_name, location.strip(), location_index)
         elif choice == "2": # Summon/Set card to Field
             field.show_hand()
             field.show_grave_banish()
-            card_name, from_location, hand_index, face_up_down, field_zone_index = input("\nEnter the card name, location: 'hand', 'gy', or 'banish', " \
-            "index of card, either 'summon' or 'set', and field zone, separated by a comma:\n").split(',')
-            hand_index = int(hand_index.strip()) - 1
-            field_zone_index = int(field_zone_index.strip()) - 1
-            field.place_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
             field.show_field()
+            card_name, from_location, hand_index, face_up_down = input("\nEnter the card name, location: 'hand', 'gy', or 'banish', " \
+            "index of card, and either 'summon' or 'set', separated by a comma:\n").split(',')
+            card_type = field.determine_card_type(card_name)
+            if card_type != "field spell":
+                field_zone_index = int(input("\nEnter the field zone:\n").strip()) - 1
+            else:
+                field_zone_index = 0
+            hand_index = int(hand_index.strip()) - 1
+            field.place_card(card_name.strip(), from_location.strip(), hand_index, face_up_down.strip(), field_zone_index)
+            if from_location == "hand":
+                field.show_hand()
+                field.show_field()
+            else:
+                field.show_grave_banish()
+                field.show_field()
         elif choice == "3": # Change monster card position on field
             field.show_field()
             card_name, field_zone_index, card_position = input("\nEnter the monster card name, the zone number, "
@@ -84,20 +96,33 @@ def duel_actions_menu(field):
             else:
                 field_zone_index = 0
             index = int(index.strip()) - 1
-            #field_zone_index = int(field_zone_index.strip()) - 1
             field.activate_card(card_name.strip(), from_location.strip(), index, field_zone_index)
-            # print(f"\n{card_name} activated its effect.")
             if from_location.strip() == "hand":
                 field.show_hand()
                 field.show_field()
         elif choice == "5": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
+            field.show_hand()
             field.show_field()
-            card_name, from_location, index, to_location = input("\nEnter the name of the card, from location: 'field', 'hand', 'gy', or 'banish', " \
-            "the index, and to location: 'hand', 'gy', or 'banish', separated by a comma:\n").split(',')
+            field.show_grave_banish()
+            card_name, from_location, index = input("\nEnter the name of the card, the from location: 'field', 'hand', 'gy', or 'banish', " \
+            "and the index, separated by a comma:\n").split(',')
+            to_location = input("\nEnter the to location: 'hand', 'gy', or 'banish' (From location and to location cannot be the same):\n")
             index = int(index.strip()) - 1
             field.move_cards(card_name.strip(), from_location.strip(), index, to_location.strip())
-            field.show_grave_banish()
-            field.show_field()
+            if from_location == "field" and to_location == "hand":
+                field.show_field()
+                field.show_hand()
+            elif from_location == "field" and to_location in ["gy", "banish"]:
+                field.show_field()
+                field.show_grave_banish()
+            elif from_location == "hand" and to_location in ["gy", "banish"]:
+                field.show_hand()
+                field.show_grave_banish()
+            elif from_location in ["gy", "banish"] and to_location == "hand":
+                field.show_grave_banish()
+                field.show_hand()
+            else:
+                field.show_grave_banish()
         elif choice == "6": # Show main/extra deck
             field.show_main_extra()
         elif choice == "7": # Quit
