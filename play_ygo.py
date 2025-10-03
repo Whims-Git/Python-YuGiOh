@@ -144,29 +144,34 @@ def search_card_pool():
 
         if choice == "1": # Vanilla Monsters
             deck_building.list_all_vanillas()
-            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
-            "Enter the card name and the amount to add, separated by a comma: ").split(',')
-            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
+            add_card = input("\nWould you like to add a card to your deck? (y/n)\n")
+            if add_card == "y":
+                card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
+                deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "2": # Main Deck Effect Monsters
             deck_building.list_all_main_effects()
-            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
-            "Enter the card name and the amount to add, separated by a comma: ").split(',')
-            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
+            add_card = input("\nWould you like to add a card to your deck? (y/n)\n")
+            if add_card == "y":
+                card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
+                deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "3": # Fusion Monsters
             deck_building.list_all_fusions()
-            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
-            "Enter the card name and the amount to add, separated by a comma: ").split(',')
-            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
+            add_card = input("\nWould you like to add a card to your deck? (y/n)\n")
+            if add_card == "y":
+                card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
+                deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "4": # Spell Cards
             deck_building.list_all_spells()
-            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
-            "Enter the card name and the amount to add, separated by a comma: ").split(',')
-            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
+            add_card = input("\nWould you like to add a card to your deck? (y/n)\n")
+            if add_card == "y":
+                card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
+                deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "5": #Trap Cards
             deck_building.list_all_traps()
-            card_name, card_qty = input("\n Would you like to add a card to your deck? " \
-            "Enter the card name and the amount to add, separated by a comma: ").split(',')
-            deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
+            add_card = input("\nWould you like to add a card to your deck? (y/n)\n")
+            if add_card == "y":
+                card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma:\n").split(',')
+                deck_building.add_card_to_deck(card_name.strip(), card_qty.strip())
         elif choice == "6":
             print("\nReturning to deck building menu.")
             break
