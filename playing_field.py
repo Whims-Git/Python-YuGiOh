@@ -47,29 +47,73 @@ class PlayingField:
         self.extra_deck = current_extra_deck.copy()
         self.banished = []
         self.hand = []
+        # Turn and phase tracking (no actual logic)
+        self.turn_count = 1
+        self.current_player = 1  # 1 or 2
+        self.phases = [
+            "Draw Phase",
+            "Standby Phase",
+            "Main Phase 1",
+            "Battle Phase",
+            "Main Phase 2",
+            "End Phase"
+        ]
+        self.phase_index = 0
+
+    def print_turn_phase(self):
+        print(f"\nTurn: {self.turn_count} | Player: {self.current_player} | Phase: {self.phases[self.phase_index]}")
+
+    def next_phase(self):
+        self.phase_index += 1
+        if self.phase_index >= len(self.phases):
+            self.phase_index = 0
+            self.next_turn()
+        self.print_turn_phase()
+
+    def next_turn(self):
+        self.turn_count += 1
+        self.current_player = 2 if self.current_player == 1 else 1
+        self.phase_index = 0
+        print(f"\n--- New Turn ---")
+        self.print_turn_phase()
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
         print("\nThe deck has been shuffled.")
 
     def draw_card(self, n = 1):
-        for _ in range(n):
+        # On the very first turn, always draw 5 cards (ignoring n)
+        if self.turn_count == 1 and len(self.hand) == 0:
+            draw_amount = 5
+        else:
+            draw_amount = n
+        for _ in range(draw_amount):
             if self.deck:
                 card = self.deck.pop(0)
                 self.hand.append(card)
                 print(f"\nDrew card: {card.get('Name', 'Unknown')}, Remaining cards in deck: {len(self.deck)} cards")
             else:
-                print("\nDeck is empty! Cannot draw. You lose!")
-                # Reset the entire duel so that players won't have to rebuild their decks to replay.
-                self.monster_zones = [None] * 5
-                self.spell_trap_zones = [None] * 5
-                self.field_zone = None
-                self.graveyard = []
-                self.deck = current_main_deck.copy()
-                self.extra_deck = current_extra_deck.copy()
-                self.banished = []
-                self.hand = []
-                main_menu()
+                self.lost_condition("empty deck")
+
+    def lost_condition(self, lost_reason):
+        if lost_reason == "empty deck":
+            print("\nDeck is empty! Cannot draw. You lose!")
+        elif lost_reason == "0 Life Points":
+            print("\nYour life points have reached 0! You lose!")
+        elif lost_reason == "surrender":
+            print("\nYou have surrendered the duel! You lose!")
+        elif lost_reason == "alt win con":
+            print("\nYou lost the duel via alternate win condition! You lose!")
+        # Reset the entire duel so that players won't have to rebuild their decks to replay.
+        self.monster_zones = [None] * 5
+        self.spell_trap_zones = [None] * 5
+        self.field_zone = None
+        self.graveyard = []
+        self.deck = current_main_deck.copy()
+        self.extra_deck = current_extra_deck.copy()
+        self.banished = []
+        self.hand = []
+        main_menu()
 
     # Create a field card dictionary for dynamic properties
     def field_monster_card_properties(self, card, position = "face-up attack", equipped_monster = None):
@@ -749,7 +793,8 @@ class PlayingField:
 def start_duel():
     field = PlayingField()
     field.shuffle_deck()
-    field.draw_card(5)
+    field.print_turn_phase()
+    field.draw_card()
     field.show_field()
     field.show_hand()
     return field

@@ -46,8 +46,9 @@ def duel_actions_menu(field):
         print("4. Activate card effect")
         print("5. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
         print("6. Show main/extra deck")
-        print("7. Quit")
-        choice = input("\nEnter your choice (1-7): ")
+        print("7. Continue to next phase")
+        print("8. Quit")
+        choice = input("\nEnter your choice (1-8): ")
 
         if choice == "1": # Examine card - field/hand/graveyard/banishment
             field.show_hand()
@@ -125,7 +126,9 @@ def duel_actions_menu(field):
                 field.show_grave_banish()
         elif choice == "6": # Show main/extra deck
             field.show_main_extra()
-        elif choice == "7": # Quit
+        elif choice == "7": # Continue to next phase
+            field.next_phase()
+        elif choice == "8": # Quit
             print("Returning to Main Menu...")
             break
         else:
