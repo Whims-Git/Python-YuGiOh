@@ -42,13 +42,14 @@ def duel_actions_menu(field):
         print("\nActions Menu")
         print("1. Examine card - field/hand/graveyard/banishment")
         print("2. Summon/Set card to Field")
-        print("3. Change monster card position on field")
-        print("4. Activate card effect")
-        print("5. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
-        print("6. Show main/extra deck")
-        print("7. Continue to next phase")
-        print("8. Quit")
-        choice = input("\nEnter your choice (1-8): ")
+        print("3. Declare Attack")
+        print("4. Change monster card position on field")
+        print("5. Activate card effect")
+        print("6. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
+        print("7. Show main/extra deck")
+        print("8. Continue to next phase")
+        print("9. Quit")
+        choice = input("\nEnter your choice (1-9): ")
 
         if choice == "1": # Examine card - field/hand/graveyard/banishment
             field.show_hand()
@@ -78,14 +79,28 @@ def duel_actions_menu(field):
             else:
                 field.show_grave_banish()
                 field.show_field()
-        elif choice == "3": # Change monster card position on field
+        elif choice == "3": # Declare Attack
+            field.show_field()
+            # Opponent's field not implamented
+            attacker_name, attacker_zone_index, target = input("\nEnter the attacking monster name, its zone number, and " \
+            "the attack target: 'monster' or 'player'\n").split(',')
+            attacker_zone_index = int(attacker_zone_index.strip()) - 1
+            if target == "monster":
+                pass
+                # defender_name, defender_zone_index = input("\nthe attack target's name, and its zone number, separated by a comma:\n").split(',')
+                field.declare_attack(attacker_name.strip(), attacker_zone_index) # defender_name.strip(), defender_zone_index
+            else:
+                print(f"{attacker_name} attacked the opponenet directly.")
+            # defender_zone_index = int(defender_zone_index.strip()) - 1
+            field.show_field()
+        elif choice == "4": # Change monster card position on field
             field.show_field()
             card_name, field_zone_index, card_position = input("\nEnter the monster card name, the zone number, "
             "and either 'atk' or 'def', separated by a comma:\n").split(',')
             field_zone_index = int(field_zone_index.strip()) - 1
             field.change_monster_position(card_name.strip(), field_zone_index, card_position.strip())
             field.show_field()
-        elif choice == "4": # Activate card effect
+        elif choice == "5": # Activate card effect
             field.show_hand()
             field.show_field()
             field.show_grave_banish()
@@ -101,7 +116,7 @@ def duel_actions_menu(field):
             if from_location.strip() == "hand":
                 field.show_hand()
                 field.show_field()
-        elif choice == "5": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
+        elif choice == "6": # Move a card field/hand/gy/banishment <-> hand/gy/banishment
             field.show_hand()
             field.show_field()
             field.show_grave_banish()
@@ -124,11 +139,11 @@ def duel_actions_menu(field):
                 field.show_hand()
             else:
                 field.show_grave_banish()
-        elif choice == "6": # Show main/extra deck
+        elif choice == "7": # Show main/extra deck
             field.show_main_extra()
-        elif choice == "7": # Continue to next phase
+        elif choice == "8": # Continue to next phase
             field.next_phase()
-        elif choice == "8": # Quit
+        elif choice == "9": # Quit
             print("Returning to Main Menu...")
             break
         else:

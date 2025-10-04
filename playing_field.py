@@ -113,6 +113,8 @@ class PlayingField:
         self.extra_deck = current_extra_deck.copy()
         self.banished = []
         self.hand = []
+        self.turn_count = 1
+        self.current_player = 1
         main_menu()
 
     # Create a field card dictionary for dynamic properties
@@ -789,6 +791,51 @@ class PlayingField:
             return True
         else: # Cards activated from the field, gy, and banishment need no extra action
             print(f"\nThe {card_type} card '{card.get('Name', 'Unknown')}' was activated from the {location}")
+    
+    def declare_attack(self, attacking, attacking_index): # defending, defending_index
+        if attacking_index is None:
+            print("\nPlease provide the zone index for the attacking monster on the field.")
+            return False
+        try:
+            ai = int(attacking_index)
+        except (ValueError, TypeError):
+            print("\nZone index must be an integer.")
+            return False
+        if not (0 <= ai < len(self.monster_zones)):
+            print("\nInvalid monster zone index.")
+            return False
+        attacker_card = self.monster_zones[ai]
+        if not attacker_card or not isinstance(attacker_card, dict) or attacker_card.get('card', {}).get('Name') != attacking:
+            print("\nAttacking card not found in the specified field zone.")
+            return False
+        if attacker_card.get("position") != "face-up attack":
+            print(f"\n{attacking} is not in face-up attack position and cannot declare an attack.")
+            return False
+        
+        attacker_atk = attacker_card['card'].get('ATK', 0)
+        print(f"\n{attacking} (ATK: {attacker_atk}) attacks a card.")
+        # Opponent and Opponent's field not implamented yet
+
+        # Find a valid defending monster in face-up attack or defense position
+        # defender_index = None
+        # for i, card in enumerate(self.monster_zones): # Opponent's field
+        #     if card and isinstance(card, dict) and card.get('card', {}).get('Name') != attacking and card.get("position") in ("face-up attack", "face-up defense"):
+        #         defender_index = i
+        #         break
+
+        # if defender_index is None:
+        #     print(f"\nNo valid defending monster found to attack. {attacking} cannot attack directly in this simulation.")
+        #     return False
+
+        # defender_card = self.monster_zones[defender_index]
+        # defender_name = defender_card['card'].get('Name', 'Unknown')
+        # defender_position = defender_card.get("position")
+
+        # defender_atk = defender_card['card'].get('ATK', 0)
+        # defender_def = defender_card['card'].get('DEF', 0)
+
+        # print(f"\n{attacking} (ATK: {attacker_atk}) attacks {defender_name} ({'ATK: ' + str(defender_atk) if defender_position == 'face-up attack' else 'DEF: ' + str(defender_def)}) in {defender_position} position.")
+
 
 def start_duel():
     field = PlayingField()
