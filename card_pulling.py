@@ -108,7 +108,7 @@ def list_cards_in_pack(pack_name):
     cards = card_pack_lookup[pack_name]
     print("\nHere are all the available cards in the selected pack")
     if pack:
-        print(f"{pack_name}: {pack['Amount']} cards available")
+        print(f"\n{pack_name}: {pack['Amount']} cards available")
         # Show rarity counts
         rarity_counts = rarity_counter(cards)
         for rarity, count in rarity_counts.items():
@@ -117,11 +117,11 @@ def list_cards_in_pack(pack_name):
         pack_card_names = {card['Name'] for card in cards}
         pulled_dict = dict(player_pulled_cards)
         if not player_pulled_cards:
-            print(f"You own 0/{len(pack_card_names)} cards from this pack (0.0%)")
+            print(f"\nYou own 0/{len(pack_card_names)} cards from this pack (0.0%)")
         else:
             owned = {name for name in pack_card_names if name in pulled_dict}
             percent_owned = (len(owned) / len(pack_card_names)) * 100 if pack_card_names else 0
-            print(f"You own {len(owned)}/{len(pack_card_names)} cards from this pack ({percent_owned:.1f}%)")
+            print(f"\nYou own {len(owned)}/{len(pack_card_names)} cards from this pack ({percent_owned:.1f}%)")
     for card in cards:
         owned_qty = 0
         for n, q in player_pulled_cards:
