@@ -1,5 +1,6 @@
 import deck_building
 import playing_field
+import card_pulling
 
 def deck_building_menu():
     while True:
@@ -152,10 +153,42 @@ def duel_actions_menu(field):
 def pull_cards_menu():
     while True:
         print("\nPull Packs!")
-        print("1. Select a card pack!")
-        print("2. View pulled cards")
-        print("3. Quit")
-        choice = input("\nEnter your choice (1-3): ")
+        print("1. View all the cards in a pack")
+        print("2. Pull from a pack")
+        print("3. View your card collection")
+        print("4. Quit")
+        choice = input("\nEnter your choice (1-4): ")
+
+        if choice == "1": # View all the cards in a pack
+            print("\nAvaliable Card Packs!\n" \
+            "1. Legend of Blue Eyes White Dragon ('Blue-Eyes' for input)\n" \
+            "2. Metal Raiders\n" \
+            "3. Magic Ruler")
+            pack_name = input("\nPlease input which pack you wish to view:\n")
+            if pack_name.strip() == "Blue-Eyes":
+                pack_name = "Legend of Blue Eyes White Dragon"
+            card_pulling.list_cards_in_pack(pack_name.strip())
+        elif choice == "2": # Pull from a pack
+            print("\nChoose an avaliable card pack to pull from\n" \
+            "1. Legend of Blue Eyes White Dragon ('Blue-Eyes' for input)\n" \
+            "2. Metal Raiders\n" \
+            "3. Magic Ruler")
+            pack_name, pack_qty = input("\nPlease input which pack you wish to pull from and the number of packs (max 10), separated by a comma:\n").split(',')
+            if pack_name.strip() == "Blue-Eyes":
+                pack_name = "Legend of Blue Eyes White Dragon"
+            try:
+                pack_qty = int(pack_qty.strip())
+            except ValueError:
+                print("\nInvalid number of packs. Please enter a valid integer.")
+                continue
+            card_pulling.pull_card_from_pack(pack_name.strip(), pack_qty)
+        elif choice == "3": # View your card collection
+            card_pulling.list_player_pulled_cards()
+        elif choice == "4": # Quit
+            print("\nReturning to main menu.")
+            break
+        else:
+            print("\nInvalid choice. Please enter a number from 1 to 4.")
 
 def search_card_pool():
     while True:
@@ -209,7 +242,7 @@ def main_menu():
         print("\nYu-Gi-Oh! Main Menu")
         print("1. Duel")
         print("2. Deck Build")
-        print("3. Pull Cards (Not implemented)")
+        print("3. Pull Cards")
         print("4. Quit")
         choice = input("\nEnter your choice (1-4): ")
 
