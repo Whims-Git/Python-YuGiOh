@@ -61,9 +61,9 @@ def duel_actions_menu(field):
                 location_index = 0
             field.examine_card(card_name, location.strip(), location_index)
         elif choice == "2": # Summon/Set card to Field
+            field.show_field()
             field.show_hand()
             field.show_grave_banish()
-            field.show_field()
             card_name, from_location, hand_index, face_up_down = input("\nEnter the card name, location: 'hand', 'gy', or 'banish', " \
             "index of card, and either 'summon' or 'set', separated by a comma:\n").split(',')
             card_type = field.determine_card_type(card_name)
@@ -88,9 +88,9 @@ def duel_actions_menu(field):
             if target == "monster":
                 pass
                 # defender_name, defender_zone_index = input("\nthe attack target's name, and its zone number, separated by a comma:\n").split(',')
-                field.declare_attack(attacker_name.strip(), attacker_zone_index) # defender_name.strip(), defender_zone_index
+                # field.declare_attack(attacker_name.strip(), attacker_zone_index) # defender_name.strip(), defender_zone_index
             else:
-                print(f"{attacker_name} attacked the opponenet directly.")
+                print(f"\n{attacker_name} attacked the opponenet directly.")
             # defender_zone_index = int(defender_zone_index.strip()) - 1
             field.show_field()
         elif choice == "4": # Change monster card position on field
@@ -148,6 +148,14 @@ def duel_actions_menu(field):
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 7.")
+
+def pull_cards_menu():
+    while True:
+        print("\nPull Packs!")
+        print("1. Select a card pack!")
+        print("2. View pulled cards")
+        print("3. Quit")
+        choice = input("\nEnter your choice (1-3): ")
 
 def search_card_pool():
     while True:
@@ -212,8 +220,7 @@ def main_menu():
         elif choice == "2": # Deck Build
             deck_building_menu()
         elif choice == "3": # Pull Cards
-            #pull_cards_menu()
-            print("Pull Cards is not implemented yet.")
+            pull_cards_menu()
         elif choice == "4":
             print("Goodbye!")
             break
