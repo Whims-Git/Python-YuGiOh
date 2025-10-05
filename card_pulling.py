@@ -1,14 +1,14 @@
 from card_packs import (
-    card_pack_1, # Legend of Blue Eyes White Dragon
-    card_pack_2, # Metal Raiders
-    card_pack_3 # Magic Ruler
+    LOB, # Legend of Blue Eyes White Dragon
+    MRD, # Metal Raiders
+    MRL # Magic Ruler
 )
 
 from collections import Counter
 import random
 
 # List of all packs
-all_packs = [card_pack_1, card_pack_2, card_pack_3]
+all_packs = [LOB, MRD, MRL]
 
 # Build lookup: {pack_name: cards_list}
 card_pack_lookup = {pack["Pack Name"]: pack["cards"] for pack in all_packs}

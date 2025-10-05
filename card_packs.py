@@ -2,7 +2,7 @@
 # Each card pack is represented as a dictionary with the name of the pack, the amount of cards in the pack
 # and a dictionary of cards avaliable. Each card has 4 characteristics being name, card category, type of card, and rarity.
 
-card_pack_1 = { # Legend of Blue Eyes White Dragon
+LOB = { # Legend of Blue Eyes White Dragon
     "Pack Name": "Legend of Blue Eyes White Dragon",
     "Amount": 4, # 129
     "cards": [
@@ -33,7 +33,7 @@ card_pack_1 = { # Legend of Blue Eyes White Dragon
     ]
 }
 
-card_pack_2 = {
+MRD = {
     "Pack Name": "Metal Raiders",
     "Amount": 4, # 146
     "cards": [
@@ -64,7 +64,7 @@ card_pack_2 = {
     ]
 }
 
-card_pack_3 = {
+MRL = {
     "Pack Name": "Magic Ruler",
     "Amount": 4, # 131
     "cards": [
