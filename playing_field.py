@@ -814,6 +814,7 @@ class PlayingField:
         
         attacker_atk = attacker_card['card'].get('ATK', 0)
         print(f"\n{attacking} (ATK: {attacker_atk}) attacks a card.")
+        
         # Opponent and Opponent's field not implamented yet
 
         # Find a valid defending monster in face-up attack or defense position
