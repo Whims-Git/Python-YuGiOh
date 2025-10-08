@@ -26,10 +26,11 @@ def rarity_counter(cards):
 def pull_chance():
     # Example: Ultra Rare 5%, Rare 20%, Common 75%
     return {
+        'Secret Rare': 0.01,
         'Ultra Rare': 0.05,
         'Super Rare': 0.10,
         'Rare': 0.20,
-        'Common': 0.65
+        'Common': 0.64
     }
 
 def pull_card_from_pack(pack_name, num_packs):
@@ -75,7 +76,7 @@ def pull_card_from_pack(pack_name, num_packs):
                 card = random.choice(cards)
             pack_pulled.append(card)
         # 1 card of any rarity (weighted)
-        rarity = random.choices(available_rarities, weights=norm_probs, k=1)[0]
+        rarity = random.choices(available_rarities, weights = norm_probs, k = 1)[0]
         rarity_cards = [card for card in cards if card['Rarity'] == rarity]
         if rarity_cards:
             card = random.choice(rarity_cards)

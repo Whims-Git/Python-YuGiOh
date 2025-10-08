@@ -1,30 +1,7 @@
 # Import card database
-from monster_cards import (
-    vanilla_monster_cards,
-    effect_monster_cards
-)
-
-from extra_deck_monster_cards import (
-    extra_deck_fusions_cards
-)
-
-from spell_cards import (
-    normal_spell_cards,
-    field_spell_cards,
-    equip_spell_cards,
-    quick_spell_cards
-)
-
-from trap_cards import (
-    normal_trap_cards,
-    continuous_trap_cards,
-    counter_trap_cards
-)
-
 from deck_building import (
     current_main_deck,
     current_extra_deck,
-    search_card,
     card_type_counts,
     main_deck_monster_card_lookup,
     extra_deck_monster_card_lookup,
@@ -47,6 +24,7 @@ class PlayingField:
         self.extra_deck = current_extra_deck.copy()
         self.banished = []
         self.hand = []
+        
         # Turn and phase tracking (no actual logic)
         self.turn_count = 1
         self.current_player = 1  # 1 or 2

@@ -8,6 +8,12 @@ normal_trap_cards = [
         "Type": "Normal",
         "Effect": "Select and destroy 2 of your monsters and 1 of your opponent's monsters."
     },
+    { # Trap Hole
+        "Name": "Trap Hole",
+        "Category": "Trap",
+        "Type": "Normal",
+        "Effect": "When your opponent Normal or Flip Summons 1 monster with 1000 or more ATK: Target that monster; destroy that target."
+    },
     # Add more cards below using the same format
 ]
 

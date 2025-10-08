@@ -2,7 +2,7 @@
 # Each card is represented as a dictionary with 8 characteristics.
 
 vanilla_monster_cards = [
-    { #Blue-Eyes White Dragon
+    { # Blue-Eyes White Dragon
         "Name": "Blue-Eyes White Dragon",
         "Category": "Monster",
         "Attribute": "LIGHT",
@@ -12,7 +12,7 @@ vanilla_monster_cards = [
         "ATK": 3000,
         "DEF": 2500,
     },
-    { #Dark Magician
+    { # Dark Magician
         "Name": "Dark Magician",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -22,7 +22,7 @@ vanilla_monster_cards = [
         "ATK": 2500,
         "DEF": 2100,
     },
-    { #Summoned Skull
+    { # Summoned Skull
         "Name": "Summoned Skull",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -32,7 +32,7 @@ vanilla_monster_cards = [
         "ATK": 2500,
         "DEF": 1200,
     },
-    { #Aqua Madoor
+    { # Aqua Madoor
         "Name": "Aqua Madoor",
         "Category": "Monster",
         "Attribute": "WATER",
@@ -42,7 +42,7 @@ vanilla_monster_cards = [
         "ATK": 1200,
         "DEF": 2000,
     },
-    { #Giant Soldier of Stone
+    { # Giant Soldier of Stone
         "Name": "Giant Soldier of Stone",
         "Category": "Monster",
         "Attribute": "EARTH",
@@ -52,7 +52,7 @@ vanilla_monster_cards = [
         "ATK": 1300,
         "DEF": 2000,
     },
-    { #Spirit of the Harp
+    { # Spirit of the Harp
         "Name": "Spirit of the Harp",
         "Category": "Monster",
         "Attribute": "WIND",
@@ -62,7 +62,7 @@ vanilla_monster_cards = [
         "ATK": 800,
         "DEF": 2000,
     },
-    { #Gaia The Fierce Knight
+    { # Gaia The Fierce Knight
         "Name": "Gaia The Fierce Knight",
         "Category": "Monster",
         "Attribute": "EARTH",
@@ -72,7 +72,7 @@ vanilla_monster_cards = [
         "ATK": 2300,
         "DEF": 2100,
     },
-    { #Left Arm of the Forbidden One
+    { # Left Arm of the Forbidden One
         "Name": "Left Arm of the Forbidden One",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -82,7 +82,7 @@ vanilla_monster_cards = [
         "ATK": 200,
         "DEF": 300,
     },
-    { #Left Leg of the Forbidden One
+    { # Left Leg of the Forbidden One
         "Name": "Left Leg of the Forbidden One",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -92,7 +92,7 @@ vanilla_monster_cards = [
         "ATK": 200,
         "DEF": 300,
     },
-    { #Right Arm of the Forbidden One
+    { # Right Arm of the Forbidden One
         "Name": "Right Arm of the Forbidden One",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -102,7 +102,7 @@ vanilla_monster_cards = [
         "ATK": 200,
         "DEF": 300,
     },
-    { #Right Leg of the Forbidden One
+    { # Right Leg of the Forbidden One
         "Name": "Right Leg of the Forbidden One",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -112,7 +112,7 @@ vanilla_monster_cards = [
         "ATK": 200,
         "DEF": 300,
     },
-    { #Red-Eyes Black Dragon
+    { # Red-Eyes Black Dragon
         "Name": "Red-Eyes Black Dragon",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -122,7 +122,7 @@ vanilla_monster_cards = [
         "ATK": 2400,
         "DEF": 2000,
     },
-    { #Celtic Guardian
+    { # Celtic Guardian
         "Name": "Celtic Guardian",
         "Category": "Monster",
         "Attribute": "EARTH",
@@ -132,7 +132,7 @@ vanilla_monster_cards = [
         "ATK": 1400,
         "DEF": 1200,
     },
-    { #Curse of Dragon
+    { # Curse of Dragon
         "Name": "Curse of Dragon",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -142,7 +142,7 @@ vanilla_monster_cards = [
         "ATK": 2000,
         "DEF": 1500,
     },
-    { #Mystical Elf
+    { # Mystical Elf
         "Name": "Mystical Elf",
         "Category": "Monster",
         "Attribute": "LIGHT",
@@ -152,7 +152,7 @@ vanilla_monster_cards = [
         "ATK": 800,
         "DEF": 2000,
     },
-    { #Tri-Horned Dragon
+    { # Tri-Horned Dragon
         "Name": "Tri-Horned Dragon",
         "Category": "Monster",
         "Attribute": "DARK",
@@ -162,7 +162,7 @@ vanilla_monster_cards = [
         "ATK": 2850,
         "DEF": 2350,
     },
-    { #Hinotama Soul
+    { # Hinotama Soul
         "Name": "Hinotama Soul",
         "Category": "Monster",
         "Attribute": "FIRE",
@@ -189,7 +189,7 @@ vanilla_monster_cards = [
 # Each card is represented as a dictionary with 8 characteristics.
 
 effect_monster_cards = [
-    {
+    { # Man-Eater Bug
         "Name": "Man-Eater Bug",
         "Category": "Monster",
         "Attribute": "EARTH",
@@ -198,6 +198,49 @@ effect_monster_cards = [
         "Effect": "FLIP: Target 1 monster on the field; destroy it",
         "ATK": 450,
         "DEF": 600
+    },
+    { # Armed Ninja
+        "Name": "Armed Ninja",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Warrior, Flip, Effect",
+        "Effect": "FLIP: Target 1 Spell Card on the field; destroy that target. " \
+        "(If the target is Set, reveal it, and destroy it if it is a Spell Card. Otherwise, return it to its original position.)",
+        "ATK": 300,
+        "DEF": 300
+    },
+    { # Hane-Hane
+        "Name": "Hane-Hane",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Beast, Flip, Effect",
+        "Effect": "FLIP: Select 1 monster on the field and return it to its owner's hand.",
+        "ATK": 450,
+        "DEF": 500
+    },
+    { # Reaper of the Cards
+        "Name": "Reaper of the Cards",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Fiend, Flip, Effect",
+        "Effect": "FLIP: Select 1 Trap Card on the field and destroy it. If the selected card is Set, pick up and see the card. "\
+        "If it is a Trap Card, it is destroyed. If it is a Spell Card, return it to its original position.",
+        "ATK": 1380,
+        "DEF": 1930
+    },
+    { # Exodia the Forbidden One
+        "Name": "Exodia the Forbidden One",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Spellcaster, Flip, Effect",
+        "Effect": "If you have 'Right Leg of the Forbidden One', 'Left Leg of the Forbidden One', 'Right Arm of the Forbidden One' and " \
+        "'Left Arm of the Forbidden One' in addition to this card in your hand, you win the Duel.",
+        "ATK": 1000,
+        "DEF": 1000
     },
     # Add more cards below using the same format
 ]
