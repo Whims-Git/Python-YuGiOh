@@ -396,6 +396,199 @@ LOB = { # Legend of Blue Eyes White Dragon
             "Type": "Field",
             "Rarity": "Common"
         },
+        { # Hinotama Soul
+            "Name": "Hinotama Soul",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Monster Egg
+            "Name": "Monster Egg",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Armaill
+            "Name": "Armaill",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Armored Starfish
+            "Name": "Armored Starfish",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Basic Insect
+            "Name": "Basic Insect",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Beaver Warrior
+            "Name": "Beaver Warrior",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Dark Gray
+            "Name": "Dark Gray",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Dark King of the Abyss
+            "Name": "Dark King of the Abyss",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Darkworld Thorns
+            "Name": "Darkworld Thorns",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Dissolverock
+            "Name": "Dissolverock",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Drooling Lizard
+            "Name": "Drooling Lizard",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Enchanting Mermaid
+            "Name": "Enchanting Mermaid",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Fiend Reflection #2
+            "Name": "Fiend Reflection #2",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Firegrass
+            "Name": "Firegrass",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Fireyarou
+            "Name": "Fireyarou",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Flame Manipulator
+            "Name": "Flame Manipulator",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Frenzied Panda
+            "Name": "Frenzied Panda",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Green Phantom King
+            "Name": "Green Phantom King",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hard Armor
+            "Name": "Hard Armor",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hitotsu-Me Giant
+            "Name": "Hitotsu-Me Giant",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+
+        { # Kagemusha of the Blue Flame
+            "Name": "Kagemusha of the Blue Flame",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # King Fog
+            "Name": "King Fog",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Kumootoko
+            "Name": "Kumootoko",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Kurama
+            "Name": "Kurama",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Larvas
+            "Name": "Larvas",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Lesser Dragon
+            "Name": "Lesser Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # M-Warrior #1
+            "Name": "M-Warrior #1",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # M-Warrior #2
+            "Name": "M-Warrior #2",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Mammoth Graveyard
+            "Name": "Mammoth Graveyard",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Man Eater
+            "Name": "Man Eater",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Masaki the Legendary Swordsman
+            "Name": "Masaki the Legendary Swordsman",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Meda Bat
+            "Name": "Meda Bat",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
     ]
 }
 
