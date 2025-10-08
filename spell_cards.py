@@ -80,6 +80,25 @@ field_spell_cards = [
         "Type": "Field",
         "Effect": "All EARTH monsters gain 200 ATK and DEF."
     },
+    { # Mountain
+        "Name": "Mountain",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All Dragon, Winged Beast, and Thunder monsters on the field gain 200 ATK/DEF."
+    },
+    { # Umi
+        "Name": "Umi",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All Fish, Sea Serpent, Thunder, and Aqua monsters on the field gain 200 ATK/DEF, " \
+        "also all Machine and Pyro monsters on the field lose 200 ATK/DEF."
+    },
+    { # Wasteland
+        "Name": "Wasteland",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All Dinosaur, Zombie, and Rock monsters on the field gain 200 ATK/DEF."
+    },
     # Add more cards below using the same format
 ]
 
@@ -89,6 +108,96 @@ equip_spell_cards = [
         "Category": "Spell",
         "Type": "Equip",
         "Effect": "A Beast-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    { # Book of Secret Arts
+        "Name": "Book of Secret Arts",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "A Spellcaster-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    { # Dark Energy
+        "Name": "Dark Energy",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Increase the ATK and DEF of a Fiend-Type monster equipped with this card by 300 points."
+    },
+    { # Dragon Treasure
+        "Name": "Dragon Treasure",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "A Dragon-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    { # Electro-Whip
+        "Name": "Electro-Whip",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Increase the ATK and DEF of a Thunder-Type monster equipped with this card by 300 points."
+    },
+    { # Electro-Whip
+        "Name": "Electro-Whip",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Increase the ATK and DEF of a Thunder-Type monster equipped with this card by 300 points."
+    },
+    { # Follow Wind
+        "Name": "Follow Wind",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Increase the ATK and DEF of a Winged Beast-Type monster equipped with this card by 300 points."
+    },
+    { # Laser Cannon Armor
+        "Name": "Laser Cannon Armor",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to an Insect monster. It gains 300 ATK/DEF."
+    },
+    { # Legendary Sword
+        "Name": "Legendary Sword",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to a Warrior monster. It gains 300 ATK/DEF."
+    },
+    { # Machine Conversion Factory
+        "Name": "Machine Conversion Factory",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to a Machine monster. It gains 300 ATK/DEF."
+    },
+    { # Mystical Moon
+        "Name": "Mystical Moon",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to a Beast-Warrior-Type monster. It gains 300 ATK and DEF."
+    },
+    { # Power of Kaishin
+        "Name": "Power of Kaishin",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to an Aqua monster. It gains 300 ATK/DEF."
+    },
+    { # Raise Body Heat
+        "Name": "Raise Body Heat",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to a Dinosaur monster. It gains 300 ATK/DEF."
+    },
+    { # Silver Bow and Arrow
+        "Name": "Silver Bow and Arrow",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "A Fairy-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    { # Vile Germs
+        "Name": "Vile Germs",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "A Plant-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    { # Violet Crystal
+        "Name": "Violet Crystal",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "(This card is not treated as a 'Crystal' card.) Equip only to a Zombie monster. It gains 300 ATK/DEF."
     },
     # Add more cards below using the same format
 ]

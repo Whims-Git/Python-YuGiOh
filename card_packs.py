@@ -4,7 +4,7 @@
 
 LOB = { # Legend of Blue Eyes White Dragon
     "Pack Name": "Legend of Blue Eyes White Dragon",
-    "Amount": 129,
+    "Amount": 126,
     "cards": [
         { # Pot of Greed
             "Name": "Pot of Greed",
@@ -269,6 +269,132 @@ LOB = { # Legend of Blue Eyes White Dragon
             "Category": "Spell",
             "Type": "Normal",
             "Rarity": "Super Rare"
+        },
+        { # Beast Fangs
+            "Name": "Beast Fangs",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Book of Secret Arts
+            "Name": "Book of Secret Arts",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Dark Energy
+            "Name": "Dark Energy",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Dragon Treasure
+            "Name": "Dragon Treasure",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Electro-Whip
+            "Name": "Electro-Whip",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Follow Wind
+            "Name": "Follow Wind",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Laser Cannon Armor
+            "Name": "Laser Cannon Armor",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Legendary Sword
+            "Name": "Legendary Sword",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Machine Conversion Factory
+            "Name": "Machine Conversion Factory",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Mystical Moon
+            "Name": "Mystical Moon",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Power of Kaishin
+            "Name": "Power of Kaishin",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Raise Body Heat
+            "Name": "Raise Body Heat",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Silver Bow and Arrow
+            "Name": "Silver Bow and Arrow",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Vile Germs
+            "Name": "Vile Germs",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Violet Crystal
+            "Name": "Violet Crystal",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Forest
+            "Name": "Forest",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Mountain
+            "Name": "Mountain",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Sogen
+            "Name": "Sogen",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Umi
+            "Name": "Umi",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Wasteland
+            "Name": "Wasteland",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Yami
+            "Name": "Yami",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
         },
     ]
 }
