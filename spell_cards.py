@@ -70,6 +70,30 @@ normal_spell_cards = [
         "of your opponent's 3rd turn. When this card is activated: If your opponent controls a face-down monster, " \
         "flip all monsters they control face-up. While this card is face-up on the field, your opponent's monsters cannot declare an attack."
     },
+    { # Hinotama
+        "Name": "Hinotama",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Inflict 500 damage to your opponent."
+    },
+    { # Red Medicine
+        "Name": "Red Medicine",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Increase your Life Points by 500 points."
+    },
+    { # Remove Trap
+        "Name": "Remove Trap",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Select 1 face-up Trap Card on the field and destroy it."
+    },
+    { # Sparks
+        "Name": "Sparks",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Inflict 200 points of damage to your opponent's Life Points."
+    }
     # Add more cards below using the same format
 ]
 
@@ -99,6 +123,13 @@ field_spell_cards = [
         "Type": "Field",
         "Effect": "All Dinosaur, Zombie, and Rock monsters on the field gain 200 ATK/DEF."
     },
+    { # Yami
+        "Name": "Yami",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All Fiend and Spellcaster monsters on the field gain 200 ATK/DEF, also all Fairy monsters " \
+        "on the field lose 200 ATK/DEF."
+    }
     # Add more cards below using the same format
 ]
 

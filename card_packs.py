@@ -516,7 +516,6 @@ LOB = { # Legend of Blue Eyes White Dragon
             "Type": "Normal",
             "Rarity": "Common"
         },
-
         { # Kagemusha of the Blue Flame
             "Name": "Kagemusha of the Blue Flame",
             "Category": "Monster",
@@ -589,6 +588,186 @@ LOB = { # Legend of Blue Eyes White Dragon
             "Type": "Normal",
             "Rarity": "Common"
         },
+        { # Misairuzame
+            "Name": "Misairuzame",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Monster Egg
+            "Name": "Monster Egg",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Mystical Sheep #2
+            "Name": "Mystical Sheep #2",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Nemuriko
+            "Name": "Nemuriko",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # One-Eyed Shield Dragon
+            "Name": "One-Eyed Shield Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Petit Angel
+            "Name": "Petit Angel",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Petit Dragon
+            "Name": "Petit Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ray & Temperature
+            "Name": "Ray & Temperature",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Root Water
+            "Name": "Root Water",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Sand Stone
+            "Name": "Sand Stone",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Silver Fang
+            "Name": "Silver Fang",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Skull Red Bird
+            "Name": "Skull Red Bird",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Skull Servant
+            "Name": "Skull Servant",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Spike Seadra
+            "Name": "Spike Seadra",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Steel Ogre Grotto #1
+            "Name": "Steel Ogre Grotto #1",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Succubus Knight
+            "Name": "Succubus Knight",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Terra the Terrible
+            "Name": "Terra the Terrible",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # The 13th Grave
+            "Name": "The 13th Grave",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # The Furious Sea King
+            "Name": "The Furious Sea King",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Trial of Nightmare
+            "Name": "Trial of Nightmare",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tripwire Beast
+            "Name": "Tripwire Beast",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Turtle Tiger
+            "Name": "Turtle Tiger",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Two-Mouth Darkruler
+            "Name": "Two-Mouth Darkruler",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tyhone
+            "Name": "Tyhone",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Uraby
+            "Name": "Uraby",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Witty Phantom
+            "Name": "Witty Phantom",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hinotama
+            "Name": "Hinotama",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Red Medicine
+            "Name": "Red Medicine",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Remove Trap
+            "Name": "Remove Trap",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Sparks
+            "Name": "Sparks",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        }
     ]
 }
 
