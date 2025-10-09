@@ -594,12 +594,6 @@ LOB = { # Legend of Blue Eyes White Dragon
             "Type": "Normal",
             "Rarity": "Common"
         },
-        { # Monster Egg
-            "Name": "Monster Egg",
-            "Category": "Monster",
-            "Type": "Normal",
-            "Rarity": "Common"
-        },
         { # Mystical Sheep #2
             "Name": "Mystical Sheep #2",
             "Category": "Monster",
@@ -833,3 +827,5 @@ MRL = { # Magic Ruler
     ]
 }
 # Add more cards below using the same format
+
+print(len(LOB["cards"]))
