@@ -93,7 +93,15 @@ normal_spell_cards = [
         "Category": "Spell",
         "Type": "Normal",
         "Effect": "Inflict 200 points of damage to your opponent's Life Points."
-    }
+    },
+    { # Curse of Fiend
+        "Name": "Curse of Fiend",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Change the battle positions of all Attack Position monsters on the field to Defense Position and vice-versa. " \
+        "These positions cannot be changed during the turn this card is activated except by the effect of a Spell, Trap or Effect Monster Card. " \
+        "You can only activate this card during your Standby Phase."
+    },
     # Add more cards below using the same format
 ]
 
@@ -129,7 +137,37 @@ field_spell_cards = [
         "Type": "Field",
         "Effect": "All Fiend and Spellcaster monsters on the field gain 200 ATK/DEF, also all Fairy monsters " \
         "on the field lose 200 ATK/DEF."
-    }
+    },
+    { # Gaia Power
+        "Name": "Gaia Power",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All EARTH monsters gain 500 ATK and lose 400 DEF."
+    },
+    { # Luminous Spark
+        "Name": "Luminous Spark",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All LIGHT monsters gain 500 ATK and lose 400 DEF."
+    },
+    { # Molten Destruction
+        "Name": "Molten Destruction",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All FIRE monsters gain 500 ATK and lose 400 DEF."
+    },
+    { # Rising Air Current
+        "Name": "Rising Air Current",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "All WIND monsters gain 500 ATK and lose 400 DEF."
+    },
+    { # Umiiruka
+        "Name": "Umiiruka",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "Increase the ATK of all WATER monsters by 500 points and decrease their DEF by 400 points."
+    },
     # Add more cards below using the same format
 ]
 
@@ -234,11 +272,21 @@ equip_spell_cards = [
 ]
 
 quick_spell_cards = [
-    { # Forest
+    { # Mystical Space Typhoon
         "Name": "Mystical Space Typhoon",
         "Category": "Spell",
         "Type": "Quick-Play",
         "Effect": "Target 1 Spell/Trap on the field; destroy that target."
+    },
+    # Add more cards below using the same format
+]
+
+continuous_spell_cards = [
+    { # Gravekeeper's Servant
+        "Name": "Gravekeeper's Servant",
+        "Category": "Spell",
+        "Type": "Continuous",
+        "Effect": "Your opponent must send 1 card from the top of their Deck to the Graveyard to declare an attack."
     },
     # Add more cards below using the same format
 ]

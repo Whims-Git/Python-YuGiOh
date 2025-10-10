@@ -769,29 +769,53 @@ MRD = { # Metal Raiders
     "Pack Name": "Metal Raiders",
     "Amount": 4, # 146
     "cards": [
-        {
-            "Name": "Pot of Greed",
+        { # Gravekeeper's Servant
+            "Name": "Gravekeeper's Servant",
             "Category": "Spell",
             "Type": "Normal",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
-        {
-            "Name": "Right Leg of the Forbidden One",
-            "Category": "Monster",
-            "Type": "Normal",
-            "Rarity": "Ultra Rare"
+        { # Gaia Power
+            "Name": "Gaia Power",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
         },
-        {
-            "Name": "Man-Eater Bug",
+        { # Luminous Spark
+            "Name": "Luminous Spark",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Molten Destruction
+            "Name": "Molten Destruction",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Rising Air Current
+            "Name": "Rising Air Current",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Umiiruka
+            "Name": "Umiiruka",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Jigen Bakudan
+            "Name": "Jigen Bakudan",
             "Category": "Monster",
             "Type": "Effect",
-            "Rarity": "Super Rare"
+            "Rarity": "Common"
         },
-        {
-            "Name": "Two-Pronged Attack",
-            "Category": "Trap",
+        { # Curse of Fiend
+            "Name": "Curse of Fiend",
+            "Category": "Spell",
             "Type": "Normal",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
     ]
 }

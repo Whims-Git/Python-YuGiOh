@@ -792,5 +792,16 @@ effect_monster_cards = [
         "ATK": 1000,
         "DEF": 1000
     },
+    { # Jigen Bakudan
+        "Name": "Jigen Bakudan",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 2,
+        "Type": "Pyro, Flip, Effect",
+        "Effect": "FLIP: After this card is flipped, Tribute it during your Standby Phase to destroy all monsters you control and " \
+        "inflict damage equal to half of the total ATK of the destroyed cards (excluding this monster) to your opponent.",
+        "ATK": 200,
+        "DEF": 1000
+    },
     # Add more cards below using the same format
 ]
