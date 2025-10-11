@@ -337,6 +337,12 @@ equip_spell_cards = [
         "Effect": "Equip only to a monster your opponent controls. Take control of the equipped monster. During each of your opponent's " \
         "Standby Phases: They gain 1000 Life Points."
     },
+    { # Horn of the Unicorn
+        "Name": "Horn of the Unicorn",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The equipped monster gains 700 ATK and DEF. When this card is sent from the field to the Graveyard: Return it to the top of the Deck."
+    },
     # Add more cards below using the same format
 ]
 
@@ -352,6 +358,12 @@ quick_spell_cards = [
         "Category": "Spell",
         "Type": "Quick-Play",
         "Effect": "Target 1 Spell/Trap on the field; destroy that target."
+    },
+    { # Rush Recklessly
+        "Name": "Rush Recklessly",
+        "Category": "Spell",
+        "Type": "Quick-Play",
+        "Effect": "Target 1 face-up monster on the field; it gains 700 ATK until the end of this turn."
     },
     # Add more cards below using the same format
 ]
@@ -380,6 +392,12 @@ continuous_spell_cards = [
         "Category": "Spell",
         "Type": "Continuous",
         "Effect": "Each player must pay 500 Life Points to declare an attack."
+    },
+    { # Chain Energy
+        "Name": "Chain Energy",
+        "Category": "Spell",
+        "Type": "Continuous",
+        "Effect": "Each player must pay 500 Life Points per card to Normal Summon, Special Summon, Set or activate cards from his/her respective hand."
     },
     # Add more cards below using the same format
 ]

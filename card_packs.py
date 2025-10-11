@@ -769,6 +769,25 @@ MRD = { # Metal Raiders
     "Pack Name": "Metal Raiders",
     "Amount": 4, # 146
     "cards": [
+        { # Megamorph
+            "Name": "Megamorph",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+        { # Snatch Steal
+            "Name": "Snatch Steal",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+    ]
+}
+
+MRL = { # Magic Ruler
+    "Pack Name": "Magic Ruler",
+    "Amount": 4, # 131
+    "cards": [
         { # Gravekeeper's Servant
             "Name": "Gravekeeper's Servant",
             "Category": "Spell",
@@ -937,7 +956,6 @@ MRD = { # Metal Raiders
             "Type": "Equip",
             "Rarity": "Ultra Rare"
         },
-
         { # Delinquent Duo
             "Name": "Delinquent Duo",
             "Category": "Spell",
@@ -974,84 +992,192 @@ MRD = { # Metal Raiders
             "Type": "Effect",
             "Rarity": "Ultra Rare"
         },
-        { # Toll
-            "Name": "Toll",
-            "Category": "Spell",
-            "Type": "Continuous",
-            "Rarity": "Common"
-        },
-        { # Slot Machine
-            "Name": "Slot Machine",
-            "Category": "Monster",
-            "Type": "Normal",
-            "Rarity": "Common"
-        },
-        { # Darkness Approaches
-            "Name": "Darkness Approaches",
-            "Category": "Spell",
-            "Type": "Normal",
-            "Rarity": "Common"
-        },
-        { # Eternal Rest
-            "Name": "Eternal Rest",
-            "Category": "Spell",
-            "Type": "Normal",
-            "Rarity": "Common"
-        },
-        { # Spellbinding Circle
-            "Name": "Spellbinding Circle",
-            "Category": "Trap",
-            "Type": "Continuous",
-            "Rarity": "Ultra Rare"
-        },
-        { # Axe of Despair
-            "Name": "Axe of Despair",
-            "Category": "Spell",
-            "Type": "Equip",
-            "Rarity": "Ultra Rare"
-        },
-        { # Megamorph
-            "Name": "Megamorph",
-            "Category": "Spell",
-            "Type": "Equip",
-            "Rarity": "Ultra Rare"
-        },
-        { # Snatch Steal
-            "Name": "Snatch Steal",
-            "Category": "Spell",
-            "Type": "Equip",
-            "Rarity": "Ultra Rare"
-        },
-    ]
-}
-
-MRL = { # Magic Ruler
-    "Pack Name": "Magic Ruler",
-    "Amount": 4, # 131
-    "cards": [
-        {
-            "Name": "Pot of Greed",
-            "Category": "Spell",
-            "Type": "Normal",
-            "Rarity": "Rare"
-        },
-        {
-            "Name": "Right Leg of the Forbidden One",
-            "Category": "Monster",
-            "Type": "Normal",
-            "Rarity": "Ultra Rare"
-        },
-        {
-            "Name": "Man-Eater Bug",
+        { # Ameba
+            "Name": "Ameba",
             "Category": "Monster",
             "Type": "Effect",
-            "Rarity": "Super Rare"
+            "Rarity": "Rare"
         },
-        {
-            "Name": "Two-Pronged Attack",
-            "Category": "Trap",
+        { # Flying Kamakiri #1
+            "Name": "Flying Kamakiri #1",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Giant Germ
+            "Name": "Giant Germ",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Giant Rat
+            "Name": "Giant Rat",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Karate Man
+            "Name": "Karate Man",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Mother Grizzly
+            "Name": "Mother Grizzly",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Mystic Tomato
+            "Name": "Mystic Tomato",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Nimble Momonga
+            "Name": "Nimble Momonga",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Senju of the Thousand Hands
+            "Name": "Senju of the Thousand Hands",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Shining Angel
+            "Name": "Shining Angel",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # UFO Turtle
+            "Name": "UFO Turtle",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+
+        { # Horn of the Unicorn
+            "Name": "Horn of the Unicorn",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Rare"
+        },
+        { # Cyber Jar
+            "Name": "Cyber Jar",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Hiro's Shadow Scout
+            "Name": "Hiro's Shadow Scout",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Hyozanryu
+            "Name": "Hyozanryu",
+            "Category": "Monster",
             "Type": "Normal",
             "Rarity": "Rare"
+        },
+        { # Rush Recklessly
+            "Name": "Rush Recklessly",
+            "Category": "Spell",
+            "Type": "Quick-Play",
+            "Rarity": "Rare"
+        },
+        { # Manga Ryu-Ran
+            "Name": "Manga Ryu-Ran",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Serpent Night Dragon
+            "Name": "Serpent Night Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Secret Rare"
+        },
+        { # Blue-Eyes Toon Dragon
+            "Name": "Blue-Eyes Toon Dragon",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Secret Rare"
+        },
+        { # Chain Energy
+            "Name": "Chain Energy",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Common"
+        },
+        { # Boar Soldier
+            "Name": "Boar Soldier",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Ceremonial Bell
+            "Name": "Ceremonial Bell",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Dark Zebra
+            "Name": "Dark Zebra",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Electric Snake
+            "Name": "Electric Snake",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Flash Assailant
+            "Name": "Flash Assailant",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Griggle
+            "Name": "Griggle",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Kotodama
+            "Name": "Kotodama",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Minar
+            "Name": "Minar",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Penguin Knight
+            "Name": "Penguin Knight",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Sonic Bird
+            "Name": "Sonic Bird",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Wall Shadow
+            "Name": "Wall Shadow",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
         },
     ]
 }

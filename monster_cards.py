@@ -742,6 +742,26 @@ vanilla_monster_cards = [
         "ATK": 2000,
         "DEF": 2300,
     },
+    { # Hyozanryu
+        "Name": "Hyozanryu",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 7,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 2100,
+        "DEF": 2800,
+    },
+    { # Serpent Night Dragon
+        "Name": "Serpent Night Dragon",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 7,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 2350,
+        "DEF": 2400,
+    },
     # Add more cards below using the same format
 ]
 
@@ -755,7 +775,7 @@ effect_monster_cards = [
         "Attribute": "EARTH",
         "Level": 2,
         "Type": "Insect, Flip, Effect",
-        "Effect": "FLIP: Target 1 monster on the field; destroy it",
+        "Effect": "FLIP: Target 1 monster on the field; destroy it.",
         "ATK": 450,
         "DEF": 600
     },
@@ -881,6 +901,263 @@ effect_monster_cards = [
         "Can attack your opponent directly, unless they control a Toon monster, in which case this card must target a Toon monster for its attacks.",
         "ATK": 1550,
         "DEF": 1400
+    },
+    { # Ameba
+        "Name": "Ameba",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 1,
+        "Type": "Aqua, Effect",
+        "Effect": "When the control of this face-up card on the field shifts to your opponent, inflict 2000 points of damage to your opponent's Life Points. " \
+        "This effect can only be used once as long as this card remains face-up on the field.",
+        "ATK": 300,
+        "DEF": 350
+    },
+    { # Giant Germ
+        "Name": "Giant Germ",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 2,
+        "Type": "Fiend, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 WIND monster with 1500 or less ATK from your Deck, in face-up Attack Position.",
+        "ATK": 1000,
+        "DEF": 100
+    },
+    { # Giant Rat
+        "Name": "Giant Rat",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 EARTH monster with 1500 or less ATK from your Deck, in Attack Position.",
+        "ATK": 1400,
+        "DEF": 1450
+    },
+    { # Karate Man
+        "Name": "Karate Man",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Warrior, Effect",
+        "Effect": "You can double the original ATK of this card once per turn. If you used this effect, destroy this card during the End Phase.",
+        "ATK": 1000,
+        "DEF": 1000
+    },
+    { # Mother Grizzly
+        "Name": "Mother Grizzly",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Beast, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 WATER monster with 1500 or less ATK from your Deck, in face-up Attack Position.",
+        "ATK": 1400,
+        "DEF": 1000
+    },
+    { # Mystic Tomato
+        "Name": "Mystic Tomato",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Plant, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the GY: You can Special Summon 1 DARK monster with 1500 or less ATK from your Deck, in face-up Attack Position.",
+        "ATK": 1400,
+        "DEF": 1100
+    },
+    { # Nimble Momonga
+        "Name": "Nimble Momonga",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Beast, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: Gain 1000 Life Points, then you can Special Summon any number of 'Nimble Momongas' from your Deck in face-down Defense Position.",
+        "ATK": 1000,
+        "DEF": 100
+    },
+    { # Senju of the Thousand Hands
+        "Name": "Senju of the Thousand Hands",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 4,
+        "Type": "Fairy, Effect",
+        "Effect": "When this card is Normal or Flip Summoned: You can add 1 Ritual Monster from your Deck to your hand.",
+        "ATK": 1400,
+        "DEF": 1000
+    },
+    { # Shining Angel
+        "Name": "Shining Angel",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 4,
+        "Type": "Fairy, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 LIGHT monster with 1500 or less ATK from your Deck, in face-up Attack Position.",
+        "ATK": 1400,
+        "DEF": 800
+    },
+    { # UFO Turtle
+        "Name": "UFO Turtle",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 4,
+        "Type": "Machine, Effect",
+        "Effect": "When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 FIRE monster with 1500 or less ATK from your Deck, in face-up Attack Position.",
+        "ATK": 1400,
+        "DEF": 1200
+    },
+    { # Cyber Jar
+        "Name": "Cyber Jar",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Rock, Flip, Effect",
+        "Effect": "FLIP: Destroy all monsters on the field, then both players reveal the top 5 cards from their Decks, then Special Summon all revealed Level 4 or lower monsters in face-up Attack Position " \
+        "or face-down Defense Position, also add any remaining cards to their hand. (If either player has less than 5 cards in their Deck, reveal as many as possible.)",
+        "ATK": 900,
+        "DEF": 900
+    },
+    { # Hiro's Shadow Scout
+        "Name": "Hiro's Shadow Scout",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 2,
+        "Type": "Fiend, Flip, Effect",
+        "Effect": "FLIP: Your opponent draws 3 cards. Both players look at the cards. If there are any Spell Cards among them, discard all those Spell Card(s) to the Graveyard.",
+        "ATK": 650,
+        "DEF": 500
+    },
+    { # Manga Ryu-Ran
+        "Name": "Manga Ryu-Ran",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 7,
+        "Type": "Dragon, Toon, Effect",
+        "Effect": "(This card is always treated as a 'Toon' card.) Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by Tributing 2 monsters, while you control 'Toon World'. " \
+        "Cannot attack the turn it is Special Summoned. You must pay 500 LP to declare an attack with this monster. If 'Toon World' on the field is destroyed, destroy this card. " \
+        "Can attack your opponent directly, unless they control a Toon monster, in which case this card must target a Toon monster for its attacks.",
+        "ATK": 2200,
+        "DEF": 2600
+    },
+    { # Blue-Eyes Toon Dragon
+        "Name": "Blue-Eyes Toon Dragon",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 8,
+        "Type": "Dragon, Toon, Effect",
+        "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by Tributing 2 monsters, while you control 'Toon World'. Cannot attack the turn it is Special Summoned. " \
+        "You must pay 500 LP to declare an attack with this monster. If 'Toon World' on the field is destroyed, destroy this card. Can attack your opponent directly, unless they control a Toon monster, " \
+        "in which case this card must target a Toon monster for its attacks.",
+        "ATK": 3000,
+        "DEF": 2500
+    },
+    { # Boar Soldier
+        "Name": "Boar Soldier",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast-Warrior, Effect",
+        "Effect": "If this card is Normal Summoned, destroy this card. If your opponent controls 1 or more monsters, decrease the ATK of this card by 1000 points.",
+        "ATK": 2000,
+        "DEF": 500
+    },
+    { # Ceremonial Bell
+        "Name": "Ceremonial Bell",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 3,
+        "Type": "Spellcaster, Effect",
+        "Effect": "Both players must keep their hands revealed.",
+        "ATK": 0,
+        "DEF": 1850
+    },
+    { # Dark Zebra
+        "Name": "Dark Zebra",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Effect",
+        "Effect": "If this is the only Monster Card in your control during your Standby Phase, it is changed to Defense Position. You cannot change the position of this card during the same turn.",
+        "ATK": 1800,
+        "DEF": 400
+    },
+    { # Electric Snake
+        "Name": "Electric Snake",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 3,
+        "Type": "Thunder, Effect",
+        "Effect": "When this card is discarded from your hand to the Graveyard by an effect of a card controlled by your opponent, draw 2 cards from your Deck.",
+        "ATK": 800,
+        "DEF": 900
+    },
+    { # Flash Assailant
+        "Name": "Flash Assailant",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Effect",
+        "Effect": "Decrease the ATK and DEF of this card by 400 points for each card in your hand.",
+        "ATK": 2000,
+        "DEF": 2000
+    },
+    { # Griggle
+        "Name": "Griggle",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Plant, Effect",
+        "Effect": "When the control of this face-up card on the field shifts to your opponent, increase your Life Points by 3000 points. This effect can only be used once as long as this card remains face-up on the field.",
+        "ATK": 350,
+        "DEF": 300
+    },
+    { # Kotodama
+        "Name": "Kotodama",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Fairy, Effect",
+        "Effect": "If there are face-up monsters with the same name on the field, destroy those monsters. (If a monster is Summoned or flipped face-up that has the same name as a monster that is already face-up on the field, " \
+        "the new face-up monster is destroyed. If they are Summoned or flipped face-up at the same time, they are all destroyed.)",
+        "ATK": 0,
+        "DEF": 1600
+    },
+    { # Minar
+        "Name": "Minar",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Insect, Effect",
+        "Effect": "When this card is discarded directly from your hand to the Graveyard by an effect of a card controlled by your opponent, inflict 1000 points of damage to your opponent's Life Points.",
+        "ATK": 850,
+        "DEF": 750
+    },
+    { # Penguin Knight
+        "Name": "Penguin Knight",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 3,
+        "Type": "Aqua, Effect",
+        "Effect": "When this card is sent directly from your Deck to the Graveyard by an effect of a card controlled by your opponent, unite your Graveyard cards and your own Deck, shuffle them and form a new Deck.",
+        "ATK": 900,
+        "DEF": 800
+    },
+    { # Sonic Bird
+        "Name": "Sonic Bird",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 4,
+        "Type": "Winged Beast, Effect",
+        "Effect": "When this card is Normal or Flip Summoned: You can add 1 Ritual Spell from your Deck to your hand.",
+        "ATK": 1400,
+        "DEF": 1000
+    },
+    { # Wall Shadow
+        "Name": "Wall Shadow",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 7,
+        "Type": "Warrior, Effect",
+        "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned with 'Magical Labyrinth'.",
+        "ATK": 1600,
+        "DEF": 3000
     },
     # Add more cards below using the same format
 ]
