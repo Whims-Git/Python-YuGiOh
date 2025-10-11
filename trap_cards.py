@@ -14,6 +14,13 @@ normal_trap_cards = [
         "Type": "Normal",
         "Effect": "When your opponent Normal or Flip Summons 1 monster with 1000 or more ATK: Target that monster; destroy that target."
     },
+    { # Fairy's Hand Mirror
+        "Name": "Fairy's Hand Mirror",
+        "Category": "Trap",
+        "Type": "Normal",
+        "Effect": "When your opponent activates a Spell Card that targets exactly 1 monster (and no other cards) on the field: " \
+        "Target another card that would be an appropriate target; that Spell now targets the new target."
+    },
     # Add more cards below using the same format
 ]
 
@@ -24,6 +31,13 @@ continuous_trap_cards = [
         "Type": "Continuous",
         "Effect": "Change all face-up Dragon-Type monsters on the field to Defense Position, "
         "also they cannot change their battle positions."
+    },
+    { # Spellbinding Circle
+        "Name": "Spellbinding Circle",
+        "Category": "Trap",
+        "Type": "Continuous",
+        "Effect": "Activate this card by targeting 1 monster your opponent controls; it cannot attack or change its battle position. " \
+        "When that monster is destroyed, destroy this card."
     },
     # Add more cards below using the same format
 ]

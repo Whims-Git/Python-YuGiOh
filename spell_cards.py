@@ -102,6 +102,48 @@ normal_spell_cards = [
         "These positions cannot be changed during the turn this card is activated except by the effect of a Spell, Trap or Effect Monster Card. " \
         "You can only activate this card during your Standby Phase."
     },
+    { # Confiscation
+        "Name": "Confiscation",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Pay 1000 Life Points. Look at your opponent's hand, select 1 card in it and discard that card."
+    },
+    { # Giant Trunade
+        "Name": "Giant Trunade",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Return all Spell and Trap Cards on the field to the hand."
+    },
+    { # Painful Choice
+        "Name": "Painful Choice",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Select 5 cards from your Deck and show them to your opponent. Your opponent selects 1 card among them. Add that card to your hand and discard the remaining cards to the Graveyard."
+    },
+    { # Darkness Approaches
+        "Name": "Darkness Approaches",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Discard 2 cards from your hand. Select 1 face-up monster and change it to face-down Defense Position."
+    },
+    { # Eternal Rest
+        "Name": "Eternal Rest",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Destroy all monsters equipped with Equip Cards."
+    },
+    { # Delinquent Duo
+        "Name": "Delinquent Duo",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Pay 1000 LP; your opponent discards 1 random card, and if they have any other cards in their hand, discard 1 more card of their choice."
+    },
+    { # The Forceful Sentry
+        "Name": "The Forceful Sentry",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Look at your opponent's hand. Select 1 card among them and return it to his/her Deck. The Deck is then shuffled."
+    },
     # Add more cards below using the same format
 ]
 
@@ -268,10 +310,43 @@ equip_spell_cards = [
         "Type": "Equip",
         "Effect": "(This card is not treated as a 'Crystal' card.) Equip only to a Zombie monster. It gains 300 ATK/DEF."
     },
+    { # Black Pendant
+        "Name": "Black Pendant",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The equipped monster gains 500 ATK. When this card is sent from the field to the Graveyard: Inflict 500 damage to your opponent."
+    },
+    { # Axe of Despair
+        "Name": "Axe of Despair",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "(This card is always treated as an 'Archfiend' card.) The equipped monster gains 1000 ATK. " \
+        "When this card is sent from the field to the Graveyard: You can Tribute 1 monster; place this card on the top of your Deck."
+    },
+    { # Megamorph
+        "Name": "Megamorph",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "While your LP is lower than your opponent's, the equipped monster's ATK becomes double its original ATK. " \
+        "While your LP is higher, the equipped monster's ATK becomes half its original ATK."
+    },
+    { # Snatch Steal
+        "Name": "Snatch Steal",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to a monster your opponent controls. Take control of the equipped monster. During each of your opponent's " \
+        "Standby Phases: They gain 1000 Life Points."
+    },
     # Add more cards below using the same format
 ]
 
 quick_spell_cards = [
+    { # Tailor of the Fickle
+        "Name": "Tailor of the Fickle",
+        "Category": "Spell",
+        "Type": "Quick-Play",
+        "Effect": "Switch 1 Equip Card equipped to a monster to another correct target."
+    },
     { # Mystical Space Typhoon
         "Name": "Mystical Space Typhoon",
         "Category": "Spell",
@@ -287,6 +362,34 @@ continuous_spell_cards = [
         "Category": "Spell",
         "Type": "Continuous",
         "Effect": "Your opponent must send 1 card from the top of their Deck to the Graveyard to declare an attack."
+    },
+    { # Messenger of Peace
+        "Name": "Messenger of Peace",
+        "Category": "Spell",
+        "Type": "Continuous",
+        "Effect": "Monsters with 1500 or more ATK cannot declare an attack. Once per turn, during your Standby Phase, pay 100 LP or destroy this card."
+    },
+    { # Toon World
+        "Name": "Toon World",
+        "Category": "Spell",
+        "Type": "Continuous",
+        "Effect": "Activate this card by paying 1000 LP."
+    },
+    { # Toll
+        "Name": "Toll",
+        "Category": "Spell",
+        "Type": "Continuous",
+        "Effect": "Each player must pay 500 Life Points to declare an attack."
+    },
+    # Add more cards below using the same format
+]
+
+ritual_spell_cards = [
+    { # Black Illusion Ritual
+        "Name": "Black Illusion Ritual",
+        "Category": "Spell",
+        "Type": "Ritual",
+        "Effect": "This card is used to Ritual Summon 'Relinquished'. You must also Tribute a monster from your hand or field whose Level is 1 or more."
     },
     # Add more cards below using the same format
 ]

@@ -772,7 +772,7 @@ MRD = { # Metal Raiders
         { # Gravekeeper's Servant
             "Name": "Gravekeeper's Servant",
             "Category": "Spell",
-            "Type": "Normal",
+            "Type": "Continuous",
             "Rarity": "Common"
         },
         { # Gaia Power
@@ -816,6 +816,211 @@ MRD = { # Metal Raiders
             "Category": "Spell",
             "Type": "Normal",
             "Rarity": "Common"
+        },
+        { # Fairy's Hand Mirror
+            "Name": "Fairy's Hand Mirror",
+            "Category": "Trap",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tailor of the Fickle
+            "Name": "Tailor of the Fickle",
+            "Category": "Spell",
+            "Type": "Quick-Play",
+            "Rarity": "Common"
+        },
+        { # Messenger of Peace
+            "Name": "Messenger of Peace",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Super Rare"
+        },
+        { # Toon World
+            "Name": "Toon World",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Super Rare"
+        },
+        { # Banisher of the Light
+            "Name": "Banisher of the Light",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Maha Vailo
+            "Name": "Maha Vailo",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Black Pendant
+            "Name": "Black Pendant",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Super Rare"
+        },
+        { # Invader of the Throne
+            "Name": "Invader of the Throne",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Confiscation
+            "Name": "Confiscation",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+        { # Giant Trunade
+            "Name": "Giant Trunade",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+        { # Painful Choice
+            "Name": "Painful Choice",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+        { # Black Illusion Ritual
+            "Name": "Black Illusion Ritual",
+            "Category": "Spell",
+            "Type": "Ritual",
+            "Rarity": "Super Rare"
+        },
+        { # Toll
+            "Name": "Toll",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Common"
+        },
+        { # Slot Machine
+            "Name": "Slot Machine",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Darkness Approaches
+            "Name": "Darkness Approaches",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Eternal Rest
+            "Name": "Eternal Rest",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Spellbinding Circle
+            "Name": "Spellbinding Circle",
+            "Category": "Trap",
+            "Type": "Continuous",
+            "Rarity": "Ultra Rare"
+        },
+        { # Axe of Despair
+            "Name": "Axe of Despair",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+        { # Megamorph
+            "Name": "Megamorph",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+        { # Snatch Steal
+            "Name": "Snatch Steal",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+
+        { # Delinquent Duo
+            "Name": "Delinquent Duo",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Ultra Rare"
+        },
+        { # The Forceful Sentry
+            "Name": "The Forceful Sentry",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Ultra Rare"
+        },
+        { # Mystical Space Typhoon
+            "Name": "Mystical Space Typhoon",
+            "Category": "Spell",
+            "Type": "Quick-Play",
+            "Rarity": "Ultra Rare"
+        },
+        { # Relinquished
+            "Name": "Relinquished",
+            "Category": "Monster",
+            "Type": "Ritual",
+            "Rarity": "Ultra Rare"
+        },
+        { # Toon Mermaid
+            "Name": "Toon Mermaid",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Ultra Rare"
+        },
+        { # Toon Summoned Skull
+            "Name": "Toon Summoned Skull",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Ultra Rare"
+        },
+        { # Toll
+            "Name": "Toll",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Common"
+        },
+        { # Slot Machine
+            "Name": "Slot Machine",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Darkness Approaches
+            "Name": "Darkness Approaches",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Eternal Rest
+            "Name": "Eternal Rest",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Spellbinding Circle
+            "Name": "Spellbinding Circle",
+            "Category": "Trap",
+            "Type": "Continuous",
+            "Rarity": "Ultra Rare"
+        },
+        { # Axe of Despair
+            "Name": "Axe of Despair",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+        { # Megamorph
+            "Name": "Megamorph",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
+        },
+        { # Snatch Steal
+            "Name": "Snatch Steal",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Ultra Rare"
         },
     ]
 }

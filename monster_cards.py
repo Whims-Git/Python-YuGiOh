@@ -731,7 +731,17 @@ vanilla_monster_cards = [
         "Effect": "None",
         "ATK": 1400,
         "DEF": 1300,
-    }
+    },
+    { # Slot Machine
+        "Name": "Slot Machine",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 7,
+        "Type": "Machine, Normal",
+        "Effect": "None",
+        "ATK": 2000,
+        "DEF": 2300,
+    },
     # Add more cards below using the same format
 ]
 
@@ -802,6 +812,75 @@ effect_monster_cards = [
         "inflict damage equal to half of the total ATK of the destroyed cards (excluding this monster) to your opponent.",
         "ATK": 200,
         "DEF": 1000
+    },
+    { # Banisher of the Light
+        "Name": "Banisher of the Light",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 3,
+        "Type": "Fairy, Effect",
+        "Effect": "Any card sent to the Graveyard is banished instead.",
+        "ATK": 100,
+        "DEF": 2000
+    },
+    { # Maha Vailo
+        "Name": "Maha Vailo",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 4,
+        "Type": "Spellcaster, Effect",
+        "Effect": "This card gains 500 ATK for each Equip Card equipped to this card.",
+        "ATK": 1550,
+        "DEF": 1400
+    },
+    { # Invader of the Throne
+        "Name": "Invader of the Throne",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Warrior, Flip, Effect",
+        "Effect": "FLIP: Select 1 monster on your opponent's side of the field and switch control of it with this card. " \
+        "This effect cannot be activated during the Battle Phase.",
+        "ATK": 1350,
+        "DEF": 1700
+    },
+    { # Relinquished
+        "Name": "Relinquished",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 1,
+        "Type": "Spellcaster, Ritual, Effect",
+        "Effect": "You can Ritual Summon this card with 'Black Illusion Ritual'. Once per turn: You can target 1 monster your " \
+        "opponent controls; equip that target to this card (max. 1). This card's ATK/DEF become equal to that equipped monster's. " \
+        "If this card would be destroyed by battle, destroy that equipped monster instead. While equipped with that monster, " \
+        "any battle damage you take from battles involving this card inflicts equal effect damage to your opponent.",
+        "ATK": 0,
+        "DEF": 0
+    },
+    { # Toon Mermaid
+        "Name": "Toon Mermaid",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Aqua, Toon, Effect",
+        "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand), while you control 'Toon World'. " \
+        "Cannot attack the turn it is Special Summoned. You must pay 500 LP to declare an attack with this monster. If 'Toon World' on " \
+        "the field is destroyed, destroy this card. Can attack your opponent directly, unless they control a Toon monster, in which case this card must target a Toon monster for its attacks.",
+        "ATK": 1400,
+        "DEF": 1500
+    },
+    { # Toon Summoned Skull
+        "Name": "Toon Summoned Skull",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 6,
+        "Type": "Fiend, Toon, Effect",
+        "Effect": "(This card is always treated as an 'Archfiend' card.) Cannot be Normal Summoned/Set. Must first be Special Summoned " \
+        "(from your hand) by Tributing 1 monster, while you control 'Toon World'. Cannot attack the turn it is Special Summoned. " \
+        "You must pay 500 LP to declare an attack with this monster. If 'Toon World' on the field is destroyed, destroy this card. " \
+        "Can attack your opponent directly, unless they control a Toon monster, in which case this card must target a Toon monster for its attacks.",
+        "ATK": 1550,
+        "DEF": 1400
     },
     # Add more cards below using the same format
 ]
