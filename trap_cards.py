@@ -21,6 +21,24 @@ normal_trap_cards = [
         "Effect": "When your opponent activates a Spell Card that targets exactly 1 monster (and no other cards) on the field: " \
         "Target another card that would be an appropriate target; that Spell now targets the new target."
     },
+    { # Eatgaboon
+        "Name": "Eatgaboon",
+        "Category": "Trap",
+        "Type": "Normal",
+        "Effect": "If the ATK of a monster summoned by your opponent (excluding Special Summon) is 500 points or less, the monster is destroyed."
+    },
+    { # House of Adhesive Tape
+        "Name": "House of Adhesive Tape",
+        "Category": "Trap",
+        "Type": "Normal",
+        "Effect": "If the DEF of a monster summoned by your opponent (excluding Special Summon) is 500 points or less, the monster is destroyed."
+    },
+    { # Snake Fang
+        "Name": "Snake Fang",
+        "Category": "Trap",
+        "Type": "Normal",
+        "Effect": "Decrease 1 selected monster's DEF by 500 points during the turn this card is activated."
+    },
     # Add more cards below using the same format
 ]
 

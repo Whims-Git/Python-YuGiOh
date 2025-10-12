@@ -786,7 +786,7 @@ MRD = { # Metal Raiders
 
 MRL = { # Magic Ruler
     "Pack Name": "Magic Ruler",
-    "Amount": 4, # 131
+    "Amount": 105,
     "cards": [
         { # Gravekeeper's Servant
             "Name": "Gravekeeper's Servant",
@@ -1058,129 +1058,248 @@ MRL = { # Magic Ruler
             "Type": "Effect",
             "Rarity": "Rare"
         },
-
         { # Horn of the Unicorn
             "Name": "Horn of the Unicorn",
             "Category": "Spell",
             "Type": "Equip",
             "Rarity": "Rare"
         },
-        { # Cyber Jar
-            "Name": "Cyber Jar",
+        { # Horn of Light
+            "Name": "Horn of Light",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Magical Labyrinth
+            "Name": "Magical Labyrinth",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Malevolent Nuzzler
+            "Name": "Malevolent Nuzzler",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Chorus of Sanctuary
+            "Name": "Chorus of Sanctuary",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Mystic Plasma Zone
+            "Name": "Mystic Plasma Zone",
+            "Category": "Spell",
+            "Type": "Field",
+            "Rarity": "Common"
+        },
+        { # Spear Cretin
+            "Name": "Spear Cretin",
             "Category": "Monster",
             "Type": "Effect",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
-        { # Hiro's Shadow Scout
-            "Name": "Hiro's Shadow Scout",
+        { # Weather Report
+            "Name": "Weather Report",
             "Category": "Monster",
             "Type": "Effect",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
-        { # Hyozanryu
-            "Name": "Hyozanryu",
+        { # Ancient One of the Deep Forest
+            "Name": "Ancient One of the Deep Forest",
             "Category": "Monster",
             "Type": "Normal",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
-        { # Rush Recklessly
-            "Name": "Rush Recklessly",
+        { # Dark Witch
+            "Name": "Dark Witch",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Fire Kraken
+            "Name": "Fire Kraken",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Giant Turtle Who Feeds on Flames
+            "Name": "Giant Turtle Who Feeds on Flames",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Guardian of the Throne Room
+            "Name": "Guardian of the Throne Room",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # High Tide Gyojin
+            "Name": "High Tide Gyojin",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Labyrinth Wall
+            "Name": "Labyrinth Wall",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Liquid Beast
+            "Name": "Liquid Beast",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Mechanical Snail
+            "Name": "Mechanical Snail",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Metal Fish
+            "Name": "Metal Fish",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Octoberser
+            "Name": "Octoberser",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Peacock
+            "Name": "Peacock",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Psychic Kappa
+            "Name": "Psychic Kappa",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Queen Bird
+            "Name": "Queen Bird",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Red Archery Girl
+            "Name": "Red Archery Girl",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ryu-Ran
+            "Name": "Ryu-Ran",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Stone Ogre Grotto
+            "Name": "Stone Ogre Grotto",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Twin Long Rods #2
+            "Name": "Twin Long Rods #2",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tyhone #2
+            "Name": "Tyhone #2",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Whiptail Crow
+            "Name": "Whiptail Crow",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Final Destiny
+            "Name": "Final Destiny",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Upstart Goblin
+            "Name": "Upstart Goblin",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Eatgaboon
+            "Name": "Eatgaboon",
+            "Category": "Trap",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # House of Adhesive Tape
+            "Name": "House of Adhesive Tape",
+            "Category": "Trap",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Snake Fang
+            "Name": "Snake Fang",
+            "Category": "Trap",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # The Reliable Guardian
+            "Name": "The Reliable Guardian",
             "Category": "Spell",
             "Type": "Quick-Play",
-            "Rarity": "Rare"
+            "Rarity": "Common"
         },
-        { # Manga Ryu-Ran
-            "Name": "Manga Ryu-Ran",
+        { # Crab Turtle
+            "Name": "Crab Turtle",
             "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Rare"
+            "Type": "Ritual",
+            "Rarity": "Common"
         },
-        { # Serpent Night Dragon
-            "Name": "Serpent Night Dragon",
+        { # Hungry Burger
+            "Name": "Hungry Burger",
             "Category": "Monster",
-            "Type": "Normal",
-            "Rarity": "Secret Rare"
+            "Type": "Ritual",
+            "Rarity": "Common"
         },
-        { # Blue-Eyes Toon Dragon
-            "Name": "Blue-Eyes Toon Dragon",
+        { # Performance of Sword
+            "Name": "Performance of Sword",
             "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Secret Rare"
+            "Type": "Ritual",
+            "Rarity": "Common"
         },
-        { # Chain Energy
-            "Name": "Chain Energy",
+        { # Commencement Dance
+            "Name": "Commencement Dance",
             "Category": "Spell",
-            "Type": "Continuous",
+            "Type": "Ritual",
             "Rarity": "Common"
         },
-        { # Boar Soldier
-            "Name": "Boar Soldier",
-            "Category": "Monster",
-            "Type": "Effect",
+        { # Hamburger Recipe
+            "Name": "Hamburger Recipe",
+            "Category": "Spell",
+            "Type": "Ritual",
             "Rarity": "Common"
         },
-        { # Ceremonial Bell
-            "Name": "Ceremonial Bell",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Dark Zebra
-            "Name": "Dark Zebra",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Electric Snake
-            "Name": "Electric Snake",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Flash Assailant
-            "Name": "Flash Assailant",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Griggle
-            "Name": "Griggle",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Kotodama
-            "Name": "Kotodama",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Minar
-            "Name": "Minar",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Penguin Knight
-            "Name": "Penguin Knight",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Sonic Bird
-            "Name": "Sonic Bird",
-            "Category": "Monster",
-            "Type": "Effect",
-            "Rarity": "Common"
-        },
-        { # Wall Shadow
-            "Name": "Wall Shadow",
-            "Category": "Monster",
-            "Type": "Effect",
+        { # Turtle Oath
+            "Name": "Turtle Oath",
+            "Category": "Spell",
+            "Type": "Ritual",
             "Rarity": "Common"
         },
     ]
 }
 # Add more cards below using the same format
 
-print(len(LOB["cards"]))
+print(len(MRL["cards"]))

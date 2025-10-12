@@ -144,6 +144,18 @@ normal_spell_cards = [
         "Type": "Normal",
         "Effect": "Look at your opponent's hand. Select 1 card among them and return it to his/her Deck. The Deck is then shuffled."
     },
+    { # Final Destiny
+        "Name": "Final Destiny",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Discard 5 cards from your hand. Destroy all cards on the field."
+    },
+    { # Upstart Goblin
+        "Name": "Upstart Goblin",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Draw 1 card, then your opponent gains 1000 LP."
+    },
     # Add more cards below using the same format
 ]
 
@@ -209,6 +221,18 @@ field_spell_cards = [
         "Category": "Spell",
         "Type": "Field",
         "Effect": "Increase the ATK of all WATER monsters by 500 points and decrease their DEF by 400 points."
+    },
+    { # Chorus of Sanctuary
+        "Name": "Chorus of Sanctuary",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "Increase the DEF of all Defense Position monsters by 500 points."
+    },
+    { # Mystic Plasma Zone
+        "Name": "Mystic Plasma Zone",
+        "Category": "Spell",
+        "Type": "Field",
+        "Effect": "Increase the ATK of all DARK monsters by 500 points and decreases their DEF by 400 points."
     },
     # Add more cards below using the same format
 ]
@@ -343,6 +367,25 @@ equip_spell_cards = [
         "Type": "Equip",
         "Effect": "The equipped monster gains 700 ATK and DEF. When this card is sent from the field to the Graveyard: Return it to the top of the Deck."
     },
+    { # Horn of Light
+        "Name": "Horn of Light",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Increase the DEF of a monster equipped with this card by 800 points. When this card is sent from the field to the Graveyard, " \
+        "if you pay 500 Life Points, this card returns to the top of your Deck."
+    },
+    { # Magical Labyrinth
+        "Name": "Magical Labyrinth",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "Equip only to 'Labyrinth Wall'. You can Tribute the equipped monster; Special Summon 'Wall Shadow' from your Deck."
+    },
+    { # Malevolent Nuzzler
+        "Name": "Malevolent Nuzzler",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The equipped monster gains 700 ATK. When this card is sent from the field to the Graveyard: You can pay 500 LP; place this card on the top of your Deck."
+    },
     # Add more cards below using the same format
 ]
 
@@ -364,6 +407,12 @@ quick_spell_cards = [
         "Category": "Spell",
         "Type": "Quick-Play",
         "Effect": "Target 1 face-up monster on the field; it gains 700 ATK until the end of this turn."
+    },
+    { # The Reliable Guardian
+        "Name": "The Reliable Guardian",
+        "Category": "Spell",
+        "Type": "Quick-Play",
+        "Effect": "Increase 1 face-up monster's DEF by 700 points until the end of this turn."
     },
     # Add more cards below using the same format
 ]
@@ -408,6 +457,24 @@ ritual_spell_cards = [
         "Category": "Spell",
         "Type": "Ritual",
         "Effect": "This card is used to Ritual Summon 'Relinquished'. You must also Tribute a monster from your hand or field whose Level is 1 or more."
+    },
+    { # Commencement Dance
+        "Name": "Commencement Dance",
+        "Category": "Spell",
+        "Type": "Ritual",
+        "Effect": "This card is used to Ritual Summon 'Performance of Sword'. You must also Tribute monsters whose total Level Stars equal 6 or more from the field or your hand."
+    },
+    { # Hamburger Recipe
+        "Name": "Hamburger Recipe",
+        "Category": "Spell",
+        "Type": "Ritual",
+        "Effect": "This card is used to Ritual Summon 'Hungry Burger'. You must also Tribute monsters whose total Level Stars equal 6 or more from the field or your hand."
+    },
+    { # Turtle Oath
+        "Name": "Turtle Oath",
+        "Category": "Spell",
+        "Type": "Ritual",
+        "Effect": "This card is used to Ritual Summon 'Crab Turtle'. You must also offer monsters whose total Level Stars equal 8 or more as a Tribute from the field or your hand."
     },
     # Add more cards below using the same format
 ]
