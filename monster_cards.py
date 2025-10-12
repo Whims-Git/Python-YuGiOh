@@ -1411,5 +1411,210 @@ effect_monster_cards = [
         "ATK": 950,
         "DEF": 1500
     },
+    { # Bladefly
+        "Name": "Bladefly",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 2,
+        "Type": "Insect, Effect",
+        "Effect": "As long as this card remains face-up on the field, increase the ATK of all WIND monsters by 500 points and decrease the ATK of all EARTH monsters by 400 points.",
+        "ATK": 600,
+        "DEF": 700
+    },
+    { # Cannon Soldier
+        "Name": "Cannon Soldier",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Machine, Effect",
+        "Effect": "You can Tribute 1 monster; inflict 500 damage to your opponent.",
+        "ATK": 1400,
+        "DEF": 1300
+    },
+    { # Dark Elf
+        "Name": "Dark Elf",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Spellcaster, Effect",
+        "Effect": "This card requires a cost of 1000 of your own Life Points to attack.",
+        "ATK": 2000,
+        "DEF": 800
+    },
+    { # Great Moth
+        "Name": "Great Moth",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 8,
+        "Type": "Insect, Effect",
+        "Effect": "This monster cannot be Normal Summoned or Set. This card can only be Special Summoned by Tributing 'Petit Moth' " \
+        "during your 4th turn after 'Petit Moth' has been equipped with 'Cocoon of Evolution'.",
+        "ATK": 2600,
+        "DEF": 2500
+    },
+    { # Hoshiningen
+        "Name": "Hoshiningen",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 2,
+        "Type": "Fairy, Effect",
+        "Effect": "All LIGHT monsters on the field gain 500 ATK, also all DARK monsters on the field lose 400 ATK.",
+        "ATK": 500,
+        "DEF": 700
+    },
+    { # Little Chimera
+        "Name": "Little Chimera",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 2,
+        "Type": "Beast, Effect",
+        "Effect": "All FIRE monsters on the field gain 500 ATK. All WATER monsters on the field lose 400 ATK.",
+        "ATK": 600,
+        "DEF": 550
+    },
+    { # Masked Sorcerer
+        "Name": "Masked Sorcerer",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Spellcaster, Effect",
+        "Effect": "When this card inflicts Battle Damage to your opponent's Life Points, draw 1 card from your Deck.",
+        "ATK": 900,
+        "DEF": 1400
+    },
+    { # Milus Radiant
+        "Name": "Milus Radiant",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Beast, Effect",
+        "Effect": "As long as this card remains face-up on the field, increase the ATK of all EARTH monsters by 500 points and decrease the ATK of all WIND monsters by 400 points.",
+        "ATK": 300,
+        "DEF": 250
+    },
+    { # Muka Muka
+        "Name": "Muka Muka",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Rock, Effect",
+        "Effect": "This card gains 300 ATK and DEF for each card in your hand.",
+        "ATK": 1400,
+        "DEF": 1300
+    },
+    { # Sangan
+        "Name": "Sangan",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Fiend, Effect",
+        # Original effect, not the errata version
+        "Effect": "When this card is sent from the field to the Graveyard, add 1 monster with 1500 or less ATK from your Deck to your hand.",
+        "ATK": 1000,
+        "DEF": 600
+    },
+    { # Shadow Ghoul
+        "Name": "Shadow Ghoul",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Zombie, Effect",
+        "Effect": "This card gains 100 ATK for each monster in your Graveyard.",
+        "ATK": 1600,
+        "DEF": 1300
+    },
+    { # Star Boy
+        "Name": "Star Boy",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 2,
+        "Type": "Aqua, Effect",
+        "Effect": "As long as this card remains face-up on the field, increase the ATK of all WATER monsters " \
+        "by 500 points and decrease the ATK of all FIRE monsters by 400 points.",
+        "ATK": 550,
+        "DEF": 500
+    },
+    { # White Magical Hat
+        "Name": "White Magical Hat",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 3,
+        "Type": "Spellcaster, Effect",
+        "Effect": "When this card inflicts Battle Damage to your opponent's Life Points, your opponent discards 1 card randomly from his/her hand.",
+        "ATK": 1000,
+        "DEF": 700
+    },
+    { # Witch's Apprentice
+        "Name": "Witch's Apprentice",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 2,
+        "Type": "Spellcaster, Effect",
+        "Effect": "As long as this card remains face-up on the field, increase the ATK of all DARK monsters by 500 points and decrease the ATK of all LIGHT monsters by 400 points.",
+        "ATK": 550,
+        "DEF": 500
+    },
+    { # Witch of the Black Forest
+        "Name": "Witch of the Black Forest",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Spellcaster, Effect",
+        # Original effect, not the errata version
+        "Effect": "When this card is sent from the field to the Graveyard: Add 1 monster with 1500 or less DEF from your Deck to your hand.",
+        "ATK": 1100,
+        "DEF": 1200
+    },
+    { # Magician of Faith
+        "Name": "Magician of Faith",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 1,
+        "Type": "Spellcaster, Flip, Effect",
+        "Effect": "FLIP: Target 1 Spell in your GY; add that target to your hand.",
+        "ATK": 300,
+        "DEF": 400
+    },
+    { # Mask of Darkness
+        "Name": "Mask of Darkness",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 2,
+        "Type": "Fiend, Flip, Effect",
+        "Effect": "FLIP: Target 1 Trap in your GY; add that target to your hand.",
+        "ATK": 900,
+        "DEF": 400
+    },
+    { # Princess of Tsurugi
+        "Name": "Princess of Tsurugi",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 3,
+        "Type": "Warrior, Effect",
+        "Effect": "FLIP: Inflict 500 damage to your opponent for each Spell and Trap Card on your opponent's side of the field.",
+        "ATK": 900,
+        "DEF": 700
+    },
+    { # Barrel Dragon
+        "Name": "Barrel Dragon",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 7,
+        "Type": "Machine, Effect",
+        "Effect": "Once per turn: You can target 1 monster your opponent controls; toss a coin 3 times and destroy it if at least 2 of the results are heads.",
+        "ATK": 2600,
+        "DEF": 2200
+    },
+    { # Time Wizard
+        "Name": "Time Wizard",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 2,
+        "Type": "Spellcaster, Effect",
+        "Effect": "Once per turn: You can toss a coin and call it. If you call it right, destroy all monsters your opponent controls. " \
+        "If you call it wrong, destroy as many monsters you control as possible, and if you do, take damage equal to half the total ATK those destroyed monsters had while face-up on the field.",
+        "ATK": 500,
+        "DEF": 400
+    },
     # Add more cards below using the same format
 ]

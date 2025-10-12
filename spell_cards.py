@@ -156,6 +156,24 @@ normal_spell_cards = [
         "Type": "Normal",
         "Effect": "Draw 1 card, then your opponent gains 1000 LP."
     },
+    { # Elegant Egotist
+        "Name": "Elegant Egotist",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "If 'Harpie Lady' is on the field: Special Summon 1 'Harpie Lady' or 'Harpie Lady Sisters' from your hand or Deck."
+    },
+    { # Shield & Sword
+        "Name": "Shield & Sword",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Switch the original ATK and DEF of all face-up monsters currently on the field, until the end of this turn."
+    },
+    { # Change of Heart
+        "Name": "Change of Heart",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Target 1 monster your opponent controls; take control of it until the End Phase."
+    },
     # Add more cards below using the same format
 ]
 

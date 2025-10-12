@@ -769,16 +769,197 @@ MRD = { # Metal Raiders
     "Pack Name": "Metal Raiders",
     "Amount": 4, # 146
     "cards": [
-        { # Megamorph
-            "Name": "Megamorph",
+        { # Robbin' Goblin
+            "Name": "Robbin' Goblin",
+            "Category": "Trap",
+            "Type": "Continuous",
+            "Rarity": "Rare"
+        },
+        { # Bladefly
+            "Name": "Bladefly",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Cannon Soldier
+            "Name": "Cannon Soldier",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Dark Elf
+            "Name": "Dark Elf",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Great Moth
+            "Name": "Great Moth",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Hoshiningen
+            "Name": "Hoshiningen",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Little Chimera
+            "Name": "Little Chimera",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Masked Sorcerer
+            "Name": "Masked Sorcerer",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Milus Radiant
+            "Name": "Milus Radiant",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Muka Muka
+            "Name": "Muka Muka",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Sangan
+            "Name": "Sangan",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Shadow Ghoul
+            "Name": "Shadow Ghoul",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Star Boy
+            "Name": "Star Boy",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # White Magical Hat
+            "Name": "White Magical Hat",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Witch's Apprentice
+            "Name": "Witch's Apprentice",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Witch of the Black Forest
+            "Name": "Witch of the Black Forest",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Magician of Faith
+            "Name": "Magician of Faith",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Mask of Darkness
+            "Name": "Mask of Darkness",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Princess of Tsurugi
+            "Name": "Princess of Tsurugi",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Elegant Egotist
+            "Name": "Elegant Egotist",
             "Category": "Spell",
-            "Type": "Equip",
+            "Type": "Normal",
+            "Rarity": "Rare"
+        },
+        { # Fake Trap
+            "Name": "Fake Trap",
+            "Category": "Trap",
+            "Type": "Normal",
+            "Rarity": "Rare"
+        },
+        { # Shield & Sword
+            "Name": "Shield & Sword",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Rare"
+        },
+
+        { # Horn of Heaven
+            "Name": "Horn of Heaven",
+            "Category": "Trap",
+            "Type": "Counter",
             "Rarity": "Ultra Rare"
         },
-        { # Snatch Steal
-            "Name": "Snatch Steal",
+        { # Magic Jammer
+            "Name": "Magic Jammer",
+            "Category": "Trap",
+            "Type": "Counter",
+            "Rarity": "Ultra Rare"
+        },
+        { # Seven Tools of the Bandit
+            "Name": "Seven Tools of the Bandit",
+            "Category": "Trap",
+            "Type": "Counter",
+            "Rarity": "Ultra Rare"
+        },
+        { # Solemn Judgment
+            "Name": "Solemn Judgment",
+            "Category": "Trap",
+            "Type": "Counter",
+            "Rarity": "Ultra Rare"
+        },
+        { # Barrel Dragon
+            "Name": "Barrel Dragon",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Ultra Rare"
+        },
+        { # Time Wizard
+            "Name": "Time Wizard",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Ultra Rare"
+        },
+        { # Black Skull Dragon
+            "Name": "Black Skull Dragon",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Ultra Rare"
+        },
+        { # Summoned Skull
+            "Name": "Summoned Skull",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Ultra Rare"
+        },
+        { # Change of Heart
+            "Name": "Change of Heart",
             "Category": "Spell",
-            "Type": "Equip",
+            "Type": "Normal",
+            "Rarity": "Ultra Rare"
+        },
+        { # Mirror Force
+            "Name": "Mirror Force",
+            "Category": "Trap",
+            "Type": "Normal",
             "Rarity": "Ultra Rare"
         },
     ]

@@ -122,5 +122,17 @@ extra_deck_fusions_cards = [
         "ATK": 1800,
         "DEF": 1600
     },
+    { # Black Skull Dragon
+        "Name": "Black Skull Dragon",
+        "Category": "Monster",
+        "Extra Deck Type": "Fusion",
+        "Attribute": "DARK",
+        "Level": 9,
+        "Type": "Dragon, Fusion, Normal",
+        "Materials": "Summoned Skull + Red-Eyes Black Dragon\n(This card is always treated as an 'Archfiend' card.)",
+        "Effect": "None",
+        "ATK": 3200,
+        "DEF": 2500
+    },
     # Add more cards below using the same format
 ]
