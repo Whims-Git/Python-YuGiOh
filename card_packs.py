@@ -786,7 +786,7 @@ MRD = { # Metal Raiders
 
 MRL = { # Magic Ruler
     "Pack Name": "Magic Ruler",
-    "Amount": 105,
+    "Amount": 104,
     "cards": [
         { # Gravekeeper's Servant
             "Name": "Gravekeeper's Servant",
@@ -1063,6 +1063,120 @@ MRL = { # Magic Ruler
             "Category": "Spell",
             "Type": "Equip",
             "Rarity": "Rare"
+        },
+        { # Cyber Jar
+            "Name": "Cyber Jar",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Hiro's Shadow Scout
+            "Name": "Hiro's Shadow Scout",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Hyozanryu
+            "Name": "Hyozanryu",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Rare"
+        },
+        { # Rush Recklessly
+            "Name": "Rush Recklessly",
+            "Category": "Spell",
+            "Type": "Quick-Play",
+            "Rarity": "Rare"
+        },
+        { # Manga Ryu-Ran
+            "Name": "Manga Ryu-Ran",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Serpent Night Dragon
+            "Name": "Serpent Night Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Secret Rare"
+        },
+        { # Blue-Eyes Toon Dragon
+            "Name": "Blue-Eyes Toon Dragon",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Rare"
+        },
+        { # Chain Energy
+            "Name": "Chain Energy",
+            "Category": "Spell",
+            "Type": "Continuous",
+            "Rarity": "Common"
+        },
+        { # Boar Soldier
+            "Name": "Boar Soldier",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Ceremonial Bell
+            "Name": "Ceremonial Bell",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Dark Zebra
+            "Name": "Dark Zebra",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Electric Snake
+            "Name": "Electric Snake",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Flash Assailant
+            "Name": "Flash Assailant",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Griggle
+            "Name": "Griggle",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Kotodama
+            "Name": "Kotodama",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Minar
+            "Name": "Minar",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Penguin Knight
+            "Name": "Penguin Knight",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Sonic Bird
+            "Name": "Sonic Bird",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Wall Shadow
+            "Name": "Wall Shadow",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
         },
         { # Horn of Light
             "Name": "Horn of Light",
