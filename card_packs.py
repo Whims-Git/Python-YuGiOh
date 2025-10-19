@@ -901,7 +901,6 @@ MRD = { # Metal Raiders
             "Type": "Normal",
             "Rarity": "Rare"
         },
-
         { # Horn of Heaven
             "Name": "Horn of Heaven",
             "Category": "Trap",
@@ -961,6 +960,109 @@ MRD = { # Metal Raiders
             "Category": "Trap",
             "Type": "Normal",
             "Rarity": "Ultra Rare"
+        },
+        { # Catapult Turtle
+            "Name": "Catapult Turtle",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Harpie Lady Sisters
+            "Name": "Harpie Lady Sisters",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Kazejin
+            "Name": "Kazejin",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Kuriboh
+            "Name": "Kuriboh",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Sanga of the Thunder
+            "Name": "Sanga of the Thunder",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Suijin
+            "Name": "Suijin",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Super Rare"
+        },
+        { # Twin-Headed Thunder Dragon
+            "Name": "Twin-Headed Thunder Dragon",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Super Rare"
+        },
+        { # Garnecia Elefantis
+            "Name": "Garnecia Elefantis",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+        { # Heavy Storm
+            "Name": "Heavy Storm",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+        { # Tribute to the Doomed
+            "Name": "Tribute to the Doomed",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Super Rare"
+        },
+
+        { # Cocoon of Evolution
+            "Name": "Cocoon of Evolution",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Crass Clown
+            "Name": "Crass Clown",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Dream Clown
+            "Name": "Dream Clown",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Jinzo #7
+            "Name": "Jinzo #7",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Leghul
+            "Name": "Leghul",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Mystic Lamp
+            "Name": "Mystic Lamp",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Ooguchi
+            "Name": "Ooguchi",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
         },
     ]
 }

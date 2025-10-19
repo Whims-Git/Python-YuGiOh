@@ -174,6 +174,18 @@ normal_spell_cards = [
         "Type": "Normal",
         "Effect": "Target 1 monster your opponent controls; take control of it until the End Phase."
     },
+    { # Heavy Storm
+        "Name": "Heavy Storm",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Destroy all Spell and Trap Cards on the field."
+    },
+    { # Tribute to the Doomed
+        "Name": "Tribute to the Doomed",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Discard 1 card, then target 1 monster on the field; destroy it."
+    },
     # Add more cards below using the same format
 ]
 

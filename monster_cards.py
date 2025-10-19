@@ -10,7 +10,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 3000,
-        "DEF": 2500,
+        "DEF": 2500
     },
     { # Dark Magician
         "Name": "Dark Magician",
@@ -20,7 +20,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 2500,
-        "DEF": 2100,
+        "DEF": 2100
     },
     { # Summoned Skull
         "Name": "Summoned Skull",
@@ -30,7 +30,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 2500,
-        "DEF": 1200,
+        "DEF": 1200
     },
     { # Aqua Madoor
         "Name": "Aqua Madoor",
@@ -40,7 +40,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Giant Soldier of Stone
         "Name": "Giant Soldier of Stone",
@@ -50,7 +50,7 @@ vanilla_monster_cards = [
         "Type": "Rock, Normal",
         "Effect": "None",
         "ATK": 1300,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Spirit of the Harp
         "Name": "Spirit of the Harp",
@@ -60,7 +60,7 @@ vanilla_monster_cards = [
         "Type": "Fairy, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Gaia The Fierce Knight
         "Name": "Gaia The Fierce Knight",
@@ -70,7 +70,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 2300,
-        "DEF": 2100,
+        "DEF": 2100
     },
     { # Left Arm of the Forbidden One
         "Name": "Left Arm of the Forbidden One",
@@ -80,7 +80,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 200,
-        "DEF": 300,
+        "DEF": 300
     },
     { # Left Leg of the Forbidden One
         "Name": "Left Leg of the Forbidden One",
@@ -90,7 +90,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 200,
-        "DEF": 300,
+        "DEF": 300
     },
     { # Right Arm of the Forbidden One
         "Name": "Right Arm of the Forbidden One",
@@ -100,7 +100,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 200,
-        "DEF": 300,
+        "DEF": 300
     },
     { # Right Leg of the Forbidden One
         "Name": "Right Leg of the Forbidden One",
@@ -110,7 +110,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 200,
-        "DEF": 300,
+        "DEF": 300
     },
     { # Red-Eyes Black Dragon
         "Name": "Red-Eyes Black Dragon",
@@ -120,7 +120,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2400,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Celtic Guardian
         "Name": "Celtic Guardian",
@@ -130,7 +130,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1200,
+        "DEF": 1200
     },
     { # Curse of Dragon
         "Name": "Curse of Dragon",
@@ -140,7 +140,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2000,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Mystical Elf
         "Name": "Mystical Elf",
@@ -150,7 +150,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Tri-Horned Dragon
         "Name": "Tri-Horned Dragon",
@@ -160,7 +160,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2850,
-        "DEF": 2350,
+        "DEF": 2350
     },
     { # Hinotama Soul
         "Name": "Hinotama Soul",
@@ -170,7 +170,7 @@ vanilla_monster_cards = [
         "Type": "Pyro, Normal",
         "Effect": "None",
         "ATK": 600,
-        "DEF": 500,
+        "DEF": 500
     },
     { # Monster Egg
         "Name": "Monster Egg",
@@ -180,7 +180,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 600,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Armaill
         "Name": "Armaill",
@@ -190,7 +190,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 700,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Armored Starfish
         "Name": "Armored Starfish",
@@ -200,7 +200,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 850,
-        "DEF": 1400,
+        "DEF": 1400
     },
     { # Basic Insect
         "Name": "Basic Insect",
@@ -210,7 +210,7 @@ vanilla_monster_cards = [
         "Type": "Insect, Normal",
         "Effect": "None",
         "ATK": 500,
-        "DEF": 700,
+        "DEF": 700
     },
     { # Beaver Warrior
         "Name": "Beaver Warrior",
@@ -220,7 +220,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Dark Gray
         "Name": "Dark Gray",
@@ -230,7 +230,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Dark King of the Abyss
         "Name": "Dark King of the Abyss",
@@ -240,7 +240,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Darkworld Thorns
         "Name": "Darkworld Thorns",
@@ -250,7 +250,7 @@ vanilla_monster_cards = [
         "Type": "Plant, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Dissolverock
         "Name": "Dissolverock",
@@ -260,7 +260,7 @@ vanilla_monster_cards = [
         "Type": "Rock, Normal",
         "Effect": "None",
         "ATK": 900,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Drooling Lizard
         "Name": "Drooling Lizard",
@@ -270,7 +270,7 @@ vanilla_monster_cards = [
         "Type": "Reptile, Normal",
         "Effect": "None",
         "ATK": 900,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Enchanting Mermaid
         "Name": "Enchanting Mermaid",
@@ -280,7 +280,7 @@ vanilla_monster_cards = [
         "Type": "Fish, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Fiend Reflection #2
         "Name": "Fiend Reflection #2",
@@ -290,7 +290,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 1100,
-        "DEF": 1400,
+        "DEF": 1400
     },
     { # Firegrass
         "Name": "Firegrass",
@@ -300,7 +300,7 @@ vanilla_monster_cards = [
         "Type": "Plant, Normal",
         "Effect": "None",
         "ATK": 700,
-        "DEF": 600,
+        "DEF": 600
     },
     { # Fireyarou
         "Name": "Fireyarou",
@@ -310,7 +310,7 @@ vanilla_monster_cards = [
         "Type": "Pyro, Normal",
         "Effect": "None",
         "ATK": 1300,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Flame Manipulator
         "Name": "Flame Manipulator",
@@ -320,7 +320,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 900,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Frenzied Panda
         "Name": "Frenzied Panda",
@@ -330,7 +330,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Green Phantom King
         "Name": "Green Phantom King",
@@ -340,7 +340,7 @@ vanilla_monster_cards = [
         "Type": "Plant, Normal",
         "Effect": "None",
         "ATK": 500,
-        "DEF": 1600,
+        "DEF": 1600
     },
     { # Hard Armor
         "Name": "Hard Armor",
@@ -350,7 +350,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 300,
-        "DEF": 1200,
+        "DEF": 1200
     },
     { # Hitotsu-Me Giant
         "Name": "Hitotsu-Me Giant",
@@ -360,7 +360,7 @@ vanilla_monster_cards = [
         "Type": "Beast-Warrior, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Kagemusha of the Blue Flame
         "Name": "Kagemusha of the Blue Flame",
@@ -370,7 +370,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 400,
+        "DEF": 400
     },
     { # King Fog
         "Name": "King Fog",
@@ -380,7 +380,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1000,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Kumootoko
         "Name": "Kumootoko",
@@ -390,7 +390,7 @@ vanilla_monster_cards = [
         "Type": "Insect, Normal",
         "Effect": "None",
         "ATK": 700,
-        "DEF": 1400,
+        "DEF": 1400
     },
     { # Kurama
         "Name": "Kurama",
@@ -400,7 +400,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Larvas
         "Name": "Larvas",
@@ -410,7 +410,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Lesser Dragon
         "Name": "Lesser Dragon",
@@ -420,7 +420,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # M-Warrior #1
         "Name": "M-Warrior #1",
@@ -430,7 +430,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 1000,
-        "DEF": 500,
+        "DEF": 500
     },
     { # M-Warrior #2
         "Name": "M-Warrior #2",
@@ -440,7 +440,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 500,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Mammoth Graveyard
         "Name": "Mammoth Graveyard",
@@ -450,7 +450,7 @@ vanilla_monster_cards = [
         "Type": "Dinosaur, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Man Eater
         "Name": "Man Eater",
@@ -460,7 +460,7 @@ vanilla_monster_cards = [
         "Type": "Plant, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 600,
+        "DEF": 600
     },
     { # Masaki the Legendary Swordsman
         "Name": "Masaki the Legendary Swordsman",
@@ -470,7 +470,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 1100,
-        "DEF": 1100,
+        "DEF": 1100
     },
     { # Meda Bat
         "Name": "Meda Bat",
@@ -480,7 +480,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 400,
+        "DEF": 400
     },
     { # Misairuzame
         "Name": "Misairuzame",
@@ -490,7 +490,7 @@ vanilla_monster_cards = [
         "Type": "Fish, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1600,
+        "DEF": 1600
     },
     { # Mystical Sheep #2
         "Name": "Mystical Sheep #2",
@@ -500,7 +500,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Nemuriko
         "Name": "Nemuriko",
@@ -510,7 +510,7 @@ vanilla_monster_cards = [
         "Type": "Spellcaster, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 700,
+        "DEF": 700
     },
     { # One-Eyed Shield Dragon
         "Name": "One-Eyed Shield Dragon",
@@ -520,7 +520,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 700,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Petit Angel
         "Name": "Petit Angel",
@@ -530,7 +530,7 @@ vanilla_monster_cards = [
         "Type": "Fairy, Normal",
         "Effect": "None",
         "ATK": 600,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Petit Dragon
         "Name": "Petit Dragon",
@@ -540,7 +540,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 600,
-        "DEF": 700,
+        "DEF": 700
     },
     { # Ray & Temperature
         "Name": "Ray & Temperature",
@@ -550,7 +550,7 @@ vanilla_monster_cards = [
         "Type": "Fairy, Normal",
         "Effect": "None",
         "ATK": 1000,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Root Water
         "Name": "Root Water",
@@ -560,7 +560,7 @@ vanilla_monster_cards = [
         "Type": "Fish, Normal",
         "Effect": "None",
         "ATK": 900,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Sand Stone
         "Name": "Sand Stone",
@@ -570,7 +570,7 @@ vanilla_monster_cards = [
         "Type": "Rock, Normal",
         "Effect": "None",
         "ATK": 1300,
-        "DEF": 1600,
+        "DEF": 1600
     },
     { # Silver Fang
         "Name": "Silver Fang",
@@ -580,7 +580,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Skull Red Bird
         "Name": "Skull Red Bird",
@@ -590,7 +590,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 1550,
-        "DEF": 1200,
+        "DEF": 1200
     },
     { # Skull Servant
         "Name": "Skull Servant",
@@ -600,7 +600,7 @@ vanilla_monster_cards = [
         "Type": "Zombie, Normal",
         "Effect": "None",
         "ATK": 300,
-        "DEF": 200,
+        "DEF": 200
     },
     { # Spike Seadra
         "Name": "Spike Seadra",
@@ -610,7 +610,7 @@ vanilla_monster_cards = [
         "Type": "Sea Serpent, Normal",
         "Effect": "None",
         "ATK": 1600,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Steel Ogre Grotto #1
         "Name": "Steel Ogre Grotto #1",
@@ -620,7 +620,7 @@ vanilla_monster_cards = [
         "Type": "Machine, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1800,
+        "DEF": 1800
     },
     { # Succubus Knight
         "Name": "Succubus Knight",
@@ -630,7 +630,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Normal",
         "Effect": "None",
         "ATK": 1650,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Terra the Terrible
         "Name": "Terra the Terrible",
@@ -640,7 +640,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # The 13th Grave
         "Name": "The 13th Grave",
@@ -650,7 +650,7 @@ vanilla_monster_cards = [
         "Type": "Zombie, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 900,
+        "DEF": 900
     },
     { # The Furious Sea King
         "Name": "The Furious Sea King",
@@ -660,7 +660,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 700,
+        "DEF": 700
     },
     { # Trial of Nightmare
         "Name": "Trial of Nightmare",
@@ -670,7 +670,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1300,
-        "DEF": 900,
+        "DEF": 900
     },
     { # Tripwire Beast
         "Name": "Tripwire Beast",
@@ -680,7 +680,7 @@ vanilla_monster_cards = [
         "Type": "Thunder, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Turtle Tiger
         "Name": "Turtle Tiger",
@@ -690,7 +690,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1000,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Two-Mouth Darkruler
         "Name": "Two-Mouth Darkruler",
@@ -700,7 +700,7 @@ vanilla_monster_cards = [
         "Type": "Dinosaur, Normal",
         "Effect": "None",
         "ATK": 900,
-        "DEF": 700,
+        "DEF": 700
     },
     { # Tyhone
         "Name": "Tyhone",
@@ -710,7 +710,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 1400,
+        "DEF": 1400
     },
     { # Uraby
         "Name": "Uraby",
@@ -720,7 +720,7 @@ vanilla_monster_cards = [
         "Type": "Dinosaur, Normal",
         "Effect": "None",
         "ATK": 1500,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Witty Phantom
         "Name": "Witty Phantom",
@@ -730,7 +730,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Slot Machine
         "Name": "Slot Machine",
@@ -740,7 +740,7 @@ vanilla_monster_cards = [
         "Type": "Machine, Normal",
         "Effect": "None",
         "ATK": 2000,
-        "DEF": 2300,
+        "DEF": 2300
     },
     { # Hyozanryu
         "Name": "Hyozanryu",
@@ -750,7 +750,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2100,
-        "DEF": 2800,
+        "DEF": 2800
     },
     { # Serpent Night Dragon
         "Name": "Serpent Night Dragon",
@@ -760,7 +760,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2350,
-        "DEF": 2400,
+        "DEF": 2400
     },
     { # Ancient One of the Deep Forest
         "Name": "Ancient One of the Deep Forest",
@@ -770,7 +770,7 @@ vanilla_monster_cards = [
         "Type": "Beast, Normal",
         "Effect": "None",
         "ATK": 1800,
-        "DEF": 1900,
+        "DEF": 1900
     },
     { # Dark Witch
         "Name": "Dark Witch",
@@ -780,7 +780,7 @@ vanilla_monster_cards = [
         "Type": "Fairy, Normal",
         "Effect": "None",
         "ATK": 1800,
-        "DEF": 1700,
+        "DEF": 1700
     },
     { # Fire Kraken
         "Name": "Fire Kraken",
@@ -790,7 +790,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1600,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Giant Turtle Who Feeds on Flames
         "Name": "Giant Turtle Who Feeds on Flames",
@@ -800,7 +800,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1800,
+        "DEF": 1800
     },
     { # Guardian of the Throne Room
         "Name": "Guardian of the Throne Room",
@@ -810,7 +810,7 @@ vanilla_monster_cards = [
         "Type": "Machine, Normal",
         "Effect": "None",
         "ATK": 1650,
-        "DEF": 1600,
+        "DEF": 1600
     },
     { # High Tide Gyojin
         "Name": "High Tide Gyojin",
@@ -820,7 +820,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1650,
-        "DEF": 1300,
+        "DEF": 1300
     },
     { # Labyrinth Wall
         "Name": "Labyrinth Wall",
@@ -830,7 +830,7 @@ vanilla_monster_cards = [
         "Type": "Rock, Normal",
         "Effect": "None",
         "ATK": 0,
-        "DEF": 3000,
+        "DEF": 3000
     },
     { # Liquid Beast
         "Name": "Liquid Beast",
@@ -840,7 +840,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 950,
-        "DEF": 800,
+        "DEF": 800
     },
     { # Mechanical Snail
         "Name": "Mechanical Snail",
@@ -850,7 +850,7 @@ vanilla_monster_cards = [
         "Type": "Machine, Normal",
         "Effect": "None",
         "ATK": 800,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Metal Fish
         "Name": "Metal Fish",
@@ -860,7 +860,7 @@ vanilla_monster_cards = [
         "Type": "Machine, Normal",
         "Effect": "None",
         "ATK": 1600,
-        "DEF": 1900,
+        "DEF": 1900
     },
     { # Octoberser
         "Name": "Octoberser",
@@ -870,7 +870,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1600,
-        "DEF": 1400,
+        "DEF": 1400
     },
     { # Peacock
         "Name": "Peacock",
@@ -880,7 +880,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 1700,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Psychic Kappa
         "Name": "Psychic Kappa",
@@ -890,7 +890,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 400,
-        "DEF": 1000,
+        "DEF": 1000
     },
     { # Queen Bird
         "Name": "Queen Bird",
@@ -900,7 +900,7 @@ vanilla_monster_cards = [
         "Type": "Winged Beast, Normal",
         "Effect": "None",
         "ATK": 1200,
-        "DEF": 2000,
+        "DEF": 2000
     },
     { # Red Archery Girl
         "Name": "Red Archery Girl",
@@ -910,7 +910,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 1400,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Ryu-Ran
         "Name": "Ryu-Ran",
@@ -920,7 +920,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 2200,
-        "DEF": 2600,
+        "DEF": 2600
     },
     { # Stone Ogre Grotto
         "Name": "Stone Ogre Grotto",
@@ -930,7 +930,7 @@ vanilla_monster_cards = [
         "Type": "Rock, Normal",
         "Effect": "None",
         "ATK": 1600,
-        "DEF": 1500,
+        "DEF": 1500
     },
     { # Twin Long Rods #2
         "Name": "Twin Long Rods #2",
@@ -940,7 +940,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Normal",
         "Effect": "None",
         "ATK": 850,
-        "DEF": 700,
+        "DEF": 700
     },
     { # Tyhone #2
         "Name": "Tyhone #2",
@@ -950,7 +950,7 @@ vanilla_monster_cards = [
         "Type": "Dragon, Normal",
         "Effect": "None",
         "ATK": 1700,
-        "DEF": 1900,
+        "DEF": 1900
     },
     { # Whiptail Crow
         "Name": "Whiptail Crow",
@@ -960,7 +960,7 @@ vanilla_monster_cards = [
         "Type": "Fiend, Normal",
         "Effect": "None",
         "ATK": 1650,
-        "DEF": 1600,
+        "DEF": 1600
     },
     { # Crab Turtle
         "Name": "Crab Turtle",
@@ -970,7 +970,7 @@ vanilla_monster_cards = [
         "Type": "Aqua, Ritual",
         "Effect": "None",
         "ATK": 2250,
-        "DEF": 2500,
+        "DEF": 2500
     },
     { # Hungry Burger
         "Name": "Hungry Burger",
@@ -980,7 +980,7 @@ vanilla_monster_cards = [
         "Type": "Warrior, Ritual",
         "Effect": "None",
         "ATK": 2000,
-        "DEF": 1850,
+        "DEF": 1850
     },
     { # Performance of Sword
         "Name": "Performance of Sword",
@@ -990,7 +990,17 @@ vanilla_monster_cards = [
         "Type": "Warrior, Ritual",
         "Effect": "None",
         "ATK": 1950,
-        "DEF": 1850,
+        "DEF": 1850
+    },
+    { # Garnecia Elefantis
+        "Name": "Garnecia Elefantis",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 7,
+        "Type": "Beast-Warrior, Ritual",
+        "Effect": "None",
+        "ATK": 2400,
+        "DEF": 2000
     },
     # Add more cards below using the same format
 ]
@@ -1615,6 +1625,141 @@ effect_monster_cards = [
         "If you call it wrong, destroy as many monsters you control as possible, and if you do, take damage equal to half the total ATK those destroyed monsters had while face-up on the field.",
         "ATK": 500,
         "DEF": 400
+    },
+    { # Catapult Turtle
+        "Name": "Catapult Turtle",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 5,
+        "Type": "Aqua, Effect",
+        "Effect": "Once per turn: You can Tribute 1 monster; inflict damage to your opponent equal to half the Tributed monster's ATK on the field.",
+        "ATK": 1000,
+        "DEF": 2000
+    },
+    { # Harpie Lady Sisters
+        "Name": "Harpie Lady Sisters",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 6,
+        "Type": "Winged Beast, Effect",
+        "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned with 'Elegant Egotist'.",
+        "ATK": 1950,
+        "DEF": 2100
+    },
+    { # Kazejin
+        "Name": "Kazejin",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 7,
+        "Type": "Spellcaster, Effect",
+        "Effect": "During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; " \
+        "make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.",
+        "ATK": 2400,
+        "DEF": 2200
+    },
+    { # Kuriboh
+        "Name": "Kuriboh",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 1,
+        "Type": "Fiend, Effect",
+        "Effect": "During damage calculation, if your opponent's monster attacks (Quick Effect): You can discard this card; you take no battle damage from that battle.",
+        "ATK": 300,
+        "DEF": 200
+    },
+    { # Sanga of the Thunder
+        "Name": "Sanga of the Thunder",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 7,
+        "Type": "Thunder, Effect",
+        "Effect": "During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; " \
+        "make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.",
+        "ATK": 2600,
+        "DEF": 2200
+    },
+    { # Suijin
+        "Name": "Suijin",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 7,
+        "Type": "Aqua, Effect",
+        "Effect": "During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; " \
+        "make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.",
+        "ATK": 2500,
+        "DEF": 2400
+    },
+
+    { # Cocoon of Evolution
+        "Name": "Cocoon of Evolution",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Insect, Effect",
+        "Effect": "You can target 1 'Petit Moth' you control; equip this card from your hand to that target. " \
+        "While equipped by this effect, the original ATK/DEF of that 'Petit Moth' becomes the ATK/DEF of 'Cocoon of Evolution'.",
+        "ATK": 0,
+        "DEF": 2000
+    },
+    { # Crass Clown
+        "Name": "Crass Clown",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Effect",
+        "Effect": "When this card is changed from Defense Position to Attack Position, return 1 monster on your opponent's side of the field to the owner's hand.",
+        "ATK": 1350,
+        "DEF": 1400
+    },
+    { # Dream Clown
+        "Name": "Dream Clown",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Warrior, Effect",
+        "Effect": "When this card is changed from Attack Position to face-up Defense Position, select 1 monster your opponent controls and destroy it.",
+        "ATK": 1200,
+        "DEF": 900
+    },
+    { # Jinzo #7
+        "Name": "Jinzo #7",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 2,
+        "Type": "Machine, Effect",
+        "Effect": "This monster can attack your opponent's Life Points directly.",
+        "ATK": 500,
+        "DEF": 400
+    },
+    { # Leghul
+        "Name": "Leghul",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Insect, Effect",
+        "Effect": "This monster may attack your opponent's Life Points directly.",
+        "ATK": 300,
+        "DEF": 350
+    },
+    { # Mystic Lamp
+        "Name": "Mystic Lamp",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 1,
+        "Type": "Thunder, Effect",
+        "Effect": "This monster can attack your opponent's Life Points directly.",
+        "ATK": 400,
+        "DEF": 300
+    },
+    { # Ooguchi
+        "Name": "Ooguchi",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 1,
+        "Type": "Aqua, Effect",
+        "Effect": "This monster may attack your opponent's Life Points directly.",
+        "ATK": 300,
+        "DEF": 250
     },
     # Add more cards below using the same format
 ]
