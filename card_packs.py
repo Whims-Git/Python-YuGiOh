@@ -1021,7 +1021,6 @@ MRD = { # Metal Raiders
             "Type": "Normal",
             "Rarity": "Super Rare"
         },
-
         { # Cocoon of Evolution
             "Name": "Cocoon of Evolution",
             "Category": "Monster",
@@ -1063,6 +1062,62 @@ MRD = { # Metal Raiders
             "Category": "Monster",
             "Type": "Effect",
             "Rarity": "Common"
+        },
+
+        { # Queen's Double
+            "Name": "Queen's Double",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Rainbow Flower
+            "Name": "Rainbow Flower",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # The Unhappy Maiden
+            "Name": "The Unhappy Maiden",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Thunder Dragon
+            "Name": "Thunder Dragon",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Stim-Pack
+            "Name": "Stim-Pack",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Baby Dragon
+            "Name": "Baby Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Gazelle the King of Mythical Beasts
+            "Name": "Gazelle the King of Mythical Beasts",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+
+        { # Gate Guardian
+            "Name": "Gate Guardian",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Secret Rare"
+        },
+        { # Thousand Dragon
+            "Name": "Thousand Dragon",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Secret Rare"
         },
     ]
 }

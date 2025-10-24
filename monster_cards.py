@@ -1002,6 +1002,26 @@ vanilla_monster_cards = [
         "ATK": 2400,
         "DEF": 2000
     },
+    { # Baby Dragon
+        "Name": "Baby Dragon",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 3,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 1200,
+        "DEF": 700
+    },
+    { # Gazelle the King of Mythical Beasts
+        "Name": "Gazelle the King of Mythical Beasts",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1200
+    },
     # Add more cards below using the same format
 ]
 
@@ -1689,7 +1709,6 @@ effect_monster_cards = [
         "ATK": 2500,
         "DEF": 2400
     },
-
     { # Cocoon of Evolution
         "Name": "Cocoon of Evolution",
         "Category": "Monster",
@@ -1760,6 +1779,56 @@ effect_monster_cards = [
         "Effect": "This monster may attack your opponent's Life Points directly.",
         "ATK": 300,
         "DEF": 250
+    },
+    { # Queen's Double
+        "Name": "Queen's Double",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Warrior, Effect",
+        "Effect": "This monster may attack your opponent's Life Points directly.",
+        "ATK": 350,
+        "DEF": 300
+    },
+    { # Rainbow Flower
+        "Name": "Rainbow Flower",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Plant, Effect",
+        "Effect": "This monster may attack your opponent's Life Points directly.",
+        "ATK": 400,
+        "DEF": 500
+    },
+    { # The Unhappy Maiden
+        "Name": "The Unhappy Maiden",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 1,
+        "Type": "Spellcaster, Effect",
+        "Effect": "When this card is sent to the Graveyard as a result of battle, the Battle Phase for that turn ends immediately.",
+        "ATK": 0,
+        "DEF": 100
+    },
+    { # Thunder Dragon
+        "Name": "Thunder Dragon",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 5,
+        "Type": "Thunder, Effect",
+        "Effect": "You can discard this card; add up to 2 'Thunder Dragon' from your Deck to your hand.",
+        "ATK": 1600,
+        "DEF": 1500
+    },
+    { # Gate Guardian
+        "Name": "Gate Guardian",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 7,
+        "Type": "Warrior, Effect",
+        "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by Tributing 1 'Sanga of the Thunder', 'Kazejin', and 'Suijin'.",
+        "ATK": 7350,
+        "DEF": 3400
     },
     # Add more cards below using the same format
 ]

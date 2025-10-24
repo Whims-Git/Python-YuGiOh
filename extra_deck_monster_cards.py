@@ -146,5 +146,18 @@ extra_deck_fusions_cards = [
         "ATK": 2800,
         "DEF": 2100
     },
+
+    { # Twin-Headed Thunder Dragon
+        "Name": "Thousand Dragon",
+        "Category": "Monster",
+        "Extra Deck Type": "Fusion",
+        "Attribute": "LIGHT",
+        "Level": 7,
+        "Type": "Thunder, Fusion, Normal",
+        "Materials": "'Time Wizard' + 'Baby Dragon'",
+        "Effect": "None",
+        "ATK": 2400,
+        "DEF": 2000
+    },
     # Add more cards below using the same format
 ]

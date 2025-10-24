@@ -416,6 +416,12 @@ equip_spell_cards = [
         "Type": "Equip",
         "Effect": "The equipped monster gains 700 ATK. When this card is sent from the field to the Graveyard: You can pay 500 LP; place this card on the top of your Deck."
     },
+    { # Stim-Pack
+        "Name": "Stim-Pack",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The equipped monster gains 700 ATK. During each of your Standby Phases, the equipped monster loses 200 ATK."
+    },
     # Add more cards below using the same format
 ]
 
