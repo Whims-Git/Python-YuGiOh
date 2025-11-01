@@ -1827,8 +1827,80 @@ effect_monster_cards = [
         "Level": 7,
         "Type": "Warrior, Effect",
         "Effect": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by Tributing 1 'Sanga of the Thunder', 'Kazejin', and 'Suijin'.",
-        "ATK": 7350,
+        "ATK": 2350,
         "DEF": 3400
+    },
+    { # Blast Juggler
+        "Name": "Blast Juggler",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 3,
+        "Type": "Machine, Effect",
+        "Effect": "You can only activate this effect during your Standby Phase. Tribute this face-up card to select and destroy 2 face-up monsters with an ATK 1000 or less.",
+        "ATK": 800,
+        "DEF": 900
+    },
+    { # Electric Lizard
+        "Name": "Electric Lizard",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Thunder, Effect",
+        "Effect": "A non Zombie-Type monster attacking 'Electric Lizard' cannot attack on its following turn.",
+        "ATK": 850,
+        "DEF": 800
+    },
+    { # Insect Soldiers of the Sky
+        "Name": "Insect Soldiers of the Sky",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 3,
+        "Type": "Insect, Effect",
+        "Effect": "If this card attacks a WIND monster, it gains 1000 ATK during the Damage Step only.",
+        "ATK": 1000,
+        "DEF": 800
+    },
+    { # Jirai Gumo
+        "Name": "Jirai Gumo",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Insect, Effect",
+        "Effect": "When this card declares an attack: Toss a coin and call it. If you call it wrong, lose half your Life Points.",
+        "ATK": 2200,
+        "DEF": 100
+    },
+    { # Larvae Moth
+        "Name": "Larvae Moth",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 2,
+        "Type": "Insect, Effect",
+        "Effect": "This monster cannot be Normal Summoned or Set. This card can only be Special Summoned " \
+        "by Tributing 'Petit Moth' during your 2nd turn after 'Petit Moth' has been equipped with 'Cocoon of Evolution'.",
+        "ATK": 500,
+        "DEF": 400
+    },
+    { # Lava Battleguard
+        "Name": "Lava Battleguard",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Warrior, Effect",
+        "Effect": "This card gains 500 ATK for each 'Swamp Battleguard' you control.",
+        "ATK": 1550,
+        "DEF": 1800
+    },
+    { # Mushroom Man #2
+        "Name": "Mushroom Man #2",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Warrior, Effect",
+        "Effect": "A player controlling this monster loses 300 Life Points during each of his/her Standby Phases " \
+        "when this card is face-up on the field. Control of this card is shifted to your opponent by paying 500 Life Points at your own End Phase.",
+        "ATK": 1250,
+        "DEF": 800
     },
     # Add more cards below using the same format
 ]

@@ -1063,7 +1063,6 @@ MRD = { # Metal Raiders
             "Type": "Effect",
             "Rarity": "Common"
         },
-
         { # Queen's Double
             "Name": "Queen's Double",
             "Category": "Monster",
@@ -1106,7 +1105,6 @@ MRD = { # Metal Raiders
             "Type": "Normal",
             "Rarity": "Common"
         },
-
         { # Gate Guardian
             "Name": "Gate Guardian",
             "Category": "Monster",
@@ -1118,6 +1116,48 @@ MRD = { # Metal Raiders
             "Category": "Monster",
             "Type": "Effect",
             "Rarity": "Secret Rare"
+        },
+        { # Blast Juggler
+            "Name": "Blast Juggler",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Electric Lizard
+            "Name": "Electric Lizard",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Insect Soldiers of the Sky
+            "Name": "Insect Soldiers of the Sky",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Jirai Gumo
+            "Name": "Jirai Gumo",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Larvae Moth
+            "Name": "Larvae Moth",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Lava Battleguard
+            "Name": "Lava Battleguard",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Mushroom Man #2
+            "Name": "Mushroom Man #2",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
         },
     ]
 }
