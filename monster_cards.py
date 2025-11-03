@@ -1902,5 +1902,78 @@ effect_monster_cards = [
         "ATK": 1250,
         "DEF": 800
     },
+
+    { # Pumpking the King of Ghosts
+        "Name": "Pumpking the King of Ghosts",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 6,
+        "Type": "Zombie, Effect",
+        "Effect": "If 'Castle of Dark Illusions' is face-up on the field, increase the ATK and DEF of this card by 100 points. " \
+        "As long as this 'Castle of Dark Illusions' remains face-up on the field, the ATK and DEF of this card continues to increase " \
+        "by 100 points during each of your Standby Phases. This effect continues until your 4th turn after the card is activated.",
+        "ATK": 1800,
+        "DEF": 2000
+    },
+    { # Steel Scorpion
+        "Name": "Steel Scorpion",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Machine, Effect",
+        "Effect": "A non Machine-Type Monster attacking 'Steel Scorpion' will be destroyed at the End Phase of your opponent's 2nd turn after the attack.",
+        "ATK": 250,
+        "DEF": 300
+    },
+    { # Swamp Battleguard
+        "Name": "Swamp Battleguard",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Warrior, Effect",
+        "Effect": "This card gains 500 ATK for each 'Lava Battleguard' you control.",
+        "ATK": 1000,
+        "DEF": 800
+    },
+    { # Tainted Wisdom
+        "Name": "Tainted Wisdom",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Fiend, Effect",
+        "Effect": "If this Attack Position card is changed to face-up Defense Position: Shuffle your Deck.",
+        "ATK": 1250,
+        "DEF": 800
+    },
+    { # The Bistro Butcher
+        "Name": "The Bistro Butcher",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Effect",
+        "Effect": "When this card inflicts Battle Damage to your opponent, your opponent draws 2 cards.",
+        "ATK": 1800,
+        "DEF": 1000
+    },
+    { # The Little Swordsman of Aile
+        "Name": "The Little Swordsman of Aile",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 3,
+        "Type": "Warrior, Effect",
+        "Effect": "Offer 1 monster on your side of the field as a Tribute to increase this monster's ATK by 700 points until the end of the turn.",
+        "ATK": 800,
+        "DEF": 1300
+    },
+    { # Yado Karu
+        "Name": "Yado Karu",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Aqua, Effect",
+        "Effect": "When this card is changed from Attack Position to Defense Position, you can place any number of cards from your hand at the bottom of your Deck in any order you desire.",
+        "ATK": 900,
+        "DEF": 1700
+    },
     # Add more cards below using the same format
 ]

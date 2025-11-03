@@ -1159,6 +1159,48 @@ MRD = { # Metal Raiders
             "Type": "Effect",
             "Rarity": "Common"
         },
+        { # Pumpking the King of Ghosts
+            "Name": "Pumpking the King of Ghosts",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Steel Scorpion
+            "Name": "Steel Scorpion",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Swamp Battleguard
+            "Name": "Swamp Battleguard",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Tainted Wisdom
+            "Name": "Tainted Wisdom",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # The Bistro Butcher
+            "Name": "The Bistro Butcher",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # The Little Swordsman of Aile
+            "Name": "The Little Swordsman of Aile",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Yado Karu
+            "Name": "Yado Karu",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
     ]
 }
 

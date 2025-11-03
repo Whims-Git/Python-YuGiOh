@@ -146,7 +146,6 @@ extra_deck_fusions_cards = [
         "ATK": 2800,
         "DEF": 2100
     },
-
     { # Twin-Headed Thunder Dragon
         "Name": "Thousand Dragon",
         "Category": "Monster",
