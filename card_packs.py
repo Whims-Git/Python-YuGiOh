@@ -767,7 +767,7 @@ LOB = { # Legend of Blue Eyes White Dragon
 
 MRD = { # Metal Raiders
     "Pack Name": "Metal Raiders",
-    "Amount": 4, # 146
+    "Amount": 144,
     "cards": [
         { # Robbin' Goblin
             "Name": "Robbin' Goblin",
@@ -2268,4 +2268,4 @@ MRL = { # Magic Ruler
 }
 # Add more cards below using the same format
 
-print(len(MRL["cards"]))
+print(len(MRD["cards"]))
