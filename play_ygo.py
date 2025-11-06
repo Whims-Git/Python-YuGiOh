@@ -4,13 +4,13 @@ import card_pulling
 
 def deck_building_menu():
     while True:
-        print("\nDeck Building Menu")
-        print("1. View Current Deck")
-        print("2. View Card Pool")
-        print("3. Search and View Card Details")
-        print("4. Add Card(s) to Deck")
-        print("5. Remove Card(s) from Deck")
-        print("6. Return to Main Menu")
+        print("\nDeck Building Menu\n" \
+        "1. View Current Deck\n" \
+        "2. View Card Pool\n" \
+        "3. Search and View Card Details\n" \
+        "4. Add Card(s) to Deck\n" \
+        "5. Remove Card(s) from Deck\n" \
+        "6. Return to Main Menu\n")
         choice = input("\nEnter your choice (1-6): ")
 
         if choice == "1": # View Current Deck
@@ -21,14 +21,8 @@ def deck_building_menu():
             card_name = input("\nEnter the name of the card to search: ")
             deck_building.search_card(card_name)
         elif choice == "4": # Add Card(s) to Deck
-            #card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
-            #deck_building.add_card_to_deck(card_name, card_qty)
-            deck_building.add_card_to_deck("Dark Magician", "3")
-            # deck_building.add_card_to_deck("Blue-Eyes White Dragon", "3")
-            deck_building.add_card_to_deck("Pot of Greed", "2")
-            deck_building.add_card_to_deck("Two-Pronged Attack", "2")
-            deck_building.add_card_to_deck("Forest", "2")
-            # deck_building.add_card_to_deck("Charubin the Fire Knight", "1")
+            card_name, card_qty = input("\nEnter the card name and the amount to add, separated by a comma: ").split(',')
+            deck_building.add_card_to_deck(card_name, card_qty)
         elif choice == "5": # Remove Card(s) from Deck
             card_name, card_qty = input("\nEnter the card name and the amount to be removed, separated by a comma: ").split(',')
             deck_building.remove_card_from_deck(card_name, card_qty)
@@ -40,16 +34,16 @@ def deck_building_menu():
 
 def duel_actions_menu(field):
     while True:
-        print("\nActions Menu")
-        print("1. Examine card - field/hand/graveyard/banishment")
-        print("2. Summon/Set card to Field")
-        print("3. Declare Attack")
-        print("4. Change monster card position on field")
-        print("5. Activate card effect")
-        print("6. Move a card field/hand/gy/banishment <-> hand/gy/banishment")
-        print("7. Show main/extra deck")
-        print("8. Continue to next phase")
-        print("9. Quit")
+        print("\nActions Menu\n" \
+        "1. Examine card - field/hand/graveyard/banishment\n" \
+        "2. Summon/Set card to Field\n" \
+        "3. Declare Attack\n" \
+        "4. Change monster card position on field\n" \
+        "5. Activate card effect\n" \
+        "6. Move a card field/hand/gy/banishment <-> hand/gy/banishment\n" \
+        "7. Show main/extra deck\n" \
+        "8. Continue to next phase\n" \
+        "9. Quit\n")
         choice = input("\nEnter your choice (1-9): ")
 
         if choice == "1": # Examine card - field/hand/graveyard/banishment
@@ -152,11 +146,11 @@ def duel_actions_menu(field):
 
 def pull_cards_menu():
     while True:
-        print("\nPull Packs!")
-        print("1. View all the cards in a pack")
-        print("2. Pull from a pack")
-        print("3. View your card collection")
-        print("4. Quit")
+        print("\nPull Packs!\n" \
+        "1. View all the cards in a pack\n" \
+        "2. Pull from a pack\n" \
+        "3. View your card collection\n" \
+        "4. Quit")
         choice = input("\nEnter your choice (1-4): ")
 
         if choice == "1": # View all the cards in a pack
@@ -192,13 +186,13 @@ def pull_cards_menu():
 
 def search_card_pool():
     while True:
-        print("\nSelect Category of Cards to View")
-        print("1. Vanilla Monsters")
-        print("2. Main Deck Effect Monsters")
-        print("3. Fusion Monsters")
-        print("4. Spell Cards")
-        print("5. Trap Cards")
-        print("6. Quit")
+        print("\nSelect Category of Cards to View\n" \
+        "1. Vanilla Monsters\n" \
+        "2. Main Deck Effect Monsters\n" \
+        "3. Fusion Monsters\n" \
+        "4. Spell Cards\n" \
+        "5. Trap Cards\n" \
+        "6. Quit")
         choice = input("\nEnter your choice (1-6): ")
 
         if choice == "1": # Vanilla Monsters
@@ -239,11 +233,11 @@ def search_card_pool():
 
 def main_menu():
     while True:
-        print("\nYu-Gi-Oh! Main Menu")
-        print("1. Duel")
-        print("2. Deck Build")
-        print("3. Pull Cards")
-        print("4. Quit")
+        print("\nYu-Gi-Oh! Main Menu\n" \
+        "1. Duel\n" \
+        "2. Deck Build\n" \
+        "3. Pull Cards\n" \
+        "4. Quit")
         choice = input("\nEnter your choice (1-4): ")
 
         if choice == "1": # Duel
