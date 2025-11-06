@@ -28,7 +28,7 @@ vanilla_monster_cards = [
         "Attribute": "DARK",
         "Level": 6,
         "Type": "Fiend, Normal",
-        "Effect": "None",
+        "Effect": "None \n(This card is always treated as an 'Archfiend' card.)",
         "ATK": 2500,
         "DEF": 1200
     },
@@ -1022,6 +1022,476 @@ vanilla_monster_cards = [
         "ATK": 1500,
         "DEF": 1200
     },
+    { # 7 Colored Fish
+        "Name": "7 Colored Fish",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Fish, Normal",
+        "Effect": "None",
+        "ATK": 1800,
+        "DEF": 800
+    },
+    { # Ancient Brain
+        "Name": "Ancient Brain",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Fiend, Normal",
+        "Effect": "None",
+        "ATK": 1000,
+        "DEF": 700
+    },
+    { # Ancient Elf
+        "Name": "Ancient Elf",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 4,
+        "Type": "Spellcaster, Normal",
+        "Effect": "None",
+        "ATK": 1450,
+        "DEF": 1200
+    },
+    { # Ancient Lizard Warrior
+        "Name": "Ancient Lizard Warrior",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Reptile, Normal",
+        "Effect": "None",
+        "ATK": 1400,
+        "DEF": 1100
+    },
+    { # Armored Lizard
+        "Name": "Armored Lizard",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Reptile, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1200
+    },
+    { # Armored Zombie
+        "Name": "Armored Zombie",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Zombie, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 0
+    },
+    { # Battle Steer
+        "Name": "Battle Steer",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Beast-Warrior, Normal",
+        "Effect": "None",
+        "ATK": 1800,
+        "DEF": 1300
+    },
+    { # Blackland Fire Dragon
+        "Name": "Blackland Fire Dragon",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 800
+    },
+    { # Blue-Winged Crown
+        "Name": "Blue-Winged Crown",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 4,
+        "Type": "Winged Beast, Normal",
+        "Effect": "None",
+        "ATK": 1600,
+        "DEF": 1200
+    },
+    { # Bottom Dweller
+        "Name": "Bottom Dweller",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 5,
+        "Type": "Fish, Normal",
+        "Effect": "None",
+        "ATK": 1650,
+        "DEF": 1700
+    },
+    { # Crawling Dragon
+        "Name": "Ancient Lizard Warrior",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 1600,
+        "DEF": 1400
+    },
+    { # Destroyer Golem
+        "Name": "Destroyer Golem",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Rock, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1000
+    },
+    { # Disk Magician
+        "Name": "Disk Magician",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Machine, Normal",
+        "Effect": "None",
+        "ATK": 1350,
+        "DEF": 1000
+    },
+    { # Doma The Angel of Silence
+        "Name": "Doma The Angel of Silence",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Fairy, Normal",
+        "Effect": "None",
+        "ATK": 1600,
+        "DEF": 1400
+    },
+    { # Feral Imp
+        "Name": "Feral Imp",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Normal",
+        "Effect": "None",
+        "ATK": 1300,
+        "DEF": 1400
+    },
+    { # Flame Cerebrus
+        "Name": "Flame Cerebrus",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 6,
+        "Type": "Pyro, Normal",
+        "Effect": "None",
+        "ATK": 2100,
+        "DEF": 1800
+    },
+    { # Giga-Tech Wolf
+        "Name": "Giga-Tech Wolf",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 4,
+        "Type": "Machine, Normal",
+        "Effect": "None",
+        "ATK": 1200,
+        "DEF": 1400
+    },
+    { # Hunter Spider
+        "Name": "Hunter Spider",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Insect, Normal",
+        "Effect": "None",
+        "ATK": 1600,
+        "DEF": 1400
+    },
+    { # Ground Attacker Bugroth
+        "Name": "Ground Attacker Bugroth",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Machine, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1000
+    },
+    { # Guardian of the Labyrinth
+        "Name": "Guardian of the Labyrinth",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Warrior, Normal",
+        "Effect": "None",
+        "ATK": 1000,
+        "DEF": 1200
+    },
+    { # Harpie Lady
+        "Name": "Harpie Lady",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 4,
+        "Type": "Winged Beast, Normal",
+        "Effect": "None",
+        "ATK": 1300,
+        "DEF": 1400
+    },
+    { # Hibikime
+        "Name": "Hibikime",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Warrior, Normal",
+        "Effect": "None",
+        "ATK": 1450,
+        "DEF": 1000
+    },
+    { # Hyosube
+        "Name": "Hyosube",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Aqua, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 900
+    },
+    { # Illusionist Faceless Mage
+        "Name": "Illusionist Faceless Mage",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Spellcaster, Normal",
+        "Effect": "None",
+        "ATK": 1200,
+        "DEF": 2200
+    },
+    { # Jellyfish
+        "Name": "Jellyfish",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Aqua, Normal",
+        "Effect": "None",
+        "ATK": 1200,
+        "DEF": 1500
+    },
+    { # Killer Needle
+        "Name": "Killer Needle",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 4,
+        "Type": "Insect, Normal",
+        "Effect": "None",
+        "ATK": 1200,
+        "DEF": 1000
+    },
+    { # King of Yamimakai
+        "Name": "King of Yamimakai",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Fiend, Normal",
+        "Effect": "None",
+        "ATK": 2000,
+        "DEF": 1530
+    },
+    { # Kojikocy
+        "Name": "Kojikocy",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Warrior, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1200
+    },
+    { # Lady of Faith
+        "Name": "Lady of Faith",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 3,
+        "Type": "Spellcaster, Normal",
+        "Effect": "None",
+        "ATK": 1100,
+        "DEF": 800
+    },
+    { # Launcher Spider
+        "Name": "Launcher Spider",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 7,
+        "Type": "Machine, Normal",
+        "Effect": "None",
+        "ATK": 2200,
+        "DEF": 2500
+    },
+    { # Leogun
+        "Name": "Leogun",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Beast, Normal",
+        "Effect": "None",
+        "ATK": 1750,
+        "DEF": 1550
+    },
+    { # Mega Thunderball
+        "Name": "Mega Thunderball",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 2,
+        "Type": "Thunder, Normal",
+        "Effect": "None",
+        "ATK": 750,
+        "DEF": 600
+    },
+    { # Morinphen
+        "Name": "Morinphen",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 5,
+        "Type": "Fiend, Normal",
+        "Effect": "None",
+        "ATK": 1550,
+        "DEF": 1300
+    },
+    { # Mystic Horseman
+        "Name": "Mystic Horseman",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Normal",
+        "Effect": "None",
+        "ATK": 1300,
+        "DEF": 1550
+    },
+    { # Niwatori
+        "Name": "Niwatori",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Winged Beast, Normal",
+        "Effect": "None",
+        "ATK": 900,
+        "DEF": 800
+    },
+    { # Ocubeam
+        "Name": "Ocubeam",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 5,
+        "Type": "Fairy, Normal",
+        "Effect": "None",
+        "ATK": 1550,
+        "DEF": 1650
+    },
+    { # Pale Beast
+        "Name": "Pale Beast",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1200
+    },
+    { # Petit Moth
+        "Name": "Petit Moth",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 1,
+        "Type": "Insect, Normal",
+        "Effect": "None",
+        "ATK": 300,
+        "DEF": 200
+    },
+    { # Prevent Rat
+        "Name": "Prevent Rat",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Beast, Normal",
+        "Effect": "None",
+        "ATK": 500,
+        "DEF": 2000
+    },
+    { # Protector of the Throne
+        "Name": "Protector of the Throne",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 4,
+        "Type": "Warrior, Normal",
+        "Effect": "None",
+        "ATK": 800,
+        "DEF": 1500
+    },
+    { # Rock Ogre Grotto #1
+        "Name": "Rock Ogre Grotto #1",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 3,
+        "Type": "Rock, Normal",
+        "Effect": "None",
+        "ATK": 800,
+        "DEF": 1200
+    },
+    { # Ryu-Kishin Powered
+        "Name": "Ryu-Kishin Powered",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Normal",
+        "Effect": "None",
+        "ATK": 1600,
+        "DEF": 1200
+    },
+    { # Saggi the Dark Clown
+        "Name": "Saggi the Dark Clown",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 3,
+        "Type": "Spellcaster, Normal",
+        "Effect": "None",
+        "ATK": 600,
+        "DEF": 1500
+    },
+    { # Tongyo
+        "Name": "Tongyo",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Fish, Normal",
+        "Effect": "None",
+        "ATK": 1350,
+        "DEF": 800
+    },
+    { # Trent
+        "Name": "Trent",
+        "Category": "Monster",
+        "Attribute": "EARTH",
+        "Level": 5,
+        "Type": "Plant, Normal",
+        "Effect": "None",
+        "ATK": 1500,
+        "DEF": 1800
+    },
+    { # Water Omotics
+        "Name": "Water Omotics",
+        "Category": "Monster",
+        "Attribute": "WATER",
+        "Level": 4,
+        "Type": "Aqua, Normal",
+        "Effect": "None",
+        "ATK": 1400,
+        "DEF": 1200
+    },
+    { # Winged Dragon, Guardian of the Fortress #1
+        "Name": "Winged Dragon, Guardian of the Fortress #1",
+        "Category": "Monster",
+        "Attribute": "WIND",
+        "Level": 4,
+        "Type": "Dragon, Normal",
+        "Effect": "None",
+        "ATK": 1400,
+        "DEF": 1200
+    },
     # Add more cards below using the same format
 ]
 
@@ -1902,7 +2372,6 @@ effect_monster_cards = [
         "ATK": 1250,
         "DEF": 800
     },
-
     { # Pumpking the King of Ghosts
         "Name": "Pumpking the King of Ghosts",
         "Category": "Monster",
@@ -1974,6 +2443,47 @@ effect_monster_cards = [
         "Effect": "When this card is changed from Attack Position to Defense Position, you can place any number of cards from your hand at the bottom of your Deck in any order you desire.",
         "ATK": 900,
         "DEF": 1700
+    },
+    { # Big Eye
+        "Name": "Big Eye",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Flip, Effect",
+        "Effect": "FLIP: Look at up to 5 cards from the top of your Deck, then place them on the top of the Deck in any order.",
+        "ATK": 1200,
+        "DEF": 1000
+    },
+    { # Castle of Dark Illusions
+        "Name": "Castle of Dark Illusions",
+        "Category": "Monster",
+        "Attribute": "DARK",
+        "Level": 4,
+        "Type": "Fiend, Flip, Effect",
+        "Effect": "FLIP: All Zombie-Type monsters gain 200 ATK and DEF. During each of your next 4 Standby Phases, " \
+        "each of those Zombie-Type monsters gains 200 more ATK and DEF. These effects last as long as this card is face-up on the field.",
+        "ATK": 920,
+        "DEF": 1930
+    },
+    { # Dragon Piper
+        "Name": "Dragon Piper",
+        "Category": "Monster",
+        "Attribute": "FIRE",
+        "Level": 3,
+        "Type": "Pyro, Flip, Effect",
+        "Effect": "FLIP: Destroy all face-up 'Dragon Capture Jar'(s) on the field. If you destroy any, change all face-up Dragon-Type monsters on the field to Attack Position.",
+        "ATK": 200,
+        "DEF": 1800
+    },
+    { # The Immortal of Thunder
+        "Name": "The Immortal of Thunder",
+        "Category": "Monster",
+        "Attribute": "LIGHT",
+        "Level": 4,
+        "Type": "Thunder, Flip, Effect",
+        "Effect": "FLIP: Increase your Life Points by 3000 points. When this card is sent from the field to the Graveyard, you lose 5000 Life Points.",
+        "ATK": 1500,
+        "DEF": 1300
     },
     # Add more cards below using the same format
 ]

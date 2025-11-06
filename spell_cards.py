@@ -186,6 +186,36 @@ normal_spell_cards = [
         "Type": "Normal",
         "Effect": "Discard 1 card, then target 1 monster on the field; destroy it."
     },
+    { # Block Attack
+        "Name": "Block Attack",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Target 1 face-up Attack Position monster your opponent controls; change that target to face-up Defense Position."
+    },
+    { # Share the Pain
+        "Name": "Share the Pain",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Tribute 1 monster; make your opponent Tribute 1 monster (for no effect)."
+    },
+    { # Soul Release
+        "Name": "Soul Release",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Target up to 5 cards in any GY(s); banish them."
+    },
+    { # The Cheerful Coffin
+        "Name": "The Cheerful Coffin",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Discard up to 3 Monster Cards from your hand to the Graveyard."
+    },
+    { # Tremendous Fire
+        "Name": "Tremendous Fire",
+        "Category": "Spell",
+        "Type": "Normal",
+        "Effect": "Inflict 1000 points of damage to your opponent's Life Points and 500 points of damage to your Life Points."
+    },
     # Add more cards below using the same format
 ]
 
@@ -421,6 +451,31 @@ equip_spell_cards = [
         "Category": "Spell",
         "Type": "Equip",
         "Effect": "The equipped monster gains 700 ATK. During each of your Standby Phases, the equipped monster loses 200 ATK."
+    },
+    { # Germ Infection
+        "Name": "Germ Infection",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The ATK of a non Machine-Type monster equipped with this card is decreased by 300 points at each of its Standby Phases."
+    },
+    { # Paralyzing Potion
+        "Name": "Paralyzing Potion",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "A non Machine-Type monster equipped with this card cannot attack."
+    },
+    { # Ring of Magnetism
+        "Name": "Ring of Magnetism",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "You can only equip this card to a monster on your side of the field. Decrease the ATK and DEF of a monster " \
+        "equipped with this card by 500 points. In addition, all the monsters on your opponent's side of the field can only attack the monster equipped with this card, if they attack."
+    },
+    { # Sword of Deep-Seated
+        "Name": "Sword of Deep-Seated",
+        "Category": "Spell",
+        "Type": "Equip",
+        "Effect": "The equipped monster gains 500 ATK/DEF. If this card is sent to your GY: Place it on top of your Deck."
     },
     # Add more cards below using the same format
 ]

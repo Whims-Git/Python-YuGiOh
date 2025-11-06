@@ -1201,6 +1201,438 @@ MRD = { # Metal Raiders
             "Type": "Effect",
             "Rarity": "Common"
         },
+        { # Big Eye
+            "Name": "Big Eye",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Castle of Dark Illusions
+            "Name": "Castle of Dark Illusions",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Dragon Piper
+            "Name": "Dragon Piper",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Germ Infection
+            "Name": "Germ Infection",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Paralyzing Potion
+            "Name": "Paralyzing Potion",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Ring of Magnetism
+            "Name": "Ring of Magnetism",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # Sword of Deep-Seated
+            "Name": "Sword of Deep-Seated",
+            "Category": "Spell",
+            "Type": "Equip",
+            "Rarity": "Common"
+        },
+        { # The Immortal of Thunder
+            "Name": "The Immortal of Thunder",
+            "Category": "Monster",
+            "Type": "Effect",
+            "Rarity": "Common"
+        },
+        { # Bickuribox
+            "Name": "Bickuribox",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Cyber Saurus
+            "Name": "Cyber Saurus",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Deepsea Shark
+            "Name": "Deepsea Shark",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Empress Judge
+            "Name": "Empress Judge",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Giltia the D. Knight
+            "Name": "Giltia the D. Knight",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Kaminari Attack
+            "Name": "Kaminari Attack",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Labyrinth Tank
+            "Name": "Labyrinth Tank",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Musician King
+            "Name": "Musician King",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Punished Eagle
+            "Name": "Punished Eagle",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Rabid Horseman
+            "Name": "Rabid Horseman",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Roaring Ocean Snake
+            "Name": "Roaring Ocean Snake",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # Skull Knight
+            "Name": "Skull Knight",
+            "Category": "Monster",
+            "Type": "Fusion",
+            "Rarity": "Common"
+        },
+        { # 7 Colored Fish
+            "Name": "7 Colored Fish",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ancient Brain
+            "Name": "Ancient Brain",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ancient Elf
+            "Name": "Ancient Elf",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ancient Lizard Warrior
+            "Name": "Ancient Lizard Warrior",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Armored Lizard
+            "Name": "Armored Lizard",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Armored Zombie
+            "Name": "Armored Zombie",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Battle Steer
+            "Name": "Battle Steer",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Blackland Fire Dragon
+            "Name": "Blackland Fire Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Blue-Winged Crown
+            "Name": "Blue-Winged Crown",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Bottom Dweller
+            "Name": "Bottom Dweller",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Crawling Dragon
+            "Name": "Crawling Dragon",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Destroyer Golem
+            "Name": "Destroyer Golem",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Disk Magician
+            "Name": "Disk Magician",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Doma The Angel of Silence
+            "Name": "Doma The Angel of Silence",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Feral Imp
+            "Name": "Feral Imp",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Flame Cerebrus
+            "Name": "Flame Cerebrus",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Giga-Tech Wolf
+            "Name": "Giga-Tech Wolf",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hunter Spider
+            "Name": "Hunter Spider",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ground Attacker Bugroth
+            "Name": "Ground Attacker Bugroth",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Guardian of the Labyrinth
+            "Name": "Guardian of the Labyrinth",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Harpie Lady
+            "Name": "Harpie Lady",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hibikime
+            "Name": "Hibikime",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Hyosube
+            "Name": "Hyosube",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Illusionist Faceless Mage
+            "Name": "Illusionist Faceless Mage",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Jellyfish
+            "Name": "Jellyfish",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Killer Needle
+            "Name": "Killer Needle",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # King of Yamimakai
+            "Name": "King of Yamimakai",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Kojikocy
+            "Name": "Kojikocy",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Lady of Faith
+            "Name": "Lady of Faith",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Launcher Spider
+            "Name": "Launcher Spider",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Leogun
+            "Name": "Leogun",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Mega Thunderball
+            "Name": "Mega Thunderball",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Morinphen
+            "Name": "Morinphen",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Mystic Horseman
+            "Name": "Mystic Horseman",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Niwatori
+            "Name": "Niwatori",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ocubeam
+            "Name": "Ocubeam",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Pale Beast
+            "Name": "Pale Beast",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Petit Moth
+            "Name": "Petit Moth",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Prevent Rat
+            "Name": "Prevent Rat",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Protector of the Throne
+            "Name": "Protector of the Throne",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Rock Ogre Grotto #1
+            "Name": "Rock Ogre Grotto #1",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Ryu-Kishin Powered
+            "Name": "Ryu-Kishin Powered",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Saggi the Dark Clown
+            "Name": "Saggi the Dark Clown",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tongyo
+            "Name": "Tongyo",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Trent
+            "Name": "Trent",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Water Omotics
+            "Name": "Water Omotics",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Winged Dragon, Guardian of the Fortress #1
+            "Name": "Winged Dragon, Guardian of the Fortress #1",
+            "Category": "Monster",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Block Attack
+            "Name": "Block Attack",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Share the Pain
+            "Name": "Share the Pain",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Soul Release
+            "Name": "Soul Release",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # The Cheerful Coffin
+            "Name": "The Cheerful Coffin",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
+        { # Tremendous Fire
+            "Name": "Tremendous Fire",
+            "Category": "Spell",
+            "Type": "Normal",
+            "Rarity": "Common"
+        },
     ]
 }
 
